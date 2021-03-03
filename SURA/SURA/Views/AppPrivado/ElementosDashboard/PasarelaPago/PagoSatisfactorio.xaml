@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                 x:Class="SURA.Views.AppPrivado.ElementosDashboard.PasarelaPago.PagoSatisfactorio">
+    <ContentView.Content>
+        <Grid ColumnSpacing="0" RowSpacing="0" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+            <StackLayout x:Name="StkContent"
+                Grid.Row="0"
+                             Grid.Column="0"
+                             Padding="10"
+                         BackgroundColor="White"
+                         HorizontalOptions="FillAndExpand"
+                             Margin="0,0,0,7">
+
+                <Image WidthRequest="100"
+                           HeightRequest="60"
+                           Aspect="AspectFit"
+                    VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                           Source="logosuranormal"/>
+
+                <Label
+                        Text="Confirmación de Pago"
+                        TextColor="{StaticResource Blue}"
+                        FontSize="Small"
+                        FontAttributes="Bold"
+                        HorizontalTextAlignment="Center"/>
+
+                <Label
+                        TextColor="{StaticResource Blue}"
+                        FontSize="Medium"
+                    HorizontalOptions="FillAndExpand"
+                    Padding="10,-5,10,0"
+                        FontAttributes="Bold"
+                        HorizontalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="¡Hola "/>
+                            <Span x:Name="txtClienteNombre" Text=""/>
+                            <Span Text=" gracias por su pago"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Image HeightRequest="45"
+                       WidthRequest="45"
+                       Source="success"
+                       HorizontalOptions="Center" />
+
+                <Label
+                    Text="Detalles del pago"
+                    TextColor="#5F5F5F"
+                    FontSize="Small"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="FillAndExpand"/>
+
+                <BoxView BackgroundColor="#e7df00" HeightRequest="1"/>
+
+                <StackLayout Orientation="Vertical"
+                           Padding="0"
+                           Margin="0,3,0,0"
+                             x:Name="StkRecibos">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Label
+                                    TextColor="#5F5F5F"
+                                    FontSize="Small"
+                                    HorizontalTextAlignment="Start"
+                                    HorizontalOptions="StartAndExpand">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Tipo de Seguro: " FontAttributes="Bold" FontSize="Micro"/>
+                                            <Span Text="{Binding Solucion}" FontSize="Micro"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                                <Label
+                                    TextColor="#5F5F5F"
+                                    FontSize="Small"
+                                    HorizontalTextAlignment="Start"
+                                    HorizontalOptions="StartAndExpand">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Número de Póliza: " FontAttributes="Bold" FontSize="Micro"/>
+                                            <Span Text="{Binding NumeroPoliza}" FontSize="Micro"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                                <Label
+                                    TextColor="#5F5F5F"
+                                    FontSize="Small"
+                                    HorizontalTextAlignment="Start"
+                                    HorizontalOptions="StartAndExpand">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Número de recibo: " FontAttributes="Bold" FontSize="Micro"/>
+                                            <Span Text="{Binding NumeroRecibo}" FontSize="Micro" TextColor="{StaticResource Blue}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                                <Label
+                                    TextColor="#5F5F5F"
+                                    FontSize="Small"
+                                    HorizontalTextAlignment="End"
+                                    HorizontalOptions="EndAndExpand">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Total de póliza: " FontAttributes="Bold" FontSize="Micro"/>
+                                            <Span Text="{Binding MontoPolizaString}" FontSize="Micro"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                                <BoxView BackgroundColor="{StaticResource Blue}" HeightRequest="1" Margin="10, 6" Opacity="0.7"/>
+
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+
+                </StackLayout>
+
+                <Frame BorderColor="{StaticResource Blue}" BackgroundColor="Transparent"
+                       HorizontalOptions="FillAndExpand" Padding="10" Margin="0" HasShadow="False">
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+
+                        <Label
+                        TextColor="{StaticResource Blue}"
+                        FontSize="Small"
+                        HorizontalTextAlignment="Start"
+                        HorizontalOptions="StartAndExpand"
+                        Text="Total Cancelado"/>
+
+                        <Label
+                        x:Name="TotalRecibos"
+                        TextColor="{StaticResource Blue}"
+                        FontSize="Small"
+                        HorizontalTextAlignment="End"
+                        HorizontalOptions="EndAndExpand"
+                        Text=""/>
+
+
+                    </StackLayout>
+                </Frame>
+
+                <BoxView BackgroundColor="#e7df00" HeightRequest="1" Margin="0,2,0,0"/>
+
+            </StackLayout>
+            <Grid
+                Margin="0,0,0,20"
+                Grid.Row="1"
+                Grid.Column="0"
+                HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+                <Frame 
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Margin="10,0,5,0"
+                       BackgroundColor="{StaticResource Blue}"
+                       HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                       CornerRadius="0"
+                       Padding="10">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="DescargarReciboTapped" />
+                    </Frame.GestureRecognizers>
+                    <Label Text="Descargar"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"/>
+                </Frame>
+
+                
+                <Frame
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Margin="5,0,10,0"
+                       BackgroundColor="{StaticResource Blue}"
+                       HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                       CornerRadius="0"
+                       Padding="10">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="RegresarTapped" />
+                    </Frame.GestureRecognizers>
+                    <Label Text="Regresar a mi cuenta"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"/>
+                </Frame>
+            </Grid>
+        </Grid>
+
+    </ContentView.Content>
+</ContentView> 

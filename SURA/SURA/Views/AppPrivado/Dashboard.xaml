@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:SURA"
+             x:Class="SURA.Views.AppPrivado.Dashboard"
+             BackgroundColor="Transparent">
+    <ContentView.Content>
+        <Grid Padding="0" RowSpacing="0" ColumnSpacing="0"
+              VerticalOptions="FillAndExpand" 
+              HorizontalOptions="FillAndExpand">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="5"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="0"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.ColumnSpacing>
+                <OnIdiom x:TypeArguments="x:Double"
+                         Phone="0"
+                         Tablet="5">
+                </OnIdiom>
+            </Grid.ColumnSpacing>
+
+            <Grid.RowSpacing>
+                <OnIdiom x:TypeArguments="x:Double"
+                         Phone="0"
+                         Tablet="5">
+                </OnIdiom>
+            </Grid.RowSpacing>
+
+            <Grid Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1"
+                  Padding="0" RowSpacing="0" ColumnSpacing="0"
+                  VerticalOptions="FillAndExpand"
+                  HorizontalOptions="FillAndExpand">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <local:CustomFrame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1"
+                       x:Name="frmMisPolizas" BorderColor="#ecf0f1"
+                       CornerRadius="0" Margin="0" HasShadow="True"
+                   Style="{StaticResource MainPageButton}">
+                    <Grid Padding="0" RowSpacing="0" ColumnSpacing="0"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition Height="100"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="5"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Row="1" Grid.Column="0"
+                               Margin="0"
+                               Source="icono_tarjeta"
+                               Aspect="AspectFit"/>
+
+                        <Label Grid.Row="3" Grid.Column="0"
+                               TextColor="#0033A0"
+                               FontSize="Medium"
+                               FontAttributes="Bold"
+                               Margin="10, 0"
+                               HorizontalTextAlignment="Start"
+                               VerticalTextAlignment="Center">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Mis pólizas" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Label Grid.Row="4" Grid.Column="0"
+                               TextColor="#53565A"
+                               FontSize="12"
+                               Margin="10, 0"
+                               HorizontalTextAlignment="Start"
+                               VerticalTextAlignment="Center">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="CONSULTA AQUI" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </Grid>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="btnMisPolizas_Clicked"/>
+                    </Frame.GestureRecognizers>
+                </local:CustomFrame>
+
+                <local:CustomFrame Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="1"
+                       x:Name="frmPagos" BorderColor="#ecf0f1"
+                       CornerRadius="0" Margin="0" HasShadow="True"
+                       Style="{StaticResource MainPageButton}">
+                    <Grid Padding="0" RowSpacing="2" ColumnSpacing="0"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition Height="15"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="1"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="5"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1"
+                               Style="{StaticResource ProductText}"
+                               HorizontalTextAlignment="Start"
+                               VerticalTextAlignment="Center"
+                               Text="Pago mínimo"/>
+
+                        <Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1"
+                               Style="{StaticResource ProductText}"
+                               FontAttributes="Bold"
+                               TextColor="#00AEC7"
+                               x:Name="lblPagoMinimo"
+                               HorizontalTextAlignment="Start"
+                               VerticalTextAlignment="Center"
+                               Text=""/>
+
+                        <BoxView Grid.Row="4" Grid.Column="1"
+                                 BackgroundColor="#53565A"/>
+
+                        <Label Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="1"
+                               Style="{StaticResource ProductText}"
+                               HorizontalTextAlignment="Start"
+                               VerticalTextAlignment="Center"
+                               Text="Saldo total"/>
+
+                        <Label Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="1"
+                               Style="{StaticResource ProductText}"
+                               FontAttributes="Bold"
+                               TextColor="#00AEC7"
+                               x:Name="lblSaldoTotal"
+                               HorizontalTextAlignment="Start"
+                               VerticalTextAlignment="Center"
+                               Text=""/>
+
+                        <Label Grid.Row="8" Grid.Column="1"
+                               TextColor="#0033A0"
+                               FontSize="Medium"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Start"
+                               VerticalTextAlignment="Center">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Mi pago" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Label Grid.Row="9" Grid.Column="1"
+                               TextColor="#53565A"
+                               FontSize="12"
+                               HorizontalTextAlignment="Start"
+                               VerticalTextAlignment="Center">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="PAGAR AQUI" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </Grid>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="btnPagos_Clicked"/>
+                    </Frame.GestureRecognizers>
+                </local:CustomFrame>
+
+            </Grid>
+
+            <local:CustomFrame Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="1"
+                   x:Name="frmMiSalud" BorderColor="#ecf0f1"
+                   CornerRadius="0" Margin="0" HasShadow="True"
+                   IsEnabled="True"
+                   Style="{StaticResource MainPageButton}">
+                <Grid Padding="0" RowSpacing="0" ColumnSpacing="0"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1"
+                           HeightRequest="50"
+                           Margin="7"
+                           Source="cruz_poliza_salud"
+                           Aspect="AspectFit"/>
+
+                    <Label Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="1"
+                           FontSize="Small"
+                           HorizontalTextAlignment="Start"
+                           VerticalTextAlignment="Center"
+                           TextColor="#00AEC7"
+                           Text="Mis servicios de salud"
+                           Style="{StaticResource ProductText}" />
+
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="btnMiSalud_Clicked"/>
+                </Frame.GestureRecognizers>
+            </local:CustomFrame>
+
+            <Label Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="1"
+                   TextColor="White" FontAttributes="Bold"
+                   FontSize="Small"
+                   HorizontalTextAlignment="Start"
+                   VerticalTextAlignment="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Descarga de documentos" TextColor="#0033A0" FontAttributes="Bold" FontSize="Medium"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+
+            <local:CustomFrame Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="1"
+                   x:Name="frmCartaDeRenta"
+                   CornerRadius="0" Margin="0" HasShadow="True"
+                   IsEnabled="True" BorderColor="#ecf0f1"
+                   Style="{StaticResource MainPageButton}">
+                <Grid Padding="0" RowSpacing="0" ColumnSpacing="0"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1"
+                           HeightRequest="50"
+                           Margin="7"
+                           Source="flecha_abajo_descargar"
+                           Aspect="AspectFit"/>
+
+                    <Label Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="1"
+                           FontSize="Small"
+                           HorizontalTextAlignment="Start"
+                           VerticalTextAlignment="Center"
+                           Text="Carta de renta"
+                           Style="{StaticResource ProductText}" />
+                    
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="btnCartaDeRenta_Clicked"/>
+                </Frame.GestureRecognizers>
+            </local:CustomFrame>
+
+            <local:CustomFrame Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="1"
+                   x:Name="frmEstadoCuenta"
+                   CornerRadius="0" Margin="0" HasShadow="True"
+                   IsEnabled="True" BorderColor="#ecf0f1"
+                   Style="{StaticResource MainPageButton}">
+                <Grid Padding="0" RowSpacing="0" ColumnSpacing="0"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1"
+                           HeightRequest="50"
+                           Margin="7"
+                           Source="flecha_abajo_descargar"
+                           Aspect="AspectFit"/>
+
+                    <Label Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="1"
+                           FontSize="Small"
+                           HorizontalTextAlignment="Start"
+                           VerticalTextAlignment="Center"
+                           Text="Carnet SURA"
+                           Style="{StaticResource ProductText}" />
+
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <!--<TapGestureRecognizer Tapped="#"/>-->
+                </Frame.GestureRecognizers>
+            </local:CustomFrame>
+            
+            <Frame Grid.Row="11" Grid.Column="2" Grid.ColumnSpan="1"
+                   Margin="0" Padding="0" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" HasShadow="False">
+                <Frame Margin="0" Padding="16, 7, 16, 7" HasShadow="False" BackgroundColor="#00AEC7"
+                       VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" CornerRadius="30">
+                    <Grid Margin="0" Padding="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0" FontSize="Small" TextColor="White" Text="VER TODOS LOS DOCUMENTOS"
+                               FontAttributes="Bold" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+
+                        <Frame Grid.Column="1" Margin="0" Padding="0" BackgroundColor="White" CornerRadius="30">
+                            <Image Source="flecha_entrar_derecha" WidthRequest="10" Margin="5" Aspect="AspectFit"
+                                   VerticalOptions="Center" HorizontalOptions="Center" />
+                        </Frame>
+                    </Grid>
+                </Frame>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="VerTodos_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>

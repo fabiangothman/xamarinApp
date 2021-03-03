@@ -1,0 +1,497 @@
+﻿//Aqui se llena los datos de cada seguro para popular DetallesContenedor.xaml
+{
+  "Seguro_Auto": [
+    {
+      "NombreSeguro": "SEGURO DE AUTO",
+      "ProductIcon": "imageAutoBlanco",
+      "ProductBanner": "SeguroAutoBanner",
+      "Slogan_1": "Somos más que un seguro de autos",
+      "Slogan_2": "Somos más que un seguro de autos",
+      "TipoPlan": "",
+      "Ventajas": [
+        {
+          "Titulo": null,
+          "Descripcion": "SURA te brinda el seguro de auto con las mejores coberturas y beneficios.",
+          "Disclaimer": "*Consulta con tu asesor si aplica en tu provincia.",
+          "Lista": [
+            "Servicio de chófer ilimitado en caso de que te sientas indispuesto*.",
+            "Asistencia Vial y grúa las 24 horas los 365 días del año",
+            "Revisado y trámite de placa GRATUITO*.",
+            "Te pagamos de inmediato en el lugar del accidente con Pago Express.",
+            "Cuentas con Centro de Auto SURA donde cuidamos de tu auto a precios preferenciales.",
+            "Tendrás la menor depreciación del mercado al renovar tu póliza.",
+            "Te proporcionamos un vehículo del alquiler por 10 días, en caso de que tu auto se encuentre en el taller.",
+            "Premiamos tu buena conducción disminuyendo hasta $500 en tu deducible con nuestro programa Conductor Estrella.",
+            "Cubrimos tu automóvil incluso cuando sea conducido por un conductor que no esté incluido en tu póliza.",
+            "Te cubrimos aún en carreteras no autorizadas por la A.T.T.T. como playas o el interior del país."
+          ]
+        }
+      ],
+      "DanosTerceros": [
+        {
+          "Titulo": null,
+          "Descripcion": "El Seguro Daños a Terceros te brinda las coberturas básicas para tu auto y la asistencia necesaria para ti: ",
+          "Lista": null
+        },
+        {
+          "Titulo": "Responsabilidad civil:",
+          "Descripcion": "Si resultas culpable en un accidente SURA se hará cargo de los daños materiales y corporales a terceros",
+          "Lista": null
+        },
+        {
+          "Titulo": "Beneficios adicionales:",
+          "Descripcion": null,
+          "Lista": [
+            "Cubrimos los gastos médicos en caso de accidente.",
+            "Te enviamos un ajustador un situ",
+            "Te proporcionamos Asistencia legal sin costo"
+          ]
+        },
+        {
+          "Titulo": "Asistencia vial las 24 horas, los 365 días del año con:",
+          "Descripcion": null,
+          "Lista": [
+            "Cambio de llantas",
+            "Grúa",
+            "Paso de corriente y gasolina",
+            "Cerrajería",
+            "Asistencia legal"
+          ]
+        },
+        {
+          "Titulo": null,
+          "Descripcion": "Puedes ampliar la cobertura de tu plan, añadiendo más beneficios.",
+          "Lista": null
+        }
+      ],
+      "Cobertura": [
+        {
+          "Titulo": null,
+          "Descripcion": "El seguro Cobertura Completa además de brindarte las coberturas y beneficios de del seguro de Daños a terceros, te brinda: ",
+          "Lista": [
+            "Gastos médicos para los ocupantes del vehículo.",
+            "Nos hacemos cargo de los daños ocasionados a tu auto, como rotura de vidrios o daños ocasionados por caída de objetos, incendio, hurto, terremoto, inundación, entre otros.",
+            "Te cubrimos en caso de colisión o vuelco."
+          ]
+        },
+        {
+          "Titulo": null,
+          "Descripcion": "Puedes ampliar la cobertura de tu plan, añadiendo más beneficios.",
+          "Lista": null
+        }
+      ],
+      "PorqueYo": null,
+      "Planes": null
+    }
+  ],
+  "Seguro_Vida": [
+    {
+      "NombreSeguro": "Seguro de Vida",
+      "ProductIcon": "segurovidaWhite",
+      "ProductBanner": "SeguroAutoBanner",
+      "Slogan_1": "No solo respaldamos financieramente a tu familia si algún día faltas,también cuidamos de tu salud y la de tus seres queridos desde hoy mismo",
+      "Slogan_2": "",
+      "TipoPlan": "",
+      "Ventajas": [
+        {
+          "Titulo": "Servicios de coordinación de citas médicas con especialistas",
+          "Descripcion": "Te brindamos acceso a una red de médicos especialistas como internistas, pediatras, alergólogos, y más, con descuentos de hasta el 50%. Además, coordinamos tu cita en menos de 72 horas. Todos estos beneficios a precios preferenciales aplican para ti y 9 seres queridos:",
+          "Lista": [
+            "Consultas con médicos generales y especialistas",
+            "Exámenes de laboratorios clínicos",
+            "Medicina alternativa ",
+            "Centros odontológicos y oftalmológicos",
+            "Spa y estéticas",
+            "Radiologías"
+          ]
+        },
+        {
+          "Titulo": "Servicios de emergencia odontológica completa",
+          "Descripcion": "Si tienes una emergencia dental inesperada, tu póliza te cubrirá los tratamientos y servicios dentales de forma gratuita.",
+          "Lista": [
+            "Consulta dental de emergencia",
+            "Endodoncias ",
+            "Extracciones dentales ",
+            "Radiografías ",
+            "Reparación de las prótesis"
+          ]
+        },
+        {
+          "Titulo": "Asistencia médica móvil",
+          "Descripcion": "En caso de urgencias por enfermedad o accidente estaremos a tu lado garantizando tu tranquilidad con:",
+          "Lista": [
+            "Servicio de ambulancia completamente equipada con médico de emergencia.",
+            "Llamadas sin límites dentales ",
+            "Servicios médicos a domicilio a costos preferenciales (Inyectables, EKG, Inhaloterapia, etc.) para que no tengas que desplazarte."
+          ]
+        }
+      ],
+      "PorqueYo": [
+        {
+          "Titulo": null,
+          "Descripcion": "Si alguna vez te has preguntado ¿quién correría con los gastos de la hipoteca o de los estudios de tus hijos si tú faltaras? o ¿cómo afrontarías los gastos de tu hogar si por incapacidad no pudieras volver a trabajar?, este seguro es para ti. No solo respaldamos financieramente a tu familia si algún día faltas sino que también cuidamos de tu salud y la de tus seres queridos desde hoy mismo, brindándote acceso a una red de médicos especialistas con descuentos de hasta el 50%.",
+          "Lista": null
+        }
+      ],
+      "Cobertura": [
+        {
+          "Titulo": "Cobertura principal",
+          "Descripcion": "Respaldamos económicamente a tu familia en caso de muerte por cualquier causa",
+          "Lista": null
+        },
+        {
+          "Titulo": "Puedes ampliar tus coberturas y ampliar tu tranquilidad:",
+          "Descripcion": "En caso de incapacidad accidental y hospitalización que te impida seguir ejerciendo tu profesión, contarás con coberturas que te permitirán mantener tu calidad de vida:",
+          "Lista": [
+            "Renta mensual por incapacidad a causa de accidente",
+            "Pago anticipado de la suma asegurada",
+            "Renta diaria por hospitalización",
+            "Gastos funerarios"
+          ],
+          "DanosTerceros": null,
+          "Planes": null
+        }
+      ]
+    }
+  ],
+  "Seguro_Asistencia_Funeraria": [
+    {
+      "NombreSeguro": "Seguro de Asistencia funeraria",
+      "ProductIcon": "",
+      "ProductBanner": "bannerasisfuneraria",
+      "Slogan_1": "Pase lo que pase estaremos contigo.",
+      "Slogan_2": "Pase lo que pase estaremos contigo.",
+      "TipoPlan": "",
+
+      "PorqueYo": [
+        {
+          "Titulo": null,
+          "Descripcion": "Es un seguro necesario para cualquier persona entre 18 y 69 años que quiera prevenir y evitar los altos costos que supone un funeral. Si llegase ese difícil momento, nosotros nos ocuparíamos de todos los gastos y trámites funerarios. ",
+          "Lista": null
+        }
+      ],
+      "Planes": [
+        {
+          "Titulo": null,
+          "Descripcion": "Tenemos un plan de Asistencia Funeraria para cada tipo de familia o persona, incluso si eres panameño residiendo en el extranjero o extranjero residente en Panamá.",
+          "Lista": null
+        },
+        {
+          "Titulo": "Nacional Individual",
+          "Descripcion": "Con este plan recibes los beneficios en caso de fallecimiento del asegurado. ",
+          "Lista": null
+        },
+        {
+          "Titulo": "Nacional Familiar",
+          "Descripcion": "Este plan cubre en caso de fallecimiento del asegurado, el cónyuge y tres hijos.",
+          "Lista": null
+        },
+        {
+          "Titulo": "Nacional Familiar Plus",
+          "Descripcion": "Si deseas una protección más amplia, este plan te cubre en caso de fallecimiento del asegurado, el cónyuge, tres hijos y dos progenitores (padres o suegros).",
+          "Lista": null
+        },
+        {
+          "Titulo": "Individual con Repatriación",
+          "Descripcion": "Los beneficios de este plan aplican si el asegurado reside en Panamá, pero fallece, por cualquier causa, en cualquier ciudad de Estados Unidos, Nicaragua, Argentina, Canadá, Belice, Colombia México, Ecuador, Bolivia, Guatemala, Perú, Brasil, Honduras, Chile, El Salvador, Paraguay, Costa Rica o Venezuela.",
+          "Lista": null
+        },
+        {
+          "Titulo": " Individual con Expatriación",
+          "Descripcion": "Este plan protege en caso de que el asegurado sea extranjero residiendo en Panamá y fallezca por cualquier causa en Panamá, siempre y cuando el país de origen pertenezca al Continente Americano. ",
+          "Lista": null
+        }
+      ],
+      "Ventajas": null,
+      "DanosTerceros": null,
+      "Cobertura": null
+    }
+  ],
+  "Seguro_PAM": [
+    {
+      "NombreSeguro": "Protección y asistencia medica PAM",
+      "ProductIcon": "",
+      "ProductBanner": "bannerasisfuneraria",
+      "Slogan_1": "Protección y Asistencia Médica para tí y tu familia por solo B/.16.00 al mes",
+      "Slogan_2": "",
+      "TipoPlan": "",
+      "Ventajas": [
+        {
+          "Titulo": null,
+          "Descripcion": "El plan Protección y Asistencia Médica de SURA te brinda los siguientes beneficios: ",
+          "Lista": null
+        },
+        {
+          "Titulo": "Orientación Médica",
+          "Descripcion": "Te damos acceso a una red de médicos especialistas como internistas, pediatras, alergólogos, y más, con descuentos de hasta el 50%.  Además coordinamos tu cita en menos de 72 horas.",
+          "Lista": null
+        },
+        {
+          "Titulo": "Emergencias Odontológicas",
+          "Descripcion": "Cubrimos tus tratamientos y servicios dentales por emergencia para ti y tu familia.",
+          "Lista": null
+        },
+        {
+          "Titulo": "Ambulancia",
+          "Descripcion": "Servicio de ambulancia completamente equipada con médico de emergencia los 365 días del año.",
+          "Lista": null
+        },
+        {
+          "Titulo": "Gastos Médicos",
+          "Descripcion": "Cubrimos tus gastos médicos por accidente. Si te atiendes en el Hospital San Fernando o en el Hospital Chiriquí de David nosotros corremos con los gastos médicos. Si te atiendes en otros centros de salud, se te reembolsarán los gastos al presentar la factura, hasta un límite de B/1,000.",
+          "Lista": null
+        },
+        {
+          "Titulo": "Asistencia Funeraria",
+          "Descripcion": "En caso de fallecimiento nos encargamos de los gastos funerarios, como: arreglos florales, sala de velación, servicios religiosos, traslados a nivel nacional, etc. Cubre al asegurado, su pareja, tres hijos y  padres.",
+          "Lista": null
+        }
+      ],
+      "Cobertura": [
+        {
+          "Titulo": "Cobertura Muerte Accidental",
+          "Descripcion": "Respaldamos económicamente a tu familia en caso de muerte por cualquier causa",
+          "Lista": null
+        },
+        {
+          "Titulo": "Renta diaria por hospitalización por accidente para ti  y tu pareja. ",
+          "Descripcion": "En caso de que requieras ser hospitalizado por accidente, SURA te pagará una renta diaria de B/50, a partir del 4 día de hospitalización, por 60 días máximo al año.",
+          "Lista": null
+        }
+      ],
+      "PorqueYo": [
+        {
+          "Titulo": null,
+          "Descripcion": "El plan Protección y Asistencia Médica  de SURA es  ideal para las personas que: ",
+          "Lista": [
+            "No tienen seguro médico",
+            "Se preocupan del futuro de su familia",
+            "Tienen un ingreso familiar mensual menor a B/. 2,000",
+            "Edad entre 18 y 65"
+          ]
+        }
+      ],
+      "DanosTerceros": null,
+      "Planes": null
+    }
+  ],
+  "Seguro_Accidente": [
+    {
+      "NombreSeguro": "Seguro de accidentes personales",
+      "ProductIcon": "",
+      "ProductBanner": "bannersegurovida",
+      "Slogan_1": "Que ningún accidente detenga tu ritmo de vida",
+      "Slogan_2": "Que ningún accidente detenga tu ritmo de vida",
+      "TipoPlan": "",
+      "Ventajas": [
+        {
+          "Titulo": null,
+          "Descripcion": "Además de brindarte respaldo económico económico en caso de accidente, te ofrecemos beneficios muy convenientes: ",
+          "Lista": null
+        },
+        {
+          "Titulo": "Orientación Médica",
+          "Descripcion": "Acceso a una red de médicos especialistas como internistas, pediatras, alergólogos, y más, con descuentos de hasta el 50%.  El beneficio aplica para ti y 9 seres queridos.  ",
+          "Lista": null
+        },
+        {
+          "Titulo": "Emergencias Odontológicas",
+          "Descripcion": "Cubrimos tus tratamientos y servicios dentales por emergencia para ti y tu familia.",
+          "Lista": null
+        },
+        {
+          "Titulo": "Ambulancia",
+          "Descripcion": "Servicio de ambulancia completamente equipada con médico de emergencia los 365 días del año.",
+          "Lista": null
+        },
+        {
+          "Titulo": "Asistencia Funeraria",
+          "Descripcion": "En caso de fallecimiento nos encargamos de los gastos funerarios, como: arreglos florales, sala de velación, servicios religiosos, traslados a nivel nacional, etc. Cubre al asegurado, su pareja, tres hijos y  padres.",
+          "Lista": null
+        }
+      ],
+      "Cobertura": [
+        {
+          "Titulo": null,
+          "Descripcion": "Los planes de Accidentes Personales de SURA te brindan las coberturas más completas para protegerte a ti y a tu familia en caso de accidente.",
+          "Lista": null
+        },
+        {
+          "Titulo": "Coberturas básicas",
+          "Descripcion": null,
+          "Lista": [
+            "Cubrimos tus gastos médicos por accidente",
+            "Te indemnizamos hasta con B/10.000.00, en caso de incapacidad total y permanente por accidente    ",
+            "Respaldamos a tu familia con una indemnización de hasta B/50.000 en caso de muerte accidental. "
+          ]
+        },
+        {
+          "Titulo": "Coberturas opcionales",
+          "Descripcion": "Puedes optar por ampliar tus coberturas para estar cubierto en caso de:",
+          "Lista": [
+            "Homicidio Doloso",
+            "Gastos médicos por accidente",
+            "Muerte Accidental en avión privado",
+            "Muerte en accidente de tránsito",
+            "Muerte como conductor en accidente de tránsito",
+            "Muerte en cajero automático",
+            "Renta diaria de incapacidad temporal por accidente",
+            "Renta diaria de hospitalización por accidente",
+            "Renta diaria de hospitalización en cuidados intensivos por accidente",
+            "Renta diaria de hospitalización de ambos cónyuges por accidente",
+            "Renta anual al cónyuge en caso de muerte accidental",
+            "Renta anual por escolaridad en caso de muerte accidental"
+          ]
+        }
+      ],
+      "DanosTerceros": null,
+      "PorqueYo": null,
+      "Planes": [
+        {
+          "Titulo": null,
+          "Descripcion": "Elige el plan que más se adapte a tus necesidades:",
+          "Lista": null
+        },
+        {
+          "Titulo": "Personal",
+          "Descripcion": "Cubrimos tus gastos médicos por accidente, incapacidad total y permanente.",
+          "Lista": null
+        },
+        {
+          "Titulo": "Viaja seguro",
+          "Descripcion": "Te respaldamos económicamente frente a gastos médicos por accidente, incapacidad total y permanente en cualquier parte del mundo.",
+          "Lista": null
+        },
+        {
+          "Titulo": "Familiar",
+          "Descripcion": "Además de protegerte a ti y a tu familia en caso de accidente o incapacidad total y permanente, cubrimos tus gastos médicos por accidente.",
+          "Lista": null
+        },
+        {
+          "Titulo": "Colectivo",
+          "Descripcion": "Es ideal para proteger a los colaboradores de tu empresa en caso de fallecimiento o incapacidad permanente por accidente.",
+          "Lista": null
+        },
+        {
+          "Titulo": "Escolar",
+          "Descripcion": "Cubrimos en caso de accidente al personal docente, administrativo y estudiantes, mientras viajan en el bus escolar, entre el hogar y la escuela y cuando realicen excursiones u otras actividades organizadas por y bajo la responsabilidad comprobada de la escuela.",
+          "Lista": null
+        }
+      ]
+    }
+  ],
+  "Seguro_Hogar": [
+    {
+      "NombreSeguro": "Seguro de Hogar",
+      "ProductIcon": "",
+      "ProductBanner": "bannershogar",
+      "Slogan_1": "Protege todas tus pertenencias dentro de tu hogar, a tu familia, a tu empleada doméstica e incluso a tu mascota frente a posibles accidentes y averías",
+      "Slogan_2": "",
+      "TipoPlan": "",
+      "Ventajas": [
+        {
+          "Titulo": null,
+          "Descripcion": "Asegura tu tranquilidad ante cualquier imprevisto, con la póliza que más beneficios te da:",
+          "Lista": [
+            "Te brindamos asistencia en cerrajería, plomería y electricidad, sin costo alguno.",
+            "Cubrimos a tu mascota en caso de accidentes dentro del hogar.",
+            "Te respaldamos a ti y a tu familia* en caso de accidente, dentro y fuera del hogar.",
+            "Tu familia, visitas y empleados domésticos, tendrán acceso al servicio de ambulancia en caso de una emergencia médica o accidente. ",
+            "Contarás con cobertura de inhabitabilidad en caso de que tengas que desalojar tu hogar forzosamente."
+          ]
+        }
+      ],
+      "Cobertura": [
+        {
+          "Titulo": null,
+          "Descripcion": "Nuestra amplia gama de coberturas te garantiza la tranquilad que estás buscando:",
+          "Lista": [
+            "Todos tus bienes estarán protegidos contra caída de árboles, caída de aeronaves u ondas sónicas.",
+            "Tu hogar estará cubierto por daños de agua, como:  lluvia o inundaciones, goteos o filtraciones, omisión de cierre de grifos, etc",
+            "Cubrimos los gastos de cerrajería y reposición de llaves y cerradura por extravío u otras razones.",
+            "Quedan cubiertos los gastos de servicio de plomería y electricidad que requieran ser arreglados con carácter de urgencia.",
+            "Tus equipos electrónicos están cubiertos ante cualquier incidente.",
+            "Nuestra póliza cubre la pérdida de equipaje durante tus viajes.",
+            "Los bienes de tu hogar, incluída tu caja fuerte, estarán cubiertos en caso de robo con forzamiento.",
+            "En caso de atraco dentro y fuera del hogar cubrimos el efectivo, objetos de valor especial y bienes sustraídos.",
+            "Brindamos cobertura a tus objetos de valor, como joyas y alhajas.",
+            "Cubrimos los gastos médicos de tus empleados domésticos.",
+            "Nuestra cobertura protege el robo de tus tarjetas de crédito.",
+            "Cubrimos indemnizaciones por responsabilidad civil familiar",
+            "Tendrás una cobertura de accidentes personales, dentro y fuera del hogar.",
+            "Contarás con la asistencia y el apoyo económico que supone un funeral.",
+            "En caso de urgencias por enfermedad o accidente dispondrás de servicio de emergencia médica"
+          ]
+        }
+      ],
+      "DanosTerceros": null,
+      "PorqueYo": null,
+      "Planes": null
+    }
+  ],
+  "Seguro_Negocio": [
+    {
+      "NombreSeguro": "Negocio Protegido",
+      "ProductIcon": "",
+      "ProductBanner": "bannernegocioesencial",
+      "Slogan_1": "El único seguro para emprendedores que te acompaña en el crecimiento de tu negocio con mentorías, red de contactos y conocimientos sobre tu mercado.",
+      "Slogan_2": "",
+      "TipoPlan": "",
+      "Ventajas": [
+        {
+          "Titulo": null,
+          "Descripcion": "Protege tu negocio con la póliza más completa del mercado: ",
+          "Lista": ["Cubrimos los daños materiales ocasionados por imprevistos a tu maquinaria de trabajo y mercancía.",
+                    "Te protegemos a ti y a tu negocio en caso de robo o asalto fuera y dentro de tu empresa.",
+                    "Te respaldamos económicamente frente a los daños que tu negocio pueda causar a tus clientes dentro de tu local.",
+                    "Te brindamos asistencia en cerrajería, plomería y electricidad, sin costo alguno.",
+                    "Te damos acceso a una red de médicos especialistas como internistas, pediatras, alergólogos, y mucho más, con descuentos de hasta el 50%.  Además, coordinamos tu cita en menos de 72 horas."
+          ]
+        }
+      ],
+      "Planes": [
+        {
+          "Titulo": null,
+          "Descripcion": "Elige el plan que más se ajuste a las características de tu empresa:",
+          "Lista": null
+        },
+        {
+          "Titulo": "Plan Esencial",
+          "Descripcion": "La póliza Negocio Protegido Esencial cubre los daños ocasionados a los bienes materiales de tu empresa (maquinaria, mobiliario y mercancías) e incluso los daños que puedas producir a otros como consecuencia de tu actividad comercial. Desde solo B/84.00 anual.",
+          "Lista": null
+        },
+        {
+          "Titulo": "Plan Integral",
+          "Descripcion": "Además de contar con las coberturas y beneficios de Negocio Protegido Esencial, el Plan Integral te brinda cobertura de Accidentes Personales para ti y hasta 2 colaboradores, que incluye:",
+          "Lista": [
+            "Gastos médicos por accidentes durante la jornada laboral, dentro y fuera del negocio.",
+            "Indemnización de hasta B/10.000.00, en caso de incapacidad total y permanente por accidente dentro del negocio.",
+            "Respaldo económico a sus familias con una indemnización de hasta B/50.000 en caso de muerte accidental."
+          ]
+        },
+        {
+          "Titulo": null,
+          "Descripcion": "Desde solo B/147.00 anual. Y por tan solo B/.2.50 adicional, puedes cubrir más colaboradores.",
+          "Lista": null
+        },
+        {
+          "Titulo": "Plan Premium",
+          "Descripcion": "Con el Plan Premium, no solo contarás con las coberturas y beneficios del plan Esencial e Integral, además dispondrás de un seguro de Vida para ti y tus empleados, que les ofrece:",
+          "Lista": [
+            "Respaldo económico para sus familias en caso de que falten.",
+            "Acceso a una red de médicos especialistas como internistas, pediatras, alergólogos, y mucho más con descuentos de hasta el 50%.  El beneficio aplica para 9 seres queridos de cada uno de los asegurados.",
+            "Cobertura de tratamientos y servicios dentales en caso de emergencia.",
+            "Asistencia médica móvil."
+          ]
+        },
+        {
+          "Titulo": null,
+          "Descripcion": "Desde solo B/192.00 anual. Y por tan solo B/.4.30 adicional, puedes cubrir más colaboradores.",
+          "Lista": null
+        }
+      ],
+      "PorqueYo": null,
+      "DanosTerceros": null
+    }
+  ]
+}

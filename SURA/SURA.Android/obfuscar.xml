@@ -1,0 +1,21 @@
+<Obfuscator>
+  <Var name="OutPath" value="..\..\..\..\..\bin\Release" />
+  <Var name="KeepPublicApi" value="false" />
+  <Var name="HidePrivateApi" value="false" />
+  <Var name="RenameProperties" value="true" />
+  <Var name="RenameEvents" value="false" />
+  <Var name="RenameFields" value="false" />
+  <Var name="UseUnicodeNames" value="true" />
+  <Var name="HideStrings" value="true" />
+  <Var name="SuppressIldasm" value="true" />
+  <Var name="XmlMapping" value="true" />
+  <Var name="RegenerateDebugInfo" value="true" />
+  <Var name="MarkedOnly" value="true" />
+  <Module file="SURA.dll">
+  <SkipType name="SURA.Properties.Settings" skipProperties="true" />
+  <SkipType name="SURA.Properties.Resources" skipProperties="true" />
+  <SkipNamespace name="SURA.Views.AppPublico.AsistenciaVial" />
+  <SkipNamespace name="SURA.Views.AppUbicaciones" />
+  <SkipNamespace name="SURA.Models" />
+  </Module>
+</Obfuscator>

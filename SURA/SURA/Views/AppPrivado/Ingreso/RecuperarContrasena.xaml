@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SURA.Views.AppPrivado.Ingreso.RecuperarContrasena">
+    <ContentView.Content>
+        <Grid HeightRequest="100" x:Name="OuterGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="3*"></RowDefinition>
+                <RowDefinition Height="65"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="15"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="logoSURAwhite"
+                   Grid.Column="2"
+                   Grid.Row="1"
+                   VerticalOptions="Center"
+                   Aspect="AspectFit"/>
+
+            <Grid Grid.Row="1"
+                  Grid.RowSpan="2"
+                  Grid.Column="1"
+                  Grid.ColumnSpan="3"
+                  VerticalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+
+                </Grid.RowDefinitions>
+
+                <Frame Style="{StaticResource EntryRoundedFrame}"
+                       Grid.Row="1"
+                       x:Name="frmViejaContrasena"
+                       IsVisible="False"
+                       Padding="4">
+                    <Entry x:Name="entViejaContrasena"
+                           IsPassword="True"
+                           Placeholder="Contraseña"
+                           Style="{StaticResource GlobalEntryStyle}"/>
+                </Frame>
+
+                <Frame Style="{StaticResource EntryRoundedFrame}"
+                       Grid.Row="2"
+                       Padding="4">
+                    <Entry x:Name="entNuevaContrasena"
+                           IsPassword="True"
+                           Placeholder="Nueva contraseña"
+                           Style="{StaticResource GlobalEntryStyle}"/>
+                </Frame>
+
+                <Frame Style="{StaticResource EntryRoundedFrame}"
+                       Grid.Row="3"
+                       Padding="4">
+                    <Entry x:Name="entConfirmarContrasena"
+                           IsPassword="True"
+                           Placeholder="Confirmar contraseña"
+                           Style="{StaticResource GlobalEntryStyle}"/>
+                </Frame>
+            </Grid>
+            <Frame Grid.Row="3"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="3"
+                   x:Name="btnEnviar"
+                   CornerRadius="13"
+                   HasShadow="false"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="End"
+                   Padding="14"
+                   BackgroundColor="{StaticResource Blue}"
+                   HeightRequest="25"
+                   Margin="0,0,0,8">
+
+                <Label Text="Enviar" FontSize="Subtitle"
+                           TextColor="White"
+                           Style="{StaticResource ProductText}"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="btnEnviar_Tapped" />
+                </Frame.GestureRecognizers>
+            </Frame>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

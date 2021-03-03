@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SURA.Views.AppPrivado.ElementosDashboard.PasarelaPago.ConfirmacionPago">
+    <ContentView.Content>
+        <Grid HeightRequest="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="130"/>
+            </Grid.RowDefinitions>
+
+            <Label Text="Detalles del pago"
+                   Grid.Column="1"
+                   Grid.Row="0"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"/>
+
+            <StackLayout Margin="0"
+                         Padding="0"
+                         Grid.Column="1"
+                         Grid.Row="1"
+                         Orientation="Horizontal"
+                         BackgroundColor="Transparent">
+
+                <CheckBox  x:Name="EnviarCorreo"
+                           HorizontalOptions="End"
+                           IsChecked="True"
+                           HeightRequest="40"
+                           Color="#e7df00"
+                           Margin="0"/>
+
+                <Label Text="Desea recibir el recibo por correo electrónico"
+                       TextColor="White"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="CenterAndExpand"/>
+
+            </StackLayout>
+
+
+
+            <CollectionView Grid.Column="1" 
+                            Grid.Row="2"
+                            x:Name="ListAPagar"
+                            SelectionMode="Single">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical"
+                                       ItemSpacing = "10"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame CornerRadius="4" BackgroundColor="White" VerticalOptions="FillAndExpand" Margin="0,4,0,4" Padding="0,12,0,7" HasShadow="False" HorizontalOptions="FillAndExpand">
+                            <Grid RowSpacing="5" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="5"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="1"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Label Text="{Binding Solucion}"
+                                               TextColor="#1B19A5"
+                                               Grid.Row="0"
+                                               Grid.Column="1"
+                                               FontSize="Small"
+                                               FontAttributes="None"
+                                               HorizontalOptions="StartAndExpand"
+                                               HorizontalTextAlignment="Start"/>
+
+                                <Label Text="{Binding PolizaCaratula}"
+                                               TextColor="#1B19A5"
+                                               Grid.Row="0"
+                                               Grid.Column="1"
+                                               FontSize="Small"
+                                               FontAttributes="None"
+                                               HorizontalOptions="EndAndExpand"
+                                               HorizontalTextAlignment="End"/>
+
+                                <BoxView BackgroundColor="#e7df00"
+                                                 Grid.Row="1"
+                                                 Grid.Column="1"/>
+
+                                <Label Text="Monto del Pago"
+                                               TextColor="#5F5F5F"
+                                               Grid.Row="2"
+                                               Grid.Column="1"
+                                               FontSize="Small"
+                                               FontAttributes="None"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="StartAndExpand"/>
+
+
+                                <Label Text="{Binding MontoPagarSeleccionadoString}"
+                                               TextColor="#5F5F5F"
+                                               Grid.Row="2"
+                                               Grid.Column="1"
+                                               FontSize="Small"
+                                               FontAttributes="None"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="EndAndExpand"/>
+
+
+                                <Label Text="Descuento"
+                                               TextColor="#5F5F5F"
+                                               Grid.Row="3"
+                                               Grid.Column="1"
+                                               FontSize="Small"
+                                               FontAttributes="None"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="StartAndExpand"/>
+
+
+                                <Label Text="{Binding DescuentoString}"
+                                               TextColor="#5F5F5F"
+                                               Grid.Row="3"
+                                               Grid.Column="1"
+                                               FontSize="Small"
+                                               FontAttributes="None"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="EndAndExpand"/>
+
+                                <Label Text="Total del pago"
+                                               TextColor="#5F5F5F"
+                                               Grid.Row="4"
+                                               Grid.Column="1"
+                                               FontSize="Small"
+                                               FontAttributes="Bold"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="StartAndExpand"/>
+
+
+
+                                <Label Text="{Binding TotalPolizaString}"
+                                               TextColor="#5F5F5F"
+                                               Grid.Row="4"
+                                               Grid.Column="1"
+                                               FontSize="Small"
+                                               FontAttributes="Bold"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="EndAndExpand"/>
+                            </Grid>
+
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Frame Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"
+                   Margin="0,10,0,0">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Monto del pago"
+                               HorizontalOptions="StartAndExpand"
+                               TextColor="#5F5F5F"/>
+                        <Label x:Name="totalMontoConfirmacion"
+                               Text="B/.0.00"
+                               HorizontalOptions="End"
+                               FontAttributes="Bold"
+                               TextColor="#5F5F5F"/>
+                    </StackLayout>
+
+                    <Frame  x:Name="frmSiguiente"
+                            Padding="12"
+                            CornerRadius="10" 
+                            Margin="5,0,5,0"
+                            HasShadow="false"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            BackgroundColor="{StaticResource Blue}">
+
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Pagar_Clicked"/>
+                        </Frame.GestureRecognizers>
+
+                        <Label Text="Proceder al pago"  
+                               TextColor="White" 
+                               FontAttributes="Bold"
+                               FontSize="Subtitle"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Center" 
+                               VerticalTextAlignment="Center"/>
+                        
+                    </Frame>
+                </StackLayout>
+            </Frame>
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>

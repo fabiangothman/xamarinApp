@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SURA.Views.AppPrivado.Salud.MiSalud"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:local="clr-namespace:SURA"
+             NavigationPage.HasNavigationBar="False">
+    <ContentView.Content>
+        
+        <Grid Margin="0" Padding="0" ColumnSpacing="0" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="10" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="20" />
+            </Grid.ColumnDefinitions>
+
+            <Frame Grid.Row="0" Grid.Column="1"
+                   Margin="0" Padding="0" HasShadow="False">
+                <Grid RowSpacing="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    
+                    <StackLayout Grid.Row="0">
+                        <Grid Margin="0" Padding="0" ColumnSpacing="0" RowSpacing="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="0" />
+                            </Grid.ColumnDefinitions>
+                    
+                            <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1"
+                                   Text="Servicios" Margin="0, 5, 0, 5"
+                                   FontSize="Medium" TextColor="#0033A0" FontAttributes="Bold"
+                                   VerticalOptions="Center" HorizontalOptions="Start"/>
+
+                            <local:CustomFrame Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1"
+                                Margin="2" Padding="0" HasShadow="True" BackgroundColor="White" BorderColor="#ecf0f1">
+                                <Grid Margin="8" Padding="0" ColumnSpacing="0" RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="10" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Frame Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"
+                                           Margin="0" Padding="0" HasShadow="False">
+                                        <Image Source="icono_confondo_orejeras"
+                                               Margin="5, 0, 0, 0"
+                                               Aspect="AspectFit" HeightRequest="40"
+                                               HorizontalOptions="Center" VerticalOptions="Center" />
+                                    </Frame>
+                                    <Frame Grid.Row="0" Grid.Column="2"
+                                               Margin="0" Padding="0" HasShadow="False">
+                                        <Label Text="Consulta virtual"
+                                               FontSize="17" TextColor="#0033A0"
+                                               VerticalOptions="Center" HorizontalOptions="Start"/>
+                                    </Frame>
+                                    <Frame Grid.Row="1" Grid.Column="2"
+                                               Margin="0" Padding="0" HasShadow="False">
+                                        <Label Text="Consulta con nuestros especialisas de SURA"
+                                               FontSize="12" TextColor="Gray"
+                                               VerticalOptions="Center" HorizontalOptions="Start"/>
+                                    </Frame>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="btnConsultaVirtualIngresar_Tapped" />
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+                            </local:CustomFrame>
+
+                            <local:CustomFrame Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1"
+                                Margin="2" Padding="0" HasShadow="True" BackgroundColor="White" BorderColor="#ecf0f1">
+                                <Grid Margin="8" Padding="0" ColumnSpacing="0" RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="10" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Frame Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"
+                                           Margin="0" Padding="0" HasShadow="False">
+                                        <Image Source="icono_confondo_cruz"
+                                               Margin="5, 0, 0, 0"
+                                               Aspect="AspectFit" HeightRequest="40"
+                                               HorizontalOptions="Center" VerticalOptions="Center" />
+                                    </Frame>
+                                    <Frame Grid.Row="0" Grid.Column="2"
+                                               Margin="0" Padding="0" HasShadow="False">
+                                        <Label Text="Citas Médicas"
+                                               FontSize="17" TextColor="#0033A0"
+                                               VerticalOptions="Center" HorizontalOptions="Start"/>
+                                    </Frame>
+                                    <Frame Grid.Row="1" Grid.Column="2"
+                                               Margin="0" Padding="0" HasShadow="False">
+                                        <Label Text="Programa una cita con nuestros especialistas"
+                                               FontSize="12" TextColor="Gray"
+                                               VerticalOptions="Center" HorizontalOptions="Start"/>
+                                    </Frame>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="btnCitasMedicasIngresar_Tapped" />
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+                            </local:CustomFrame>
+
+                            <local:CustomFrame Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1"
+                                Margin="2" Padding="0" HasShadow="True" BackgroundColor="White" BorderColor="#ecf0f1">
+                                <Grid Margin="8" Padding="0" ColumnSpacing="0" RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="10" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Frame Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"
+                                           Margin="0" Padding="0" HasShadow="False">
+                                        <Image Source="icono_confondo_listado"
+                                               Margin="5, 0, 0, 0"
+                                               Aspect="AspectFit" HeightRequest="40"
+                                               HorizontalOptions="Center" VerticalOptions="Center" />
+                                    </Frame>
+                                    <Frame Grid.Row="0" Grid.Column="2"
+                                               Margin="0" Padding="0" HasShadow="False">
+                                        <Label Text="Resultados"
+                                               FontSize="17" TextColor="#0033A0"
+                                               VerticalOptions="Center" HorizontalOptions="Start"/>
+                                    </Frame>
+                                    <Frame Grid.Row="1" Grid.Column="2"
+                                               Margin="0" Padding="0" HasShadow="False">
+                                        <Label Text="Consulta resultados"
+                                               FontSize="12" TextColor="Gray"
+                                               VerticalOptions="Center" HorizontalOptions="Start"/>
+                                    </Frame>
+                                </Grid>
+                            </local:CustomFrame>
+
+                            <local:CustomFrame Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="1"
+                                Margin="2" Padding="0" HasShadow="True" BackgroundColor="White" BorderColor="#ecf0f1">
+                                <Grid Margin="8" Padding="0" ColumnSpacing="0" RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="10" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Frame Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"
+                                           Margin="0" Padding="0" HasShadow="False">
+                                        <Image Source="icono_confondo_listado"
+                                               Margin="5, 0, 0, 0"
+                                               Aspect="AspectFit" HeightRequest="40"
+                                               HorizontalOptions="Center" VerticalOptions="Center" />
+                                    </Frame>
+                                    <Frame Grid.Row="0" Grid.Column="2"
+                                               Margin="0" Padding="0" HasShadow="False">
+                                        <Label Text="Autorizaciones"
+                                               FontSize="18" TextColor="#0033A0"
+                                               VerticalOptions="Center" HorizontalOptions="Start"/>
+                                    </Frame>
+                                    <Frame Grid.Row="1" Grid.Column="2"
+                                               Margin="0" Padding="0" HasShadow="False">
+                                        <Label Text="Consulta resultados"
+                                               FontSize="Small" TextColor="Gray"
+                                               VerticalOptions="Center" HorizontalOptions="Start"/>
+                                    </Frame>
+                                </Grid>
+                            </local:CustomFrame>
+
+                            <local:CustomFrame Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="1"
+                                Margin="2" Padding="0" HasShadow="True" BackgroundColor="White" BorderColor="#ecf0f1">
+                                <Grid Margin="8" Padding="0" ColumnSpacing="0" RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="10" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Frame Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"
+                                           Margin="0" Padding="0" HasShadow="False">
+                                        <Image Source="icono_confondo_listado"
+                                               Margin="5, 0, 0, 0"
+                                               Aspect="AspectFit" HeightRequest="40"
+                                               HorizontalOptions="Center" VerticalOptions="Center" />
+                                    </Frame>
+                                    <Frame Grid.Row="0" Grid.Column="2"
+                                               Margin="0" Padding="0" HasShadow="False">
+                                        <Label Text="Reembolsos"
+                                               FontSize="18" TextColor="#0033A0"
+                                               VerticalOptions="Center" HorizontalOptions="Start"/>
+                                    </Frame>
+                                    <Frame Grid.Row="1" Grid.Column="2"
+                                               Margin="0" Padding="0" HasShadow="False">
+                                        <Label Text="Solicita un reembolso"
+                                               FontSize="Small" TextColor="Gray"
+                                               VerticalOptions="Center" HorizontalOptions="Start"/>
+                                    </Frame>
+                                </Grid>
+                            </local:CustomFrame>
+
+                        </Grid>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1" Margin="0, 15, 0, 0">
+                        <Grid ColumnSpacing="0" RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="0" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1"
+                                   Text="Próximas citas"
+                                   FontSize="Medium" TextColor="#0033A0" FontAttributes="Bold"
+                                   VerticalOptions="Center" HorizontalOptions="Start"/>
+
+                            <local:CustomFrame Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1"
+                                               Margin="2" Padding="0" HasShadow="True" BackgroundColor="White" CornerRadius="15" BorderColor="#ecf0f1"
+                                               VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                <Grid Margin="0" Padding="0" ColumnSpacing="0" RowSpacing="0"
+                                      VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="1" />
+                                        <RowDefinition Height="auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="0" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackLayout Grid.Row="0" Grid.Column="1">
+                                        <Grid Margin="0" Padding="15" ColumnSpacing="0" RowSpacing="5" >
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto" />
+                                                <RowDefinition Height="auto" />
+                                                <RowDefinition Height="auto" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                                                <Label Text="Próxima cita"
+                                                   FontSize="14" TextColor="Gray"
+                                                   VerticalOptions="Center" HorizontalOptions="Start"/>
+                                            </StackLayout>
+                                            <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1"
+                                               Margin="0" Padding="0" BackgroundColor="Transparent">
+                                                <Label Text="En 5 días"
+                                                   FontSize="14" TextColor="#0033A0" FontAttributes="Bold"
+                                                   VerticalOptions="Center" HorizontalOptions="Start"/>
+                                            </StackLayout>
+                                            <StackLayout Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1"
+                                               Margin="0" Padding="0" BackgroundColor="Transparent">
+                                                <Label Text="09/12/2020"
+                                                   FontSize="14" TextColor="#00AEC7" FontAttributes="Bold"
+                                                   VerticalOptions="Center" HorizontalOptions="End"/>
+                                            </StackLayout>
+                                            <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                               Margin="0" Padding="0" >
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                
+                                                <StackLayout Grid.Column="0">
+                                                    <Image Source="icono_localizacion"
+                                                           Margin="0" Aspect="AspectFit" HeightRequest="22"
+                                                           HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+                                                </StackLayout>
+                                                <StackLayout Grid.Column="1">
+                                                    <Label Text="Aquilino De La Guardia, entre calle 47 y 48"
+                                                           FontSize="14" TextColor="#0033A0"
+                                                           VerticalOptions="Center" HorizontalOptions="Start"/>
+                                                </StackLayout>
+                                            </Grid>
+                                        </Grid>
+                                    </StackLayout>
+
+                                    <BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="#53565A"/>
+
+                                    <StackLayout Grid.Row="2" Grid.Column="1" BackgroundColor="White">
+                                        <Grid Padding="15" Margin="0" ColumnSpacing="10" RowSpacing="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <StackLayout Grid.Column="0" VerticalOptions="CenterAndExpand">
+                                                <Image Source="foto_medico"
+                                                       Margin="0" Aspect="AspectFit" HeightRequest="75"
+                                                       HorizontalOptions="Center" VerticalOptions="Center" />
+                                            </StackLayout>
+                                            <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                                <Grid ColumnSpacing="0" RowSpacing="0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="auto" />
+                                                        <RowDefinition Height="auto" />
+                                                        <RowDefinition Height="auto" />
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackLayout Grid.Row="0">
+                                                        <Label Text="Especialista en Gastroenterólogía"
+                                                               FontSize="14" TextColor="#0033A0"
+                                                               VerticalOptions="End"/>
+                                                    </StackLayout>
+                                                    <StackLayout Grid.Row="1">
+                                                        <Label Text="DR. ARMANDO BUENAVENTURA"
+                                                               FontSize="14" TextColor="#0033A0" FontAttributes="Bold"
+                                                               VerticalOptions="Center" />
+                                                    </StackLayout>
+                                                    <StackLayout Grid.Row="2">
+                                                        <Label Text="Médico frecuente"
+                                                               FontSize="14" TextColor="Gray"
+                                                               VerticalOptions="Start"/>
+                                                    </StackLayout>
+                                                </Grid>
+                                            </StackLayout>
+                                        </Grid>
+                                    </StackLayout>
+
+                                </Grid>
+                            </local:CustomFrame>
+                        </Grid>
+                    </StackLayout>
+
+                    <!--Resultados de los examenes-->
+                    <StackLayout Grid.Row="2" Margin="0, 15, 0, 0">
+                        <Grid ColumnSpacing="0" RowSpacing="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="0" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1"
+                                   Text="Resultados de examenes"
+                                   FontSize="Medium" TextColor="#0033A0" FontAttributes="Bold"
+                                   VerticalOptions="Center" HorizontalOptions="Start"/>
+
+                            <local:CustomFrame Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1"
+                                Margin="2" Padding="0" HasShadow="True" BackgroundColor="White" CornerRadius="15" BorderColor="#ecf0f1">
+                                <Grid Margin="20" Padding="0" ColumnSpacing="0" RowSpacing="5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="0" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Frame Grid.Row="0" Grid.Column="1" Margin="0" Padding="0" HasShadow="False">
+                                        <Label Text="Examen"
+                                               FontSize="14" TextColor="#0033A0" VerticalOptions="Start"/>
+                                    </Frame>
+                                    <Frame Grid.Row="1" Grid.Column="1" Margin="0" Padding="0" HasShadow="False">
+                                        <Label Text="GLUCOSA EN SANGRE"
+                                               FontSize="14" TextColor="#0033A0" FontAttributes="Bold" VerticalOptions="Start"/>
+                                    </Frame>
+                                    <Frame Grid.Row="2" Grid.Column="1" Margin="0" Padding="0" HasShadow="False">
+                                        <Label Text="Fecha de recepción"
+                                               FontSize="14" TextColor="Gray" VerticalOptions="Start"/>
+                                    </Frame>
+                                    <Frame Grid.Row="3" Grid.Column="1" Margin="0" Padding="0" HasShadow="False">
+                                        <Label Text="09/12/2020"
+                                               FontSize="14" TextColor="#00AEC7" FontAttributes="Bold" VerticalOptions="Start"/>
+                                    </Frame>
+                                    <Frame Grid.Row="4" Grid.Column="1" Margin="0, 5, 0, 0" Padding="0" HasShadow="False">
+                                        <Grid Margin="0" Padding="0" ColumnSpacing="0" RowSpacing="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Frame Grid.Column="0" Margin="0" Padding="12, 7, 12, 7" HasShadow="False" BorderColor="#00AEC7" CornerRadius="20">
+                                                <Label Text="CONSULTAR RESULTADO" FontSize="14" TextColor="#00AEC7" FontAttributes="Bold" VerticalOptions="Start"/>
+                                            </Frame>
+                                        </Grid>
+                                    </Frame>
+                                </Grid>
+                            </local:CustomFrame>
+                        </Grid>
+                    </StackLayout>
+
+                </Grid>
+            </Frame>
+        </Grid>
+
+    </ContentView.Content>
+</ContentView>

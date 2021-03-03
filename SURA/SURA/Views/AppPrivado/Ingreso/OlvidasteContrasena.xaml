@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SURA.Views.AppPrivado.Ingreso.OlvidasteContrasena">
+    <ContentView.Content>
+        <Grid HeightRequest="100"
+              x:Name="OuterGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="3*"></RowDefinition>
+                <RowDefinition Height="15"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="15"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="logoSURAwhite"
+                   Grid.Column="2"
+                   Grid.Row="1"
+                   VerticalOptions="Center"
+                   Aspect="AspectFit"/>
+
+            <Grid Grid.Row="1"
+                  Grid.Column="1"
+                  Grid.RowSpan="2"
+                  Grid.ColumnSpan="3"
+                  VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Frame Style="{StaticResource EntryRoundedFrame}"
+                       Grid.Row="0"
+                       HeightRequest="50">
+                    <Entry x:Name="entCorreo"
+                           Placeholder="Correo Electrónico"
+                           Style="{StaticResource GlobalEntryStyle}"
+                           VerticalOptions="Center"/>
+                </Frame>
+
+                <Frame Grid.Row="1" 
+                       Style="{StaticResource EntryRoundedFrame}"
+                       IsVisible="False"
+                       x:Name="frmCodigo"
+                       HeightRequest="50">
+                    <Entry x:Name="entCodigo"
+                       Placeholder="Código"
+                       VerticalOptions="Center"
+                       Style="{StaticResource GlobalEntryStyle}"/>
+                </Frame>
+
+                <Label x:Name="lblRevisaCorreo" 
+                    Text="Revise su correo electrónico"
+                    Grid.Row="2"
+                    TextColor="White"
+                    HorizontalTextAlignment="Center"
+                    IsVisible="False"/>
+            </Grid>
+
+            <Frame Grid.Row="2" 
+                   Grid.Column="1"
+                   Grid.ColumnSpan="3"
+                   x:Name="btnEnviar"
+                   CornerRadius="13" 
+                   HasShadow="false"
+                   Padding="13"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="EndAndExpand"
+                   BackgroundColor="{StaticResource Blue}"
+                   HeightRequest="25">
+
+                <Label Text="Enviar" FontSize="Subtitle" TextColor="White" Style="{StaticResource ProductText}"
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BtnEnviar_Clicked" />
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Frame Grid.Row="2" 
+                   Grid.Column="1"
+                   Grid.ColumnSpan="3"
+                   x:Name="btnEnviarCodigo"
+                   CornerRadius="13" 
+                   HasShadow="false"
+                   IsVisible="False"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="EndAndExpand"
+                   BackgroundColor="{StaticResource Blue}"
+                   Padding="13"
+                   HeightRequest="25">
+
+                <Label Text="Enviar" FontSize="Subtitle" TextColor="White" Style="{StaticResource ProductText}"
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="btnEnviarCodigo_Clicked" />
+                </Frame.GestureRecognizers>
+            </Frame>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

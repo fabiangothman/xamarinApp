@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:SURA"
+             x:Class="SURA.Views.AppPublico.MiPago.MiPagoPublic"
+             BackgroundColor="Transparent">
+    <ContentView.Content>
+        <Grid Padding="0" RowSpacing="0" ColumnSpacing="0"
+              VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="20"/>
+                <!--Formulario-->
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="45"/><!--Selector-->
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="20"/>
+                <!--Botones-->
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="15"/>
+                <!--Mensaje-->
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="0"/>
+            </Grid.ColumnDefinitions>
+
+            <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"
+                Padding="0" BackgroundColor="#0033A0" CornerRadius="0"/>
+            <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="2"
+                   Padding="0" BackgroundColor="#0033A0" HasShadow="True" CornerRadius="30">
+            </Frame>
+            <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2"
+                   Margin="0"  Padding="30, 0, 0, 0" BackgroundColor="#0033A0" HasShadow="True" CornerRadius="0">
+                <Image Source="mensaje_mipago"
+                       Aspect="AspectFit" WidthRequest="150"
+                       VerticalOptions="Start" HorizontalOptions="Center"
+                       AutomationProperties.IsInAccessibleTree="True" AutomationProperties.HelpText="Imagen del logo de Sura" />
+            </Frame>
+
+            <Label Grid.Row="3" Grid.Column="2" FontSize="14" TextColor="#0033A0"
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" >
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Para buscar una póliza ingresa los datos" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label Grid.Row="5" Grid.Column="2" FontSize="13"
+                   HorizontalTextAlignment="Start" Padding="13, 0, 0, 5" TextColor="#0033A0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Tipo de identificación" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <local:CustomFrame Grid.Row="6" Grid.Column="2"
+                    Padding="0" Margin="0" CornerRadius="30" HasShadow="true" BackgroundColor="#FFFFFF" BorderColor="#00aec7"
+                    HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid Margin="0" Padding="0" ColumnSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="20"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="1" Margin="0" Padding="0">
+                        <Grid Margin="0" Padding="1" RowSpacing="0" BackgroundColor="Transparent">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="0"/>
+                            </Grid.RowDefinitions>
+                        
+                            <Picker Grid.Row="0" x:Name="documentTypePicker" Title="Selecciona una opción" Margin="0, 0, 0, 0"
+                                    TitleColor="#53565A" FontSize="16" BackgroundColor="Transparent" VerticalOptions="Start">
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>Opción 1</x:String>
+                                        <x:String>Opción 2</x:String>
+                                        <x:String>Opción 3</x:String>
+                                        <x:String>Opción 4</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+                            <Frame Grid.Row="1" BackgroundColor="Transparent" HasShadow="False" Padding="0" Margin="0, -9, 0, 0" HeightRequest="1">
+                                <Grid Margin="0" Padding="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2" />
+                                    </Grid.RowDefinitions>
+                                    <BoxView Grid.Row="0" BackgroundColor="White" Margin="0" />
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </StackLayout>
+                    <Frame Grid.Column="2" Margin="0" Padding="0" HasShadow="False" BackgroundColor="Transparent">
+                        <Image Margin="0" Source="flecha_sin_expandir"
+                               WidthRequest="10" Aspect="AspectFit"
+                               HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="btnListado_Tapped" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </Grid>
+            </local:CustomFrame>
+            
+            <Label Grid.Row="8" Grid.Column="2" FontSize="13"
+                   HorizontalTextAlignment="Start" Padding="13, 0, 0, 5" TextColor="#0033A0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Identificación" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <StackLayout Grid.Row="9" Grid.Column="2" Orientation="Horizontal">
+                <local:CustomFrame Padding="0" CornerRadius="30" HasShadow="true" Margin="2" BackgroundColor="#FFFFFF" BorderColor="#ecf0f1"
+                    HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid RowSpacing="0" ColumnSpacing="0" Padding="0"
+                          VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                        </Grid.ColumnDefinitions>
+                        <Entry Grid.Row="0" Grid.Column="1" x:Name="entPassword"
+                               VerticalOptions="Center" FontSize="16"
+                               Style="{StaticResource GlobalEntryStyle}" IsPassword="True" Text="{Binding Password}"
+                               Placeholder="Numero de identificación"/>
+                    </Grid>
+                </local:CustomFrame>
+            </StackLayout>
+
+            <Frame Grid.Row="11" Grid.Column="2"
+                   Margin="0" Padding="0" CornerRadius="20" HasShadow="false" BackgroundColor="#00aec7"
+                   HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                <Grid Margin="33, 8, 33, 8">
+                    <Label Text="BUSCAR" FontSize="14" TextColor="White" FontAttributes="Bold"
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="btnBuscar_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Frame Grid.Row="13" Grid.Column="2"
+                   Margin="0" Padding="0" CornerRadius="20" HasShadow="false" BorderColor="#00aec7"
+                   HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                <Grid Margin="17, 8, 17, 8" Padding="0" ColumnSpacing="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="2" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="0" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="1" Source="icon_asesora_diad_incompl"
+                           Aspect="AspectFit"
+                           HorizontalOptions="End" VerticalOptions="Center"/>
+                    <Label Grid.Column="3" Text="SOPORTE"
+                           FontSize="14" TextColor="#00aec7" FontAttributes="Bold"
+                           HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="btnSoporte_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Label Grid.Row="15" Grid.Column="2" FontSize="12" TextColor="#0033A0"
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" >
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Lunes a Viernes de 8 A.M. a 5 P.M." />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

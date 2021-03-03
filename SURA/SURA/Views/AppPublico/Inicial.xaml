@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SURA.Views.AppPublico.Inicial">
+    <ContentView.Content>
+        <Grid Padding="0" 
+                  VerticalOptions="FillAndExpand" 
+                  HorizontalOptions="FillAndExpand"
+                  RowSpacing="0" ColumnSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/><!--Entre top y logo-->
+                <RowDefinition>
+                    <RowDefinition.Height>
+                        <OnIdiom x:TypeArguments="GridLength"
+                                 Tablet="100"
+                                 Phone="60">
+                        </OnIdiom>
+                    </RowDefinition.Height>
+                </RowDefinition>
+                <!--<RowDefinition Height="60"/>-->
+                <RowDefinition Height="2*"/><!--Entre logo y bienvenido-->
+                <RowDefinition Height="auto"/><!--Entre bienvenido y mi portal-->
+                
+                <RowDefinition Height="10"/><!--Entre bienvenido y mi portal-->
+                <RowDefinition Height="50"/><!--Alto btn Mi portal-->
+                <RowDefinition Height="auto"/><!--Entre Mi portal y Mi pago-->
+                
+                <RowDefinition Height="5"/><!--Entre Mi portal y Mi pago-->
+                <RowDefinition Height="50"/><!--Alto btn Mi pago-->
+
+                <RowDefinition Height="2*"/><!--Entre Mi pago y label-->
+                <RowDefinition Height="auto"/><!--Alto label "aun no"-->
+                <RowDefinition Height="2*"/><!--Entre label y Soluciones-->
+
+                <RowDefinition Height="50"/><!--Alto btn Soluciones-->
+                <RowDefinition Height="5"/><!--Entre Soluciones y Pymes-->
+                <RowDefinition Height="50"/><!--Alto btn Pymes-->
+                <RowDefinition Height="5"/><!--Entre Pymes y Asegurate-->
+                <RowDefinition Height="50"/><!--Alto btn Asegurate-->
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/><!--Ancho margen izq-->
+                <ColumnDefinition Width="80"/><!--Ancho margen izq-->
+                <ColumnDefinition Width="*"/><!--Ancho total-->
+                <ColumnDefinition Width="80"/><!--Ancho margen izq-->
+                <ColumnDefinition Width="20"/><!--Ancho margen der-->
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Row="1" Grid.Column="2"
+                   Source="logosuranormal"
+                   Aspect="AspectFit"
+                   AutomationProperties.IsInAccessibleTree="True"
+                   AutomationProperties.HelpText="Imagen del logo de Sura">
+            </Image>
+
+            <Label Grid.Row="3" Grid.Column="2"
+                   Text="¡Bienvenido a SURA App!"
+                   TextColor="#0033A0"
+                   Style="{StaticResource MainPageTitle_Label}"
+                   AutomationProperties.IsInAccessibleTree="True"
+                   AutomationProperties.HelpText="¡Bienvenido a SURA App!">
+            </Label>
+            
+            <Frame Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"
+                   x:Name="btnIngresarCuenta"
+                   CornerRadius="30"
+                   BackgroundColor="#00AEC7"
+                   Style="{StaticResource MainPageButton}"
+                   AutomationProperties.IsInAccessibleTree="True"
+                   AutomationProperties.HelpText="INGRESA A MI PORTAL">
+                <StackLayout Orientation="Horizontal">
+                    <Grid Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand"
+                          RowSpacing="0" ColumnSpacing="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="14"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Row="0" Grid.Column="0"
+                               HeightRequest="20"
+                               WidthRequest="20"
+                               Source="cara_muneca"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"/>
+
+                        <Label Grid.Row="0" Grid.Column="1"
+                               Text="INGRESA A MI PORTAL"
+                               TextColor="#FFFFFF"
+                               Style="{StaticResource MainViewButtonText}"/>
+                    </Grid>
+
+                    <Frame CornerRadius="20" Padding="0" Margin="0" >
+                        <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+                            <BoxView HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#FFFFFF" Opacity="1"/>
+                            <Image
+                               Source="flecha_derecha_cielo"
+                               Aspect="AspectFill"
+                               WidthRequest="18"
+                               HeightRequest="18"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"/>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="btnIngresarCuenta_Tapped" />
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Frame Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="3"
+                   x:Name="btnIngresarMiPago"
+                   CornerRadius="30"
+                   BackgroundColor="#0033A0"
+                   Style="{StaticResource MainPageButton}"
+                   AutomationProperties.IsInAccessibleTree="True"
+                   AutomationProperties.HelpText="Mi pago">
+                <StackLayout Orientation="Horizontal">
+                    <Grid Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand"
+                          RowSpacing="5" ColumnSpacing="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="14"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Row="0" Grid.Column="0"
+                               HeightRequest="20"
+                               WidthRequest="20"
+                               Source="simbolo_money"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"/>
+
+                        <Label Grid.Row="0" Grid.Column="1"
+                               Text="MI PAGO"
+                               TextColor="#FFFFFF"
+                               Style="{StaticResource MainViewButtonText}"/>
+                    </Grid>
+
+                    <Frame CornerRadius="20" Padding="0" Margin="0" >
+                        <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+                            <BoxView HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#FFFFFF" Opacity="1"/>
+                            <Image
+                               Source="flecha_derecha_azul"
+                               Aspect="AspectFill"
+                               WidthRequest="18"
+                               HeightRequest="18"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"/>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="btnMiPago_Tapped" />
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Label Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="3"
+                   Text="¿Aún no estás asegurado con SURA?"
+                   TextColor="#53565A"
+                   Style="{StaticResource MainPageTitle_Label}"/>
+
+            <Frame Grid.Row="12" Grid.Column="2" Grid.ColumnSpan="1"
+                   x:Name="btnSolucionesPymes"
+                   OutlineColor="#0033A0"
+                   CornerRadius="30"
+                   Style="{StaticResource MainPageButton}"
+                   AutomationProperties.IsInAccessibleTree="True"
+                   AutomationProperties.HelpText="PYMES">
+                <StackLayout Orientation="Horizontal">
+                    <Grid Padding="0" Margin="0" VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand"
+                          RowSpacing="0" ColumnSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="0"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="1"
+                               Text="PYMES"
+                               TextColor="#0033A0"
+                               Style="{StaticResource MainViewButtonText}"/>
+                    </Grid>
+
+                    <Frame CornerRadius="20" Padding="0" Margin="0" >
+                        <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+                            <BoxView HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#0033A0" Opacity="1"/>
+                            <Image
+                               Source="flecha_derecha_blanco"
+                               Aspect="AspectFill"
+                               WidthRequest="18"
+                               HeightRequest="18"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"/>
+                        </Grid>
+                    </Frame>
+                    
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="btnSolucionesPymes_Tapped" />
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Frame Grid.Row="14" Grid.Column="2" Grid.ColumnSpan="1"
+                   x:Name="btnSolucionesPersonas"
+                   OutlineColor="#0033A0"
+                   CornerRadius="30"
+                   Style="{StaticResource MainPageButton}"
+                   AutomationProperties.IsInAccessibleTree="True"
+                   AutomationProperties.HelpText="Ver seguros para personas">
+                <StackLayout Orientation="Horizontal">
+                    <Grid Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand"
+                          RowSpacing="0" ColumnSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="0"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="1"
+                               Text="PERSONAS"
+                               TextColor="#0033A0"
+                               Style="{StaticResource MainViewButtonText}"/>
+                    </Grid>
+
+                    <Frame CornerRadius="20" Padding="0" Margin="0" >
+                        <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+                            <BoxView HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#0033A0" Opacity="1"/>
+                            <Image
+                               Source="flecha_derecha_blanco"
+                               Aspect="AspectFill"
+                               WidthRequest="18"
+                               HeightRequest="18"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"/>
+                        </Grid>
+                    </Frame>
+
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="btnSolucionesPersonas_Tapped" />
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Frame Grid.Row="16" Grid.Column="2" Grid.ColumnSpan="1"
+                   x:Name="btnAsegurate"
+                   OutlineColor="#0033A0"
+                   CornerRadius="30"
+                   Style="{StaticResource MainPageButton}"
+                   AutomationProperties.IsInAccessibleTree="True"
+                   AutomationProperties.HelpText="Asegurate con SURA">
+                <StackLayout Orientation="Horizontal">
+                    <Grid Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand"
+                          RowSpacing="0" ColumnSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="0"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="1"
+                               Text="ASEGURATE"
+                               TextColor="#0033A0"
+                               Style="{StaticResource MainViewButtonText}"/>
+                    </Grid>
+
+                    <Frame CornerRadius="20" Padding="0" Margin="0" >
+                        <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+                            <BoxView HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#0033A0" Opacity="1"/>
+                            <Image
+                               Source="flecha_derecha_blanco"
+                               Aspect="AspectFill"
+                               WidthRequest="18"
+                               HeightRequest="18"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"/>
+                        </Grid>
+                    </Frame>
+                    
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="btnAsegurate_Tapped" />
+                </Frame.GestureRecognizers>
+            </Frame>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

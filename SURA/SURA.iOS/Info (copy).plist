@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+		<integer>2</integer>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>MinimumOSVersion</key>
+	<string>9.0</string>
+	<key>CFBundleDisplayName</key>
+	<string>SURA</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.sura.panama.ios</string>
+	<key>CFBundleVersion</key>
+	<string>1.08</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>CFBundleName</key>
+	<string>SURA</string>
+	<key>XSAppIconAssets</key>
+	<string>Images.xcassets/AppIcons.appiconset</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Por favor, autentíquese para iniciar sesión</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>googlechromes</string>
+		<string>comgooglemaps</string>
+		<string>tel</string>
+		<string>telprompt</string>
+		<string>whatsapp</string>
+	</array>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>es</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Su localización será utilizada para facilitar su navegación en el mapa</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Necesitamos utilizar el calendario para continuar.</string>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Su localización será utilizada para facilitar su navegación en el mapa.</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.08</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>New Entry</string>
+</dict>
+</plist>

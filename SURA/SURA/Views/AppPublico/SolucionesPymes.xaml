@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SURA.Views.AppPublico.SolucionesPymes"
+             BackgroundColor="Transparent">
+    <ContentView.Content>
+        <Grid Padding="0" RowSpacing="0" ColumnSpacing="0"
+              VerticalOptions="FillAndExpand" 
+              HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+
+            <Frame Grid.Row="1" Grid.Column="1"
+                   x:Name="frmNPEsencial"
+                   Style="{StaticResource MainPageButton}">
+                <Grid Padding="0" RowSpacing="0" ColumnSpacing="0"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="2"/>
+                        <RowDefinition Height="auto"/>
+                        <!--<RowDefinition Height="auto"/>-->
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
+                           WidthRequest="100"
+                           HeightRequest="50"
+                           Source="negocioprotegido"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"/>
+
+                    <Label Grid.Row="3" Grid.Column="1"
+                           Text="Negocio protegido" 
+                           Style="{StaticResource ProductText}" />
+
+                    <!--<Label Grid.Row="4" Grid.Column="1"
+                           Text="ESENCIAL" 
+                           Style="{StaticResource ProductText}"
+                           TextColor="White"
+                           BackgroundColor="#0033A0"/>-->
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="frmEsencial_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <!--<Frame Grid.Row="1" Grid.Column="3"
+                   x:Name="frmNPIntegral"
+                   Style="{StaticResource MainPageButton}">
+                <Grid Padding="0" RowSpacing="0" ColumnSpacing="0"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
+                           WidthRequest="100"
+                           HeightRequest="50"
+                           Source="negocioprotegido"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"/>
+
+                    <Label Grid.Row="3" Grid.Column="1"
+                           Text="Negocio protegido" 
+                           Style="{StaticResource ProductText}" />
+
+                    <Label Grid.Row="4" Grid.Column="1"
+                           Text="INTEGRAL" 
+                           Style="{StaticResource ProductText}"
+                           BackgroundColor="#DBDD32"/>
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="frmIntegral_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Frame Grid.Row="3" Grid.Column="1"
+                   x:Name="frmNPPremium"
+                   Style="{StaticResource MainPageButton}">
+                <Grid Padding="0" RowSpacing="0" ColumnSpacing="0"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
+                           WidthRequest="100"
+                           HeightRequest="50"
+                           Source="negocioprotegido"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"/>
+
+                    <Label Grid.Row="3" Grid.Column="1"
+                           Text="Negocio protegido" 
+                           Style="{StaticResource ProductText}" />
+
+                    <Label Grid.Row="4" Grid.Column="1"
+                           Text="PREMIUM" 
+                           Style="{StaticResource ProductText}"
+                           TextColor="White"
+                           BackgroundColor="#009CBA"/>
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="frmPremium_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>-->
+        </Grid>
+    </ContentView.Content>
+</ContentView>

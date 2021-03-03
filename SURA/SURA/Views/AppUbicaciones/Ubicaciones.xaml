@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SURA.Views.AppUbicaciones.Ubicaciones">
+    <ContentView.Content>
+        <Grid Padding="0" 
+              VerticalOptions="FillAndExpand" 
+              HorizontalOptions="FillAndExpand"
+              RowSpacing="0" ColumnSpacing="0"
+              HeightRequest="100">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="85*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <!--depliege de mapa-->
+            <StackLayout 
+                         x:Name="frmContenedorMapa"
+                         IsVisible="True"
+                         Grid.Row="0" 
+                         Grid.Column="0"
+                         Grid.ColumnSpan="3"
+                         IsClippedToBounds="True"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="FillAndExpand"
+                        />
+
+            <!--   despliege de lista de opciones de pago -->
+            
+            <Grid x:Name="frmOpcionesPago"
+                  Grid.Row="0" 
+                  Grid.Column="0"
+                  Grid.ColumnSpan="3"
+                  BackgroundColor="LightGray"
+                  VerticalOptions="FillAndExpand"
+                  Padding="5"
+                  IsVisible="False">
+                
+                <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="5"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                
+                <Frame BorderColor="Gray"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    CornerRadius="4" 
+                    HorizontalOptions="FillAndExpand" 
+                    VerticalOptions="Center"
+                    Padding="5"
+                    HasShadow="False"
+                        BackgroundColor="White">
+                    <Label Text="Epago"
+                        TextColor="#5F5F5F"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        FontSize="Small"
+                        FontAttributes="None"
+                        Padding="25,5,5,5"
+                        HorizontalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center"/>
+                </Frame>
+
+                <Frame BorderColor="Gray"
+                    Grid.Row="1"
+                        BackgroundColor="White"
+                    Grid.Column="1"
+                    CornerRadius="4" 
+                    HorizontalOptions="FillAndExpand" 
+                    VerticalOptions="Center"
+                    Padding="5"
+                    HasShadow="False">
+                    <Label Text="Multipagos"
+                        TextColor="#5F5F5F"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        FontSize="Small"
+                        Padding="25,5,5,5"
+                        FontAttributes="None"
+                        HorizontalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center"/>
+                </Frame>
+
+                <Frame BorderColor="Gray"
+                           BackgroundColor="White"
+                           Grid.Row="2"
+                           Grid.Column="1"
+                           CornerRadius="4" 
+                           HorizontalOptions="FillAndExpand"
+                           HasShadow="False"
+                           Margin="0">
+                    <ScrollView>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="5"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="1"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Text="Banco General"
+                               TextColor="#5F5F5F"
+                               Grid.Row="0"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               FontAttributes="None"
+                               HorizontalOptions="Start"
+                               HorizontalTextAlignment="Start"
+                               VerticalOptions="Start"/>
+
+                            <BoxView 
+                                 Grid.Row="1"
+                                 Grid.ColumnSpan="3"
+                                 BackgroundColor="DarkGray"/>
+
+                            <Label Text="•"
+                               TextColor="#0033A0"
+                               Grid.Row="2"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               FontSize="Small"
+                               FontAttributes="None"
+                               HorizontalOptions="Start"
+                               HorizontalTextAlignment="Start"
+                               Padding="15,0,0,0"/>
+
+                            <Label Text="Banca en Línea"
+                               TextColor="#0033A0"
+                               Grid.Row="2"
+                               Grid.Column="1"
+                               Grid.ColumnSpan="2"
+                               FontSize="Small"
+                               FontAttributes="None"
+                               HorizontalOptions="Start"
+                               HorizontalTextAlignment="Start"
+                               Padding="15,0,0,0"/>
+
+                            <Label Text="•"
+                                       TextColor="#0033A0"
+                                       Grid.Row="3"
+                                       Grid.Column="0"
+                                       Grid.ColumnSpan="2"
+                                       FontSize="Small"
+                                       FontAttributes="None"
+                                       HorizontalOptions="Start"
+                                       HorizontalTextAlignment="Start"
+                                       Padding="15,0,0,0"/>
+
+                            <Label Text="Presencial: Mediante el slip personalizado de SURA"
+                                           LineBreakMode="WordWrap"
+                                       TextColor="#0033A0"
+                                       Grid.Row="3"
+                                       Grid.Column="1"
+                                       Grid.ColumnSpan="2"
+                                       FontSize="Small"
+                                       FontAttributes="None"
+                                       HorizontalOptions="Start"
+                                       HorizontalTextAlignment="Start"
+                                       Padding="15,0,0,0"/>
+                        </Grid>
+                    </ScrollView>
+                </Frame>
+
+                <Frame BorderColor="Gray"
+                       BackgroundColor="White"
+                           Grid.Row="3"
+                           Grid.Column="1"
+                           CornerRadius="4" 
+                           HorizontalOptions="FillAndExpand"
+                           HasShadow="False"
+                           Margin="0,0,0,5">
+                    <ScrollView>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="5"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="1"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Text="Banistmo"
+                                       TextColor="#5F5F5F"
+                                       Grid.Row="0"
+                                       Grid.Column="1"
+                                       FontSize="Small"
+                                       FontAttributes="None"
+                                       HorizontalOptions="Start"
+                                       HorizontalTextAlignment="Start"/>
+
+                            <BoxView 
+                                            Grid.Row="1"
+                                            Grid.ColumnSpan="3"
+                                            BackgroundColor="DarkGray"/>
+
+                            <Label Text="•"
+                                       TextColor="#0033A0"
+                                       Grid.Row="2"
+                                       Grid.Column="0"
+                                       Grid.ColumnSpan="2"
+                                       FontSize="Small"
+                                       FontAttributes="None"
+                                       HorizontalOptions="Start"
+                                       HorizontalTextAlignment="Start"
+                                       Padding="15,0,0,0"/>
+
+                            <Label Text="Banca en Línea"
+                                       TextColor="#0033A0"
+                                       Grid.Row="2"
+                                       Grid.Column="1"
+                                       Grid.ColumnSpan="2"
+                                       FontSize="Small"
+                                       FontAttributes="None"
+                                       HorizontalOptions="Start"
+                                       HorizontalTextAlignment="Start"
+                                       Padding="15,0,0,0"/>
+
+                            <Label Text="•"
+                                       TextColor="#0033A0"
+                                       Grid.Row="3"
+                                       Grid.Column="0"
+                                       Grid.ColumnSpan="2"
+                                       FontSize="Small"
+                                       FontAttributes="None"
+                                       HorizontalOptions="Start"
+                                       HorizontalTextAlignment="Start"
+                                       Padding="15,0,0,0"/>
+
+                            <Label Text="Presencial: Solicitando el número de servicio 35"
+                                       TextColor="#0033A0"
+                                       Grid.Row="3"
+                                       Grid.Column="1"
+                                       Grid.ColumnSpan="2"
+                                       FontSize="Small"
+                                       FontAttributes="None"
+                                       HorizontalOptions="Start"
+                                       HorizontalTextAlignment="Start"
+                                       Padding="15,0,0,0"/>
+                        </Grid>
+                    </ScrollView>
+                    
+                </Frame>
+
+            </Grid>
+
+            <!--barra de botones sucursales y opciones de pago-->
+            <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" x:Name="frmBarraAbajo"
+                   Margin="0" Padding="0" HasShadow="False" CornerRadius="0"
+                   IsEnabled="True" InputTransparent="False" IsClippedToBounds="True"
+                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <Grid VerticalOptions="FillAndExpand" 
+                  HorizontalOptions="FillAndExpand"
+                  RowSpacing="2" ColumnSpacing="0">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="15"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                           Margin="0" Padding="0" CornerRadius="0" HasShadow="False"
+                           VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent">
+                        <Label x:Name="lblLocationType" Text="Filtrar por"
+                               TextColor="{StaticResource Blue}"
+                               Style="{StaticResource BottomBarLabel}" HorizontalOptions="CenterAndExpand"/>
+
+                    </Frame>
+
+                    <Frame Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" BackgroundColor="White"
+                           Margin="0" Padding="0" HasShadow="False" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+                        <Frame Margin="0" Padding="0" HasShadow="False" BackgroundColor="#00AEC7" CornerRadius="30"
+                               VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" >
+                            <Grid Margin="0" Padding="0, 11, 0, 11">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="5"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Frame Grid.Column="1" x:Name="frmSucursales"
+                                       Margin="0" Padding="0" HasShadow="False" IsEnabled="True" BackgroundColor="Transparent" HorizontalOptions="Center">
+                                    <Grid Margin="0" Padding="0" VerticalOptions="Center" HorizontalOptions="Center">
+                                        <Frame Margin="0" Padding="27, 8, 27, 8" BackgroundColor="#33bed2" HasShadow="False" CornerRadius="30">
+                                            <Label x:Name="lblSucursales" Text="SUCURSALES" TextColor="White" FontSize="14"
+                                                   HorizontalOptions="Center" VerticalOptions="Center" />
+                                        </Frame>
+                                    </Grid>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Sucursales_Tapped"/>
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+
+                                <Frame Grid.Column="2" x:Name="frmPuntosdePago"
+                                       Margin="0" Padding="0" HasShadow="False" IsEnabled="True" BackgroundColor="Transparent" HorizontalOptions="Center">
+                                    <Grid Margin="0" Padding="0" VerticalOptions="Center" HorizontalOptions="Center">
+                                        <Frame Margin="0" Padding="27, 8, 27, 8" BackgroundColor="#00AEC7" HasShadow="False" CornerRadius="30">
+                                            <Label x:Name="lblOpcionespago" Text="PUNTOS DE PAGO" TextColor="White" FontSize="14"
+                                                   HorizontalOptions="Center" VerticalOptions="Center" />
+                                        </Frame>
+                                    </Grid>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Opcionespago_Tapped"/>
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+
+                            </Grid>
+                        </Frame>
+                    </Frame>
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HasShadow="False"
+                Margin="0" Padding="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="7" />
+                        <RowDefinition Height="1" />
+                        <RowDefinition Height="7" />
+                    </Grid.RowDefinitions>
+                    <BoxView Grid.Row="1" BackgroundColor="#cfd8ec"/>
+                </Grid>
+            </Frame>
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>

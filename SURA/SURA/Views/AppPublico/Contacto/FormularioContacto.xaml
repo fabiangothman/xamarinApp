@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SURA.Views.AppPublico.Contacto.FormularioContacto">
+    <ContentView.Content>
+        <Grid Grid.Row="1" Grid.Column="1" RowSpacing="10"
+              VerticalOptions="FillAndExpand"
+              HeightRequest="100"
+              x:Name="OuterGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <!--<RowDefinition Height="45"/>-->
+                <RowDefinition>
+                    <RowDefinition.Height>
+                        <OnIdiom x:TypeArguments="GridLength"
+                                 Tablet="100"
+                                 Phone="45">
+                        </OnIdiom>
+                    </RowDefinition.Height>
+                </RowDefinition>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="65"/>
+            </Grid.RowDefinitions>
+
+            <Image Grid.Column="1" Grid.Row="1"
+                   Source="logoSURAwhite" IsEnabled="False"
+                   Aspect="AspectFit"
+                   x:Name="ImgLogo"/>
+
+            <StackLayout Grid.Row="2" Grid.Column="1" Padding="0" Spacing="0" VerticalOptions="CenterAndExpand" x:Name="StckSlogan">
+                <Label Text="Asegúrate de llegar a tu destino con" FontAttributes="None" FontSize="Small" Style="{StaticResource MainPageTitle_Label}"/>
+                <Label Text="La mejor Póliza del mercado" TextColor="#00AEC7" FontAttributes="Bold" FontSize="Small" Style="{StaticResource MainPageTitle_Label}"/>
+                <Label Text="Déjanos tus datos para asesorarte" FontAttributes="None" FontSize="Small" Style="{StaticResource MainPageTitle_Label}"/>
+            </StackLayout>
+
+            <ScrollView Grid.Row="3" Grid.Column="1" VerticalOptions="StartAndExpand" x:Name="ScrllFormulario">
+                <Grid VerticalOptions="Center" Padding="0,10,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Frame Style="{StaticResource EntryRoundedFrame}"
+                       VerticalOptions="FillAndExpand"
+                       Grid.Row="0">
+                        <Entry x:Name="entNombre"
+                           Placeholder="Nombre Completo*" 
+                           Style="{StaticResource GlobalEntryStyle}"/>
+                    </Frame>
+
+                    <Frame Style="{StaticResource EntryRoundedFrame}"
+                           x:Name="frameEmail"
+                           Grid.Row="1">
+                        <Entry x:Name="entCorreo"
+                               Placeholder="Correo Electrónico*"
+                               Style="{StaticResource GlobalEntryStyle}"
+                               Unfocused="entCorreo_Unfocused"/>
+                    </Frame>
+
+                    <Frame Style="{StaticResource EntryRoundedFrame}"
+                           Grid.Row="2">
+                        <Entry x:Name="entCelular"
+                               Keyboard="Numeric"
+                               Placeholder="Número de Teléfono*"
+                               Style="{StaticResource GlobalEntryStyle}"/>
+                    </Frame>
+
+                    <Frame Style="{StaticResource EntryRoundedFrame}"
+                           x:Name="frameEntryAsunto"
+                           BackgroundColor="LightGray"
+                           Grid.Row="3">
+                        <Entry x:Name="entAsunto"
+                           Placeholder="Asunto*"
+                           IsReadOnly="True"
+                           Style="{StaticResource GlobalEntryStyle}"/>
+                    </Frame>
+
+                    <Frame Style="{StaticResource EntryRoundedFrame}"
+                           Grid.Row="4">
+                        <Entry x:Name="entDescripcion"
+                           Placeholder="Descripción*"
+                           Style="{StaticResource GlobalEntryStyle}"/>
+                    </Frame>
+
+                    <Frame Style="{StaticResource EntryRoundedFrame}"
+                           Grid.Row="5">
+                        <StackLayout Orientation="Horizontal">
+                            <Entry x:Name="entModoContacto"
+                                   Placeholder="Medio de respuesta:*"
+                                   IsEnabled="False"
+                                   TextColor="Black"
+                                   Style="{StaticResource GlobalEntryStyle}"/>
+                            <Image Source="chevron"
+                                   Aspect="AspectFit"
+                                   Rotation="90"
+                                   WidthRequest="10"
+                                   Margin="0,0,20,0"/>
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="SentMode_Tapped"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                    <Frame Style="{StaticResource EntryRoundedFrame}"
+                           IsVisible="False"
+                           Grid.Row="6"
+                           x:Name="frameEntryCompany">
+                        <Entry x:Name="entEmpresa"
+                               Placeholder="Empresa*"
+                               Style="{StaticResource GlobalEntryStyle}" />
+                    </Frame>
+                </Grid>
+            </ScrollView>
+
+            <Frame  Grid.Row="4"
+                    Grid.Column="1" 
+                    x:Name="frmIngresar"
+                    Padding="12" 
+                    Margin="30,8,30,8"
+                    CornerRadius="10" 
+                    HasShadow="false"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="EndAndExpand"
+                    BackgroundColor="{StaticResource Blue}">
+
+                <Label Text="Enviar"  
+                       TextColor="White" 
+                       FontAttributes="Bold"
+                       FontSize="Subtitle"
+                       VerticalOptions="Center"
+                       HorizontalTextAlignment="Center" 
+                       VerticalTextAlignment="Center"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Enviar_Clicked"></TapGestureRecognizer>
+                </Frame.GestureRecognizers>
+            </Frame>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

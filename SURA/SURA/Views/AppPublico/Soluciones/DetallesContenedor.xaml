@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:SURA.Helpers"
+             mc:Ignorable="d"
+             x:Class="SURA.Views.AppPublico.Soluciones.DetallesContenedor">
+    <ContentView.Content>
+        <Grid RowSpacing="0"
+              HorizontalOptions="FillAndExpand"
+              HeightRequest="100">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="70*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid RowSpacing="0"
+                  ColumnSpacing="5"
+                  VerticalOptions="FillAndExpand"
+                  HorizontalOptions="FillAndExpand"
+                  x:Name="sloganGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="25*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="15*"/>
+                    <ColumnDefinition Width="90.5*"/>
+                </Grid.ColumnDefinitions>
+                <Image x:Name="Banner"
+                       Grid.Row="0"
+                       Grid.RowSpan="4"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="3"
+                       Aspect="AspectFill"
+                       VerticalOptions="FillAndExpand"
+                       HorizontalOptions="FillAndExpand"/>
+                <Image x:Name="productIcon"
+                       Grid.Row="0"
+                       Aspect="AspectFit"
+                       Grid.RowSpan="4"
+                       Grid.Column="1"/>
+                <Label x:Name="lblSlogan1"
+                       TextColor="White"
+                       VerticalOptions="CenterAndExpand"
+                       LineBreakMode="TailTruncation"
+                       MaxLines="4"
+                       Grid.Row="0"
+                       Grid.Column="2"
+                       Grid.RowSpan="4"
+                       HorizontalOptions="StartAndExpand">
+                        <Label.Effects>
+                            <local:IAjustarLabel/>
+                        </Label.Effects>
+                    </Label>
+            </Grid>
+
+            <ScrollView x:Name="Scroll"
+                        Orientation="Horizontal"
+                        Grid.Row="1"
+                        HeightRequest="30">
+                <StackLayout x:Name="PanelDefinicion"
+                             IsVisible="False"
+                             Orientation="Horizontal"
+                             VerticalOptions="Start"
+                             Spacing="0">
+                    <Button x:Name="btnVentajas"
+                            Style="{StaticResource ProductDetailButtonClicked}"
+                            Text="VENTAJAS"
+                            Clicked="btnVentajas_Clicked"/>
+                    <Button x:Name="btnDanosTerceros"
+                            Style="{StaticResource ProductDetailButton}"
+                            Text="DAÑOS A TERCEROS"
+                            Clicked="btnDanosTerceros_Clicked"/>
+                    <Button x:Name="btnCoberturas"
+                            Style="{StaticResource ProductDetailButton}"
+                            Text="COBERTURAS"
+                            Clicked="btnCoberturas_Clicked"/>
+
+                    <Button x:Name="btnPlanes"
+                            Style="{StaticResource ProductDetailButton}"
+                            Text="PLANES"
+                            Clicked="btnPlanes_Clicked"/>
+                    <Button x:Name="btnParaMi"
+                            Style="{StaticResource ProductDetailButton}"
+                            Text="¿POR QUÉ ES PARA MI? "
+                            Clicked="btnParaMi_Clicked"/>
+                </StackLayout>
+            </ScrollView>
+
+
+            <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                        Padding="0,20,0,0"
+                        IsClippedToBounds="True"
+                        Grid.Row="2">
+                <StackLayout x:Name="Contenedor"
+                             Padding="15,0,15,15"
+                             IsClippedToBounds="True">
+                    <!--Aqui van cosas-->
+                </StackLayout>
+            </ScrollView>
+
+            <Frame x:Name="btnContactenos"
+                   Grid.Row="3" 
+                   Margin="45,5,45,7"
+                   CornerRadius="10" 
+                   HasShadow="false"
+                   Padding="0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    BackgroundColor="{StaticResource Blue}"
+                   HeightRequest="50">
+
+                <Label Text="Contáctenos" FontSize="Subtitle"
+                       TextColor="White" 
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BtnContactenos_Clicked" />
+                </Frame.GestureRecognizers>
+            </Frame>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

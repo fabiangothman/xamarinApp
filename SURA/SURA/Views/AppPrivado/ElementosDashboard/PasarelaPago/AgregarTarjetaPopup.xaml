@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:mask="clr-namespace:SURA.Helpers"
+                 xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                 x:Class="SURA.Views.AppPrivado.ElementosDashboard.PasarelaPago.AgregarTarjetaPopup">
+    <popup:PopupPage.Animation>
+        <animations:ScaleAnimation
+            DurationIn="300"
+            DurationOut="200"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"
+            PositionIn="Right"
+            PositionOut="Right"
+            ScaleIn="1.2"
+            ScaleOut="0.8" />
+    </popup:PopupPage.Animation>
+
+    <Frame  Margin="20,0,20,0"
+            CornerRadius="10"
+            IsClippedToBounds="True"
+            HasShadow="True"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="350"
+            BackgroundColor="White"
+            Padding="0">
+        <Grid ColumnSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Row="0"
+                         Grid.Column="0"
+                         Grid.ColumnSpan="2"
+                         Padding="10"
+                         Margin="0,0,0,7">
+
+                <!-- Titulo-->
+                <Label
+                    Text="Agregar tarjeta de crédito"
+                    TextColor="{StaticResource Blue}"
+                    FontAttributes="Bold"/>
+
+                <BoxView BackgroundColor="#e7df00"
+                        HeightRequest="2"
+                         Margin="0,0,0,5"/>
+
+                <Label
+                    x:Name="cardError"
+                    Text=""
+                    TextColor="Red"/>
+
+                <StackLayout Margin="0"
+                         Padding="0"
+                         Orientation="Horizontal"
+                         BackgroundColor="Transparent">
+
+                    <CheckBox  x:Name="ChkGuardar"
+                               HorizontalOptions="End"
+                               Color="{StaticResource Blue}"
+                               IsChecked="False"
+                               HeightRequest="40"
+                               Margin="0"/>
+
+                    <Label Text="Desea recordar la tarjeta de crédito"
+                           TextColor="{StaticResource Blue}"
+                           Margin="-5,0,0,0"
+                           HorizontalOptions="StartAndExpand"
+                           VerticalOptions="CenterAndExpand"/>
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    
+                </StackLayout>
+                <!-- Nombre de tarjetahabiente-->
+                <Label
+                    Text="Titular de la tarjeta"
+                    TextColor="{StaticResource Blue}"/>
+
+                <Frame HorizontalOptions="FillAndExpand"
+                       Padding="6"
+                       Margin="0"
+                       HasShadow="False"
+                       BorderColor="#DADADA">
+                    <Entry
+                        BackgroundColor="White"
+                        x:Name="cardNombre"
+                        Placeholder="Nombre"
+                        Keyboard="Text"
+                        Text="" />
+                </Frame>
+
+                <!-- Número de tajeta de crédito -->
+                <Label
+                    Text="Número de tarjeta"
+                    TextColor="{StaticResource Blue}"/>
+
+                <Frame HorizontalOptions="FillAndExpand"
+                       Padding="6"
+                       Margin="0"
+                       HasShadow="False"
+                       BorderColor="#DADADA">
+                    <Entry
+                        BackgroundColor="White"
+                        x:Name="cardNumero"
+                        Keyboard="Numeric"
+                        Placeholder="Tarjeta"
+                        Text="" />
+                </Frame>
+
+                <!-- Fecha de caducidad -->
+                <Label
+                    Text="Fecha de caducidad"
+                    TextColor="{StaticResource Blue}"/>
+
+                <StackLayout
+                    Orientation="Horizontal"
+                    Padding="0">
+
+                    <Frame
+                        HorizontalOptions="FillAndExpand"
+                       Padding="3"
+                       Margin="0"
+                       HasShadow="False"
+                        WidthRequest="1" IsClippedToBounds="false"
+                       BorderColor="White">
+
+                        <Picker x:Name="pickerMes"
+                                BackgroundColor="Transparent"
+                                Title="Mes">
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                      <x:String>01</x:String>
+                                      <x:String>02</x:String>
+                                      <x:String>03</x:String>
+                                      <x:String>04</x:String>
+                                      <x:String>05</x:String>
+                                      <x:String>06</x:String>
+                                      <x:String>07</x:String>
+                                      <x:String>08</x:String>
+                                      <x:String>09</x:String>
+                                      <x:String>10</x:String>
+                                      <x:String>11</x:String>
+                                      <x:String>12</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                        </Picker>
+                        <!--Entry
+                            x:Name="cardMes"
+                        Keyboard="Numeric"
+                        Placeholder="Mes"
+                        Text="" /-->
+                    </Frame>
+
+                    <Label
+                        Text="/"
+                        TextColor="{StaticResource Blue}"
+                        VerticalOptions="CenterAndExpand"/>
+
+                    <Frame HorizontalOptions="FillAndExpand"
+                       Padding="3"
+                       Margin="0"
+                       HasShadow="False"
+                       WidthRequest="1" IsClippedToBounds="false"
+                       BorderColor="White">
+                        <Picker x:Name="pickerAno"
+                                BackgroundColor="Transparent"
+                                Title="Año">
+                        </Picker>
+                    </Frame>
+                </StackLayout>
+
+                <!-- Código cvv -->
+                <Label
+                    Text="CVV"
+                    TextColor="{StaticResource Blue}"/>
+
+                <Frame HorizontalOptions="FillAndExpand"
+                       Padding="6"
+                       Margin="0"
+                       HasShadow="False"
+                       BorderColor="#DADADA">
+                    <Entry
+                        BackgroundColor="White"
+                        MaxLength="4"
+                        x:Name="cardCVV"
+                        Keyboard="Numeric"
+                        IsPassword="True"
+                        Placeholder="Tarjeta"
+                        Text="" />
+                </Frame>
+            </StackLayout>
+
+
+            <!-- Botones del popup -->
+            <Frame Grid.Row="1"
+                   Grid.Column="0"
+                   HeightRequest="20"
+                   HorizontalOptions="FillAndExpand"
+                   CornerRadius="0"
+                   BackgroundColor="White">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Cancelar_Tapped" />
+                </Frame.GestureRecognizers>
+                <Label Text="Cancel"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"/>
+
+            </Frame>
+            <Frame Grid.Row="1"
+                   Grid.Column="1"
+                   HeightRequest="20"
+                   BackgroundColor="{StaticResource Blue}"
+                   HorizontalOptions="FillAndExpand"
+                   CornerRadius="0"
+                   Padding="10">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Agregar_Tapped" />
+                </Frame.GestureRecognizers>
+                <Label Text="Aceptar"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"/>
+
+
+            </Frame>
+
+        </Grid>
+    </Frame>
+
+</popup:PopupPage>

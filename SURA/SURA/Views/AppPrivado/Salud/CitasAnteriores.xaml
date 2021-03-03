@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SURA"
+             x:Class="SURA.Views.AppPrivado.Salud.CitasAnteriores">
+    <ContentView.Content>
+        <StackLayout>
+            <StackLayout Grid.Row="1" Margin="0, 15, 0, 0">
+                <Grid ColumnSpacing="0" RowSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="10" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="15" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1"
+                        Text="Registro de citas" FontSize="Medium" TextColor="#0033A0" FontAttributes="Bold"
+                        VerticalOptions="Center" HorizontalOptions="Start"/>
+
+                    <StackLayout Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1">
+
+                        <!--Inicio del bloque-->
+                        <local:CustomFrame Margin="0, 10, 0, 0" Padding="0" HasShadow="True" BackgroundColor="White" CornerRadius="15" BorderColor="#ecf0f1"
+                                        VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                            <Grid Margin="0" Padding="0" ColumnSpacing="0" RowSpacing="0"
+                            VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="1" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="0" />
+                                </Grid.ColumnDefinitions>
+
+                                <StackLayout Grid.Row="0" Grid.Column="1">
+                                    <Grid Margin="0" Padding="20" ColumnSpacing="0" RowSpacing="10" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto" />
+                                            <RowDefinition Height="auto" />
+                                            <RowDefinition Height="auto" />
+                                        </Grid.RowDefinitions>
+                                        
+                                        <StackLayout Grid.Row="0" Margin="0" Padding="0" BackgroundColor="Transparent">
+                                            <Label Text="09/12/2020"
+                                                FontSize="14" TextColor="#00AEC7" FontAttributes="Bold"
+                                                VerticalOptions="Center" HorizontalOptions="Start"/>
+                                        </StackLayout>
+                                        
+                                        <Grid Grid.Row="1" Margin="0" Padding="0" >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <StackLayout Grid.Column="0">
+                                                <Image Source="icono_localizacion"
+                                                    Margin="0" Aspect="AspectFit" HeightRequest="22"
+                                                    HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+                                            </StackLayout>
+                                            <StackLayout Grid.Column="1">
+                                                <Label Text="Aquilino De La Guardia, entre calle 47 y 48"
+                                                    FontSize="14" TextColor="#0033A0"
+                                                    VerticalOptions="Center" HorizontalOptions="Start"/>
+                                            </StackLayout>
+                                        </Grid>
+
+                                        <Grid Grid.Row="2" Padding="0" Margin="0" ColumnSpacing="10" RowSpacing="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <StackLayout Grid.Column="0" VerticalOptions="CenterAndExpand">
+                                                <Image Source="foto_medico"
+                                                Margin="0" Aspect="AspectFit" HeightRequest="75"
+                                                HorizontalOptions="Center" VerticalOptions="Center" />
+                                            </StackLayout>
+                                            <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                                <Grid ColumnSpacing="0" RowSpacing="2">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="auto" />
+                                                        <RowDefinition Height="auto" />
+                                                        <RowDefinition Height="auto" />
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackLayout Grid.Row="0">
+                                                        <Label Text="Especialista en Gastroenterólogía"
+                                                        FontSize="14" TextColor="#0033A0"
+                                                        VerticalOptions="End"/>
+                                                    </StackLayout>
+                                                    <StackLayout Grid.Row="1">
+                                                        <Label Text="DR. ARMANDO BUENAVENTURA"
+                                                        FontSize="14" TextColor="#0033A0" FontAttributes="Bold"
+                                                        VerticalOptions="Center" />
+                                                    </StackLayout>
+                                                    <StackLayout Grid.Row="2">
+                                                        <Label Text="Médico frecuente"
+                                                        FontSize="14" TextColor="Gray"
+                                                        VerticalOptions="Start"/>
+                                                    </StackLayout>
+                                                </Grid>
+                                            </StackLayout>
+                                        </Grid>
+                                    </Grid>
+                                </StackLayout>
+
+                                <BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="#53565A"/>
+
+                                <StackLayout Grid.Row="2" Grid.Column="1" BackgroundColor="White" Margin="0, 15, 0, 15">
+                                    <Frame Margin="0" Padding="16, 8, 16, 8" BorderColor="#00AEC7" CornerRadius="30"
+                                        VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                        <Label Text="PROGRAMAR DE NUEVO" TextColor="#00AEC7" FontAttributes="Bold" />
+                                    </Frame>
+                                </StackLayout>
+
+                            </Grid>
+                        </local:CustomFrame>
+                        <!--Fin del bloque-->
+
+                        <!--Inicio del bloque-->
+                        <local:CustomFrame Margin="0, 10, 0, 0" Padding="0" HasShadow="True" BackgroundColor="White" CornerRadius="15" BorderColor="#ecf0f1"
+                                        VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                            <Grid Margin="0" Padding="0" ColumnSpacing="0" RowSpacing="0"
+                            VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="1" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="0" />
+                                </Grid.ColumnDefinitions>
+
+                                <StackLayout Grid.Row="0" Grid.Column="1">
+                                    <Grid Margin="0" Padding="20" ColumnSpacing="0" RowSpacing="10" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto" />
+                                            <RowDefinition Height="auto" />
+                                            <RowDefinition Height="auto" />
+                                        </Grid.RowDefinitions>
+
+                                        <StackLayout Grid.Row="0" Margin="0" Padding="0" BackgroundColor="Transparent">
+                                            <Label Text="09/12/2020"
+                                                FontSize="14" TextColor="#00AEC7" FontAttributes="Bold"
+                                                VerticalOptions="Center" HorizontalOptions="Start"/>
+                                        </StackLayout>
+
+                                        <Grid Grid.Row="1" Margin="0" Padding="0" >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <StackLayout Grid.Column="0">
+                                                <Image Source="icono_localizacion"
+                                                    Margin="0" Aspect="AspectFit" HeightRequest="22"
+                                                    HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+                                            </StackLayout>
+                                            <StackLayout Grid.Column="1">
+                                                <Label Text="Aquilino De La Guardia, entre calle 47 y 48"
+                                                    FontSize="14" TextColor="#0033A0"
+                                                    VerticalOptions="Center" HorizontalOptions="Start"/>
+                                            </StackLayout>
+                                        </Grid>
+
+                                        <Grid Grid.Row="2" Padding="0" Margin="0" ColumnSpacing="10" RowSpacing="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <StackLayout Grid.Column="0" VerticalOptions="CenterAndExpand">
+                                                <Image Source="foto_medico"
+                                                Margin="0" Aspect="AspectFit" HeightRequest="75"
+                                                HorizontalOptions="Center" VerticalOptions="Center" />
+                                            </StackLayout>
+                                            <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                                <Grid ColumnSpacing="0" RowSpacing="2">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="auto" />
+                                                        <RowDefinition Height="auto" />
+                                                        <RowDefinition Height="auto" />
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackLayout Grid.Row="0">
+                                                        <Label Text="Especialista en Gastroenterólogía"
+                                                        FontSize="14" TextColor="#0033A0"
+                                                        VerticalOptions="End"/>
+                                                    </StackLayout>
+                                                    <StackLayout Grid.Row="1">
+                                                        <Label Text="DR. ARMANDO BUENAVENTURA"
+                                                        FontSize="14" TextColor="#0033A0" FontAttributes="Bold"
+                                                        VerticalOptions="Center" />
+                                                    </StackLayout>
+                                                    <StackLayout Grid.Row="2">
+                                                        <Label Text="Médico frecuente"
+                                                        FontSize="14" TextColor="Gray"
+                                                        VerticalOptions="Start"/>
+                                                    </StackLayout>
+                                                </Grid>
+                                            </StackLayout>
+                                        </Grid>
+                                    </Grid>
+                                </StackLayout>
+
+                                <BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="#53565A"/>
+
+                                <StackLayout Grid.Row="2" Grid.Column="1" BackgroundColor="White" Margin="0, 15, 0, 15">
+                                    <Frame Margin="0" Padding="16, 8, 16, 8" BorderColor="#00AEC7" CornerRadius="30"
+                                        VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                        <Label Text="PROGRAMAR DE NUEVO" TextColor="#00AEC7" FontAttributes="Bold" />
+                                    </Frame>
+                                </StackLayout>
+
+                            </Grid>
+                        </local:CustomFrame>
+                        <!--Fin del bloque-->
+
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

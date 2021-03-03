@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SURA"
+             x:Class="SURA.Views.AppPrivado.Salud.CitasMedicas">
+  <ContentView.Content>
+      <StackLayout>
+            <Grid RowSpacing="5" ColumnSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/><!--Ciudad-->
+                    <RowDefinition Height="auto"/><!--Buscador-->
+                    <RowDefinition Height="auto"/><!--Buscar-->
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="15" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="15" />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Row="0" Grid.Column="1" Margin="0, 15, 0, 0">
+                    <Label Text="Programa tú cita"
+                           TextColor="#0033A0" FontSize="20" FontAttributes="Bold" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Grid.Column="1">                
+                    <Label Text="Programa una cita médica con nuestros profesionales de la salud. Ten en cuenta que en esta opción únicamente podrás solicitar citas para ti o tus beneficiarios."
+                           TextColor="#768692" FontSize="16" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" Grid.Column="1" Margin="0, 10, 0, 0">
+                    <Label Text="Consulta un profesional de la salud SURA y programa una cita médica"
+                           TextColor="#0033A0" FontSize="16" FontAttributes="Bold" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="3" Grid.Column="1" Margin="0, 10, 0, 0">
+                    <StackLayout Margin="15, 0, 0, 0">
+                        <Label Text="Ciudad" TextColor="#0033A0" FontSize="13"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <local:CustomFrame Padding="0" Margin="0" CornerRadius="30" HasShadow="true"
+                                           BackgroundColor="White" BorderColor="#ecf0f1">
+                            <Grid Margin="0" Padding="0" ColumnSpacing="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="20"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Column="1" Margin="0" Padding="0">
+                                    <Grid Margin="0" Padding="1" RowSpacing="0" BackgroundColor="Transparent">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="0"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Picker Grid.Row="0" x:Name="documentTypePicker" Title="Selecciona una opción" Margin="0, 0, 0, 0"
+                                        TitleColor="#53565A" FontSize="16" BackgroundColor="Transparent" VerticalOptions="Start">
+                                            <Picker.ItemsSource>
+                                                <x:Array Type="{x:Type x:String}">
+                                                    <x:String>Opción 1</x:String>
+                                                    <x:String>Opción 2</x:String>
+                                                    <x:String>Opción 3</x:String>
+                                                    <x:String>Opción 4</x:String>
+                                                </x:Array>
+                                            </Picker.ItemsSource>
+                                        </Picker>
+                                        <Frame Grid.Row="1" BackgroundColor="Transparent" HasShadow="False" Padding="0" Margin="0, -9, 0, 0" HeightRequest="1">
+                                            <Grid Margin="0" Padding="0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="2" />
+                                                </Grid.RowDefinitions>
+                                                <BoxView Grid.Row="0" BackgroundColor="White" Margin="0" />
+                                            </Grid>
+                                        </Frame>
+                                    </Grid>
+                                </StackLayout>
+                                <Frame Grid.Column="2" Margin="0" Padding="0" HasShadow="False" BackgroundColor="Transparent">
+                                    <Image Margin="0" Source="flecha_sin_expandir"
+                                           WidthRequest="10" Aspect="AspectFit"
+                                           HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="btnListado_Tapped" />
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                            </Grid>
+                        </local:CustomFrame>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Grid.Row="4" Grid.Column="1" Margin="0, 10, 0, 0">
+                    <StackLayout Margin="15, 0, 0, 0">
+                        <Label Text="Nombre o especialización" TextColor="#0033A0" FontSize="13"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <local:CustomFrame Padding="0" Margin="0" CornerRadius="30" HasShadow="true"
+                                           BackgroundColor="White" BorderColor="#00AEC7">
+                            <Grid Margin="0" Padding="0" ColumnSpacing="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="20"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Column="1" Margin="0" Padding="0, 2, 0, 2">
+                                    <Entry Grid.Row="0" Grid.Column="1" x:Name="entPassword"
+                                           VerticalOptions="Center" FontSize="16"
+                                           Placeholder="Buscar"/>
+                                </StackLayout>
+                                <StackLayout Grid.Column="2" VerticalOptions="FillAndExpand">
+                                    <Image Margin="0" Source="btn_lupa_buscar"
+                                           WidthRequest="17" Aspect="AspectFit"
+                                           HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="btnBuscarEspecializacion_Tapped" />
+                                    </StackLayout.GestureRecognizers>
+                                </StackLayout>
+                            </Grid>
+                        </local:CustomFrame>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Grid.Row="5" Grid.Column="1" Margin="0, 10, 0, 0">
+                    <Frame Margin="0" Padding="0" HasShadow="False" BackgroundColor="#00AEC7" CornerRadius="30"
+                           VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackLayout Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                <Label Text="BUSCAR" Margin="33, 0, 0, 0"
+                                       TextColor="White" FontSize="14" FontAttributes="Bold"/>
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" HorizontalOptions="CenterAndExpand">
+                                <Frame Margin="8" Padding="10" HasShadow="False" CornerRadius="30" BackgroundColor="White" >
+                                    <Image Margin="0" Source="flecha_entrar_derecha"
+                                       WidthRequest="15" Aspect="AspectFit"
+                                       HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Frame>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Grid.Row="6" Grid.Column="1" Margin="0, 15, 0, 0">
+                    <Grid RowSpacing="15">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        
+                        <StackLayout Grid.Row="0">
+                            <Label Text="Consulta" TextColor="#0033A0" FontSize="20" FontAttributes="Bold" />
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="1">
+                            <local:CustomFrame Margin="0" Padding="0" HasShadow="True" BorderColor="#ecf0f1">
+                                <Grid ColumnSpacing="0" RowSpacing="0" Padding="0, 10, 0, 10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackLayout Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"
+                                                 Padding="10, 0, 10, 0" VerticalOptions="FillAndExpand">
+                                        <Image Margin="0" Source="icono_confondo_cruz"
+                                               WidthRequest="40" Aspect="AspectFit"
+                                               HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+                                    </StackLayout>
+                                    <StackLayout Grid.Row="0" Grid.Column="1" >
+                                        <Label Text="Próximas citas" TextColor="#0033A0" FontSize="20" />
+                                    </StackLayout>
+                                    <StackLayout Grid.Row="1" Grid.Column="1" >
+                                        <Label Text="Programa una cita con nuestros especialistas"
+                                               TextColor="Gray" FontSize="12" VerticalOptions="CenterAndExpand" />
+                                    </StackLayout>
+                                </Grid>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="btnProximasCitas_Tapped" />
+                                </Frame.GestureRecognizers>
+                            </local:CustomFrame>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="2">
+                            <local:CustomFrame Margin="0" Padding="0" HasShadow="True" BorderColor="#ecf0f1">
+                                <Grid ColumnSpacing="0" RowSpacing="0" Padding="0, 10, 0, 10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackLayout Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"
+                                                 Padding="10, 0, 10, 0" VerticalOptions="FillAndExpand">
+                                        <Image Margin="0" Source="icono_confondo_cruz"
+                                               WidthRequest="40" Aspect="AspectFit"
+                                               HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+                                    </StackLayout>
+                                    <StackLayout Grid.Row="0" Grid.Column="1" >
+                                        <Label Text="Citas anteriores" TextColor="#0033A0" FontSize="20" />
+                                    </StackLayout>
+                                    <StackLayout Grid.Row="1" Grid.Column="1" >
+                                        <Label Text="Programa una cita con nuestros especialistas"
+                                               TextColor="Gray" FontSize="12" VerticalOptions="CenterAndExpand" />
+                                    </StackLayout>
+                                </Grid>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="btnCitasAnteriores_Tapped" />
+                                </Frame.GestureRecognizers>
+                            </local:CustomFrame>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+                
+            </Grid>
+      </StackLayout>
+  </ContentView.Content>
+</ContentView>

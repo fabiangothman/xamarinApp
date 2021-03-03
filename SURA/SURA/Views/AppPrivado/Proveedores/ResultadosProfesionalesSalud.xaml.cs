@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace SURA.Views.AppPrivado.Proveedores
+{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ResultadosProfesionalesSalud : ContentView
+    {
+        public ResultadosProfesionalesSalud()
+        {
+            InitializeComponent();
+        }
+
+        private void btnXXX_Tapped(object sender, EventArgs e)
+        {
+            App.objContenedor.MostrarVista("XXX");
+        }
+    }
+}

@@ -1,0 +1,616 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SURA.Views.AppPrivado.ElementosDashboard.DetallePoliza">
+    <ContentView.Content>
+        <Grid BackgroundColor="White"
+            RowSpacing="1"
+            AbsoluteLayout.LayoutBounds="0, 0, 1, 1" 
+            AbsoluteLayout.LayoutFlags="All"
+              HeightRequest="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="2"/>
+            </Grid.RowDefinitions>
+
+            <!--<Frame Padding="0"
+                       CornerRadius="0"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="4"
+                       Grid.Row="1"
+                       HasShadow="False"
+                       BackgroundColor="White"  HeightRequest="50"/>-->
+
+            <StackLayout Grid.Column="1"
+                             Grid.ColumnSpan="2"
+                             Grid.Row="1"
+                             Orientation="Horizontal" 
+                             VerticalOptions="Center"
+                             HorizontalOptions="CenterAndExpand">
+                <Label VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="CenterAndExpand"
+                           TextColor="#0033A0"
+                           FontAttributes="Bold"
+                           FontSize="Small">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Riesgo asegurado: "/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Picker x:Name="pickerNumeroRiesgo" 
+                            BackgroundColor="Transparent" 
+                            TextColor="Blue"
+                            FontAttributes="Bold"
+                            FontSize="Small"
+                            Title="Seleccione"
+                            SelectedIndex="0"
+                            WidthRequest="20"
+                            IsEnabled="False"
+                            SelectedIndexChanged="PickerNumeroRiesgo_SelectedIndexChanged"/>
+                <Image x:Name="iconChevron" 
+                       Source="chevron"
+                       IsVisible="False"
+                       BackgroundColor="Transparent"
+                       Aspect="AspectFit"
+                       Rotation="90" 
+                       HorizontalOptions="Start"/>
+
+            </StackLayout>
+
+            <Frame x:Name="frameNumeroRiesgo"
+                   Padding="0"
+                   CornerRadius="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="4"
+                   Grid.Row="2"
+                   HasShadow="False"
+                   BackgroundColor="White"
+                   HeightRequest="50">
+                <Grid VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="1"
+                               Grid.Row="0"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Start"
+                               TextColor="#0033A0"
+                               FontAttributes="Bold"
+                               FontSize="Small"
+                               Text="Número riesgo"/>
+                    <Label Grid.Column="2"
+                               Grid.Row="0"
+                               x:Name="numeroRiesgo"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Start"
+                               TextColor="#0033A0"
+                               FontAttributes="None"
+                               FontSize="Small"/>
+                </Grid>
+            </Frame>
+
+            <Frame x:Name="framesumaAsegurada"
+                   Padding="0"
+                   CornerRadius="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="4"
+                   Grid.Row="3"
+                   HasShadow="False"
+                   BackgroundColor="White"  HeightRequest="50">
+
+                <Grid VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="1"
+                               Grid.Row="0"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Start"
+                               TextColor="#0033A0"
+                               FontAttributes="Bold"
+                               FontSize="Small"
+                               Text="Suma asegurada"/>
+                    <Label Grid.Column="2"
+                               Grid.Row="0"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Start"
+                               TextColor="#0033A0"
+                               FontAttributes="None"
+                               FontSize="Small">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span x:Name="sumaAsegurada"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </Grid>
+            </Frame>
+
+            <Frame x:Name="frameAnio"
+                   Padding="0"
+                   CornerRadius="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="4"
+                   Grid.Row="4"
+                   HasShadow="False"
+                   BackgroundColor="White"  HeightRequest="50">
+
+                <Grid VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="1"
+                               Grid.Row="0"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Start"
+                               TextColor="#0033A0"
+                               FontAttributes="Bold"
+                               FontSize="Small"
+                               Text="Año"/>
+                    <Label Grid.Column="2"
+                               Grid.Row="0"
+                               x:Name="anio"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Start"
+                               TextColor="#0033A0"
+                               FontAttributes="None"
+                               FontSize="Small"/>
+                </Grid>
+            </Frame>
+
+            <Frame x:Name="framemarca"
+                   Padding="0"
+                   CornerRadius="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="4"
+                   Grid.Row="5"
+                   HasShadow="False"
+                   BackgroundColor="White"  HeightRequest="50">
+
+                <Grid VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="1"
+                               Grid.Row="0"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Start"
+                               TextColor="#0033A0"
+                               FontAttributes="Bold"
+                               FontSize="Small"
+                               Text="Marca"/>
+                    <Label Grid.Column="2"
+                               Grid.Row="0"
+                               x:Name="marca"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Start"
+                               TextColor="#0033A0"
+                               FontAttributes="None"
+                               FontSize="Small"/>
+                </Grid>
+            </Frame>
+
+            <Frame x:Name="framecolor"
+                       Padding="0"
+                       CornerRadius="0"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="4"
+                       Grid.Row="6"
+                       HasShadow="False"
+                       BackgroundColor="White"  HeightRequest="50">
+
+                <Grid VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="1"
+                               Grid.Row="0"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Start"
+                               TextColor="#0033A0"
+                               FontAttributes="Bold"
+                               FontSize="Small"
+                               Text="Color"/>
+                    <Label Grid.Column="2"
+                               Grid.Row="0"
+                               x:Name="color"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Start"
+                               TextColor="#0033A0"
+                               FontAttributes="None"
+                               FontSize="Small"/>
+                </Grid>
+            </Frame>
+
+            <Frame x:Name="framenumeroMotor"
+                       Padding="0"
+                       CornerRadius="0"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="4"
+                       Grid.Row="7"
+                       HasShadow="False"
+                       BackgroundColor="White"  HeightRequest="50">
+
+                <Grid VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="1"
+                               Grid.Row="0"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Start"
+                               TextColor="#0033A0"
+                               FontAttributes="Bold"
+                               FontSize="Small"
+                               Text="Núm. de motor"/>
+                    <Label Grid.Column="2"
+                               Grid.Row="0"
+                               x:Name="numeroMotor"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Start"
+                               TextColor="#0033A0"
+                               FontAttributes="None"
+                               FontSize="Small"/>
+                </Grid>
+            </Frame>
+
+            <Frame x:Name="framechasis"
+                   Padding="0"
+                   CornerRadius="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="4"
+                   Grid.Row="8"
+                   HasShadow="False"
+                   BackgroundColor="White"  HeightRequest="50">
+
+                <Grid VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="1"
+                               Grid.Row="0"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Start"
+                               TextColor="#0033A0"
+                               FontAttributes="Bold"
+                               FontSize="Small"
+                               Text="Chasis"/>
+                    <Label Grid.Column="2"
+                               Grid.Row="0"
+                               x:Name="chasis"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Start"
+                               TextColor="#0033A0"
+                               FontAttributes="None"
+                               FontSize="Small"/>
+                </Grid>
+            </Frame>
+
+            <Frame x:Name="frameactividad"
+                   Padding="0"
+                   CornerRadius="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="4"
+                   Grid.Row="9"
+                   HasShadow="False"
+                   BackgroundColor="White"  HeightRequest="50">
+
+                <Grid VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="1"
+                   Grid.Row="0"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Start"
+                   TextColor="#0033A0"
+                   FontAttributes="Bold"
+                   FontSize="Small"
+                   Text="Actividad"/>
+                    <Label Grid.Column="2"
+                   Grid.Row="0"
+                   x:Name="actividad"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Start"
+                   TextColor="#0033A0"
+                   FontAttributes="None"
+                   FontSize="Small"/>
+                </Grid>
+            </Frame>
+
+            <Frame x:Name="frameplaca"
+                   Padding="0"
+                   CornerRadius="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="4"
+                   Grid.Row="10"
+                   HasShadow="False"
+                   BackgroundColor="White"  HeightRequest="50">
+
+                <Grid VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="1"
+                   Grid.Row="0"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Start"
+                   TextColor="#0033A0"
+                   FontAttributes="Bold"
+                   FontSize="Small"
+                   Text="Placa"/>
+                    <Label Grid.Column="2"
+                   Grid.Row="0"
+                   x:Name="placa"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Start"
+                   TextColor="#0033A0"
+                   FontAttributes="None"
+                   FontSize="Small"/>
+                </Grid>
+            </Frame>
+
+            <Frame x:Name="frameProvincia"
+                       Padding="0"
+                       CornerRadius="0"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="4"
+                       Grid.Row="11"
+                       HasShadow="False"
+                       BackgroundColor="White"  HeightRequest="50">
+
+                <Grid VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="1"
+                                   Grid.Row="0"
+                                   VerticalOptions="Center"
+                                   HorizontalTextAlignment="Start"
+                                   TextColor="#0033A0"
+                                   FontAttributes="Bold"
+                                   FontSize="Small"
+                                   Text="Provincia"/>
+                    <Label Grid.Column="2"
+                                   Grid.Row="0"
+                                   x:Name="provincia"
+                                   VerticalOptions="Center"
+                                   HorizontalTextAlignment="Start"
+                                   TextColor="#0033A0"
+                                   FontAttributes="None"
+                                   FontSize="Small"/>
+                </Grid>
+            </Frame>
+
+            <Frame x:Name="frameDistrito"
+                           Padding="0"
+                           CornerRadius="0"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="4"
+                           Grid.Row="12"
+                           HasShadow="False"
+                           BackgroundColor="White"  
+                           HeightRequest="50">
+
+                <Grid VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="1"
+                                   Grid.Row="0"
+                                   VerticalOptions="Center"
+                                   HorizontalTextAlignment="Start"
+                                   TextColor="#0033A0"
+                                   FontAttributes="Bold"
+                                   FontSize="Small"
+                                   Text="Distrito"/>
+                    <Label Grid.Column="2"
+                                   Grid.Row="0"
+                                   x:Name="distrito"
+                                   VerticalOptions="Center"
+                                   HorizontalTextAlignment="Start"
+                                   TextColor="#0033A0"
+                                   FontAttributes="None"
+                                   FontSize="Small"/>
+                </Grid>
+            </Frame>
+
+            <Frame x:Name="frameCorregimiento"
+                           Padding="0"
+                           CornerRadius="0"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="4"
+                           Grid.Row="13"
+                           HasShadow="False"
+                           BackgroundColor="White"  
+                           HeightRequest="50">
+
+                <Grid VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="1"
+                                   Grid.Row="0"
+                                   VerticalOptions="Center"
+                                   HorizontalTextAlignment="Start"
+                                   TextColor="#0033A0"
+                                   FontAttributes="Bold"
+                                   FontSize="Small"
+                                   Text="Corregimiento"/>
+                    <Label Grid.Column="2"
+                                   Grid.Row="0"
+                                   x:Name="corregimiento"
+                                   VerticalOptions="Center"
+                                   HorizontalTextAlignment="Start"
+                                   TextColor="#0033A0"
+                                   FontAttributes="None"
+                                   FontSize="Small"/>
+                </Grid>
+            </Frame>
+
+            <Frame x:Name="frameManzana"
+                           Padding="0"
+                           CornerRadius="0"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="4"
+                           Grid.Row="14"
+                           HasShadow="False"
+                           BackgroundColor="White"  
+                           HeightRequest="50">
+
+                <Grid VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="1"
+                                   Grid.Row="0"
+                                   VerticalOptions="Center"
+                                   HorizontalTextAlignment="Start"
+                                   TextColor="#0033A0"
+                                   FontAttributes="Bold"
+                                   FontSize="Small"
+                                   Text="Manzana"/>
+                    <Label Grid.Column="2"
+                                   Grid.Row="0"
+                                   x:Name="manzana"
+                                   VerticalOptions="Center"
+                                   HorizontalTextAlignment="Start"
+                                   TextColor="#0033A0"
+                                   FontAttributes="None"
+                                   FontSize="Small"/>
+                </Grid>
+            </Frame>
+
+            <Button x:Name="btnCoberturas" 
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="16"
+                    CornerRadius="10"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="#0033A0"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="Small"
+                    Text="Coberturas"
+                    Clicked="BtnCoberturas_Clicked"/>
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>

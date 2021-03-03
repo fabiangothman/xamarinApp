@@ -1,0 +1,1226 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:local="clr-namespace:SURA"
+             mc:Ignorable="d"
+             x:Class="SURA.Views.Contenedor"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <AbsoluteLayout Padding="0" 
+                        HorizontalOptions="FillAndExpand" 
+                        VerticalOptions="FillAndExpand">
+            <BoxView AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     AbsoluteLayout.LayoutFlags="All"
+                     Color="#ffffff">
+            </BoxView>
+            <Image
+                Aspect="AspectFill"
+                x:Name="imgBackground"
+                Source="newbackground_white_temp.png"
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All">
+            </Image>
+            <Grid Padding="0"
+                  VerticalOptions="FillAndExpand" 
+                  HorizontalOptions="FillAndExpand"
+                  AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                  AbsoluteLayout.LayoutFlags="All"
+                  x:Name="gridMayor"
+                  RowSpacing="0" ColumnSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="15"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="15"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="15"/>
+                </Grid.ColumnDefinitions>
+
+                <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                       CornerRadius="0" HasShadow="false" Padding="0" Margin="0"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="FillAndExpand"
+                       BackgroundColor="#0033A0"
+                       x:Name="frmBarraSuperior">
+                    <Grid Grid.Row="0" Grid.Column="0"
+                          RowSpacing="0" ColumnSpacing="0" Padding="0, 10, 0, 10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="70"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Frame Grid.Row="0" Grid.Column="0"
+                               CornerRadius="0" HasShadow="false" Padding="0"
+                               HorizontalOptions="FillAndExpand" 
+                               VerticalOptions="FillAndExpand"
+                               BackgroundColor="Transparent"
+                               x:Name="frmAtras">
+                            <Image Source="flecha_volver_blanca"
+                                   HeightRequest="20"
+                                   Aspect="AspectFit"
+                                   x:Name="imgBackIcon"
+                                   HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="frmAtras_Tapped" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                        <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                               Margin="0, 5, 5, 0" HeightRequest="25"
+                               VerticalOptions="Center" HorizontalOptions="Center"
+                               Source="logosuranormal"
+                               x:Name="imgLogo"
+                               IsVisible="False"/>
+                        <Label Grid.Row="0" Grid.Column="1"
+                               Text="*** TITULO DE LA VISTA ***"
+                               FontSize="15"
+                               Style="{StaticResource TitleBarText}"
+                               x:Name="lblTitulo"
+                               IsVisible="True"/>
+                        
+                        <!--Frames (de la derecha) posibles del header-->
+                        <Frame Grid.Row="0" Grid.Column="2"
+                               CornerRadius="0" HasShadow="false" Padding="0" Margin="0"
+                               HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                               BackgroundColor="Transparent" x:Name="hDerecha_chat" IsVisible="True">
+                            <Image Source="boton_chat_nuevo"
+                                   HeightRequest="25"
+                                   HorizontalOptions="End" VerticalOptions="Center"/>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="frmChatEnLinea_Tapped"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        <Frame Grid.Row="0" Grid.Column="2"
+                               CornerRadius="0" HasShadow="false" Padding="0" Margin="0"
+                               HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                               BackgroundColor="Transparent" x:Name="hDerecha_misalud" IsVisible="False">
+                            <Image Source="icono_selector_submenu"
+                                   Aspect="AspectFit" HeightRequest="13"
+                                   HorizontalOptions="Center" VerticalOptions="Center" />
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="frmMiSaludDesenglosar_Tapped"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        
+                    </Grid>
+                </Frame>
+
+                <ScrollView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
+                            BackgroundColor="Transparent"
+                            x:Name="scrlContenedor">
+                    <Grid RowSpacing="0" ColumnSpacing="0" Padding="0"
+                          x:Name="grdContenedor">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <!--Contenedor de las vistas-->
+
+                        <Grid.Padding>
+                            <OnIdiom x:TypeArguments="Thickness"
+                                     Phone="0,0,0,0"
+                                     Tablet="100,50,100,50">
+                            </OnIdiom>
+                        </Grid.Padding>
+
+                    </Grid>
+
+                </ScrollView>
+
+                <StackLayout Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" x:Name="lyBarraInferPagar"
+                             Padding="0, 5, 0, 5" IsVisible="False">
+                    <Frame x:Name="btnProcPago" HeightRequest="40"
+                           CornerRadius="30" BackgroundColor="#00AEC7" Style="{StaticResource MainPageButton}"
+                           AutomationProperties.IsInAccessibleTree="True" AutomationProperties.HelpText="INGRESA A MI PORTAL">
+                        <StackLayout Orientation="Horizontal">
+                            <Grid RowSpacing="0" ColumnSpacing="2"
+                                  Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="14"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Grid.Row="0" Grid.Column="0" Source="simbolo_money"
+                                       HeightRequest="20" WidthRequest="20" 
+                                       VerticalOptions="Center" HorizontalOptions="Center"/>
+                                <Label Grid.Row="0" Grid.Column="1"
+                                       Text="PROCEDER AL PAGO" TextColor="#FFFFFF" Style="{StaticResource MainViewButtonText}"/>
+                            </Grid>
+
+                            <Frame CornerRadius="20" Padding="0" Margin="0" >
+                                <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+                                    <BoxView HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#FFFFFF" Opacity="1"/>
+                                    <Image Source="flecha_derecha_cielo"
+                                           Aspect="AspectFill" WidthRequest="18" HeightRequest="18"
+                                           VerticalOptions="Center" HorizontalOptions="Center"/>
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <!--<TapGestureRecognizer Tapped="btnIngresarPagar_Tapped" />-->
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </StackLayout>
+                
+                <!--Btn Iniciar Consulta / Seccion Consulta Virtual -->
+                <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" x:Name="lyBarraIniciarConsulta"
+                             Padding="0" IsVisible="False" BackgroundColor="White">
+                    <local:CustomFrame HeightRequest="1" Margin="0" Padding="0" HasShadow="True" />
+                    <StackLayout Padding="10, 5, 10, 5" Margin="0, 5, 0, 5">
+                        <local:CustomFrame x:Name="btnIniciarConsulta" HeightRequest="40" HasShadow="True"
+                               CornerRadius="30" BackgroundColor="#DDDFE8" Style="{StaticResource MainPageButton}"
+                               AutomationProperties.IsInAccessibleTree="True" AutomationProperties.HelpText="INGRESA A MI PORTAL">
+                            <StackLayout Orientation="Horizontal">
+                                <Grid RowSpacing="0" ColumnSpacing="2"
+                                      Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="14"/>
+                                    </Grid.ColumnDefinitions>
+                                
+                                    <Label Grid.Row="0" Grid.Column="1"
+                                           Text="INICIAR CONSULTA" TextColor="#8189A9" Style="{StaticResource MainViewButtonText}"/>
+                                </Grid>
+
+                                <Frame CornerRadius="20" Padding="0" Margin="0" >
+                                    <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+                                        <BoxView HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#FFFFFF" Opacity="1"/>
+                                        <Image Source="flecha_derecha_gris"
+                                               Aspect="AspectFill" WidthRequest="18" HeightRequest="18"
+                                               VerticalOptions="Center" HorizontalOptions="Center"/>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="btnIniciarConsulta_Tapped" />
+                            </Frame.GestureRecognizers>
+                        </local:CustomFrame>
+                    </StackLayout>
+                </StackLayout>
+                <Frame Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1"
+                       BackgroundColor="{StaticResource Blue}"
+                       Padding="0"
+                       Margin="0"
+                       CornerRadius="35"
+                       HasShadow="False"
+                       x:Name="frmBarraInferior">
+                    <Grid Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                          RowSpacing="0" ColumnSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto" x:Name="FrmUserColumn" />
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Frame Grid.Row="0" Grid.Column="0" Margin="0" Padding="0" BackgroundColor="Transparent" x:Name="navCol0" />
+
+                        <Frame Grid.Row="0" Grid.Column="1" Margin="0" Padding="5" BackgroundColor="Transparent" 
+                               x:Name="frmContactenos">
+                            <Grid Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                                  RowSpacing="0" ColumnSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="20"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Grid.Row="0" Grid.Column="0"
+                                       HeightRequest="25"
+                                       Source="icono_contacto_nuev"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="Center"/>
+
+                                <Label Grid.Row="1" Grid.Column="0"
+                                       Text="Contacto"
+                                       Style="{StaticResource BottomBarLabel}"
+                                       HorizontalTextAlignment="Center"/>
+                            </Grid>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="frmContactenos_Tapped"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                        <Frame Grid.Row="0" Grid.Column="2" Margin="0" Padding="5" BackgroundColor="Transparent"
+                               x:Name="frmEmergencias">
+                            <Grid Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                                  RowSpacing="0" ColumnSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="20"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Grid.Row="0" Grid.Column="0"
+                                       HeightRequest="25"
+                                       Source="icono_emergencias_nuev"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="Center"/>
+
+                                <Label Grid.Row="1" Grid.Column="0"
+                                       Text="Emergencias"
+                                       Style="{StaticResource BottomBarLabel}"
+                                       HorizontalTextAlignment="Center"/>
+                            </Grid>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="frmEmergencias_Tapped" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                        <Frame Grid.Row="0" Grid.Column="3" Margin="0" Padding="5" BackgroundColor="Transparent"
+                               x:Name="frmUbicaciones" IsEnabled="True">
+                            <Grid Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                                  RowSpacing="0" ColumnSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="20"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Grid.Row="0" Grid.Column="0"
+                                       HeightRequest="25"
+                                       Source="icono_ubicaciones_nuev"
+                                       VerticalOptions="End"
+                                       HorizontalOptions="Center"/>
+
+                                <Label Grid.Row="1" Grid.Column="0"
+                                       Text="Ubicaciones"
+                                       Style="{StaticResource BottomBarLabel}"
+                                       HorizontalTextAlignment="Center"/>
+                            </Grid>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="btnUbicaciones_Tapped" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                        <Frame Grid.Row="0" Grid.Column="4" Margin="0" Padding="5" BackgroundColor="Transparent"
+                               x:Name="frmNavBtnUsuario" IsEnabled="True" IsVisible="True">
+                            <Grid Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                                  RowSpacing="0" ColumnSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="20"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Grid.Row="0" Grid.Column="0"
+                                       HeightRequest="25"
+                                       Source="usuario_icono_navbar"
+                                       VerticalOptions="End"
+                                       HorizontalOptions="Center"/>
+
+                                <Label Grid.Row="1" Grid.Column="0"
+                                       Text="Usuario"
+                                       Style="{StaticResource BottomBarLabel}"
+                                       HorizontalTextAlignment="Center"/>
+                            </Grid>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="frmUsuario_Tapped" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                        <Frame Grid.Row="0" Grid.Column="5" Margin="0" Padding="0" BackgroundColor="Transparent" x:Name="navCol5" />
+                    </Grid>
+                </Frame>
+            </Grid>
+
+
+
+            <!--Popup para Contactenos-->
+            <ContentView x:Name="popupContactar" BackgroundColor="#C0808080"
+                         Padding="20, 0, 20, 10" IsVisible="false"
+                         AbsoluteLayout.LayoutBounds="0, 0, 1, 1" 
+                         AbsoluteLayout.LayoutFlags="All"
+                         HorizontalOptions="FillAndExpand">
+                <StackLayout HorizontalOptions="FillAndExpand" 
+                             VerticalOptions="End"
+                             Orientation="Vertical" 
+                             Spacing="10">
+
+                    <Frame CornerRadius="10" HasShadow="false" Margin="0" Padding="0"
+                           HorizontalOptions="FillAndExpand" 
+                           BackgroundColor="White">
+
+                        <Grid VerticalOptions="FillAndExpand"
+                              HorizontalOptions="FillAndExpand"
+                              RowSpacing="0" ColumnSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+
+                                <RowDefinition Height="20"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0"
+                                   Grid.ColumnSpan="3" Margin="0, 20, 0, 20"
+                                   Text="Opciones de contacto"
+                                   Style="{StaticResource PopupLabel}"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Start"
+                                   FontAttributes="Bold"
+                                   TextColor="#0033A0"/>
+
+                            <Frame Grid.Row="1" Grid.Column="1" Margin="0, 5, 0, 5"
+                                   BackgroundColor="Transparent"
+                                   Padding="0" HasShadow="False"
+                                   x:Name="frmLlamarSURA">
+                                <Grid RowSpacing="0" ColumnSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="1"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="70"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Row="0" Grid.Column="0" WidthRequest="40" Margin="0, 0, 10, 2" Source="menu_telefono"
+                                           HorizontalOptions="End" VerticalOptions="Center"/>
+                                    <Label Grid.Row="0" Grid.Column="1"
+                                           Text="Llamar al 800-8888"
+                                           FontAttributes="None"
+                                           Style="{StaticResource PopupLabel}"/>
+                                    <Image Grid.Row="0" Grid.Column="2" WidthRequest="20" Source="flecha_derecha_cielo"
+                                           HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                                           BackgroundColor="LightGray"/>
+                                </Grid>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="frmLlamarSURA_Tapped" />
+                                </Frame.GestureRecognizers>
+                            </Frame>                            
+
+                            <Frame Grid.Row="2" Grid.Column="1" Margin="0, 5, 0, 5"
+                                   BackgroundColor="Transparent"
+                                   Padding="0" HasShadow="False"
+                                   x:Name="frmWhatsApp">
+
+                                <Grid RowSpacing="0" ColumnSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="1"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="70"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Row="0" Grid.Column="0" WidthRequest="40" Margin="0, 0, 10, 2" Source="menu_whatsapp"
+                                           HorizontalOptions="End" VerticalOptions="Center"/>
+                                    <Label Grid.Row="0" Grid.Column="1"
+                                           Text="WhatsApp"
+                                           FontAttributes="None"
+                                           Style="{StaticResource PopupLabel}"/>
+                                    <Image Grid.Row="0" Grid.Column="2" WidthRequest="20" Source="flecha_derecha_cielo"
+                                           HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                                           BackgroundColor="LightGray"/>
+                                </Grid>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="frmWhatsApp_Tapped" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+
+                            <Frame Grid.Row="3" Grid.Column="1" Margin="0, 5, 0, 5"
+                                   BackgroundColor="Transparent"
+                                   Padding="0" HasShadow="False"
+                                   x:Name="frmCorreoElectronico">
+
+                                <Grid RowSpacing="0" ColumnSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="1"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="70"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Row="0" Grid.Column="0" WidthRequest="40" Margin="0, 0, 10, 2" Source="menu_carta"
+                                           HorizontalOptions="End" VerticalOptions="Center"/>
+                                    <Label Grid.Row="0" Grid.Column="1"
+                                           Text="Correo electrónico"
+                                           FontAttributes="None"
+                                           Style="{StaticResource PopupLabel}"/>
+                                    <Image Grid.Row="0" Grid.Column="2" WidthRequest="20" Source="flecha_derecha_cielo"
+                                           HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                                           BackgroundColor="LightGray"/>
+                                </Grid>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="frmCorreoElectronico_Tapped" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+
+                            <Frame Grid.Row="4" Grid.Column="1" Margin="0, 5, 0, 5"
+                                   BackgroundColor="Transparent"
+                                   Padding="0" HasShadow="False"
+                                   x:Name="frmSitioWeb">
+                                <Grid RowSpacing="0" ColumnSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="1"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="70"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Row="0" Grid.Column="0" WidthRequest="40" Margin="0, 0, 10, 2" Source="menu_pantalla"
+                                           HorizontalOptions="End" VerticalOptions="Center"/>
+                                    <Label Grid.Row="0" Grid.Column="1"
+                                           Text="Sitio web"
+                                           FontAttributes="None"
+                                           Style="{StaticResource PopupLabel}"/>
+                                    <Image Grid.Row="0" Grid.Column="2" WidthRequest="20" Source="flecha_derecha_cielo"
+                                           HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                                           BackgroundColor="LightGray"/>
+                                </Grid>
+                                
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="frmSitioWeb_Tapped" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+
+                            <Frame Grid.Row="5" Grid.Column="1" Margin="0, 5, 0, 5"
+                                   BackgroundColor="Transparent"
+                                   Padding="0" HasShadow="False">
+                                <Grid RowSpacing="0" ColumnSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="1"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="70"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Row="0" Grid.Column="0" WidthRequest="40" Margin="0, 0, 10, 2" Source="menu_formulario2"
+                                           HorizontalOptions="End" VerticalOptions="Center"/>
+                                    <Label Grid.Row="0" Grid.Column="1"
+                                           Text="Formulario de contacto"
+                                           FontAttributes="None"
+                                           Style="{StaticResource PopupLabel}"/>
+                                    <Image Grid.Row="0" Grid.Column="2" WidthRequest="20" Source="flecha_derecha_cielo"
+                                           HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                                           BackgroundColor="LightGray"/>
+                                </Grid>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="FormularioContacto_Tapped" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+
+                            <Frame Grid.Row="6" Grid.Column="1" Margin="0, 5, 0, 5"
+                                   BackgroundColor="Transparent"
+                                   Padding="0" HasShadow="False">
+                                <Grid RowSpacing="0" ColumnSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="1"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="70"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Row="0" Grid.Column="0" WidthRequest="40" Margin="0, 0, 10, 2" Source="menu_asesora"
+                                           HorizontalOptions="End" VerticalOptions="Center"/>
+                                    <Label Grid.Row="0" Grid.Column="1"
+                                           Text="Chat en línea"
+                                           FontAttributes="None"
+                                           Style="{StaticResource PopupLabel}"/>
+                                    <Image Grid.Row="0" Grid.Column="2" WidthRequest="20" Source="flecha_derecha_cielo"
+                                           HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                                           BackgroundColor="LightGray"/>
+                                </Grid>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="frmChatEnLinea_Tapped"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+
+                            <Frame Grid.Row="7" Grid.Column="1" Margin="0, 5, 0, 5"
+                                   BackgroundColor="Transparent"
+                                   Padding="0" HasShadow="False"
+                                   x:Name="frmCentroAutos">
+                                <Grid RowSpacing="0" ColumnSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="1"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="70"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Row="0" Grid.Column="0" WidthRequest="40" Margin="0, 0, 10, 2" Source="menu_calendario"
+                                           HorizontalOptions="End" VerticalOptions="Center"/>
+                                    <Label Grid.Row="0" Grid.Column="1"
+                                           Text="Citas: Centro Autos SURA"
+                                           FontAttributes="None"
+                                           Style="{StaticResource PopupLabel}"/>
+                                    <Image Grid.Row="0" Grid.Column="2" WidthRequest="20" Source="flecha_derecha_cielo"
+                                           HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                                           BackgroundColor="LightGray"/>
+                                </Grid>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="frmCentroAutos_Tapped" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                        </Grid>
+
+                    </Frame>
+
+
+                    <Frame x:Name="frmCancelarContactanos" CornerRadius="10" HasShadow="false"
+                               HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                        <Label Text="Cancelar" Style="{StaticResource PopupLabel}"
+                               HorizontalTextAlignment="Center"/>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="frmCancelarContactanos_Tapped"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </StackLayout>
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="frmCancelarContactanos_Tapped"/>
+                </ContentView.GestureRecognizers>
+            </ContentView>
+            
+            
+            
+
+            <!--Popup para Emergencias-->
+            <ContentView x:Name="popupEmergencias" BackgroundColor="#C0808080"
+                         Padding="20, 0, 20, 10" IsVisible="false"
+                         AbsoluteLayout.LayoutBounds="0, 0, 1, 1" 
+                         AbsoluteLayout.LayoutFlags="All"
+                         HorizontalOptions="FillAndExpand">
+                <StackLayout HorizontalOptions="FillAndExpand" 
+                             VerticalOptions="End"
+                             Orientation="Vertical" 
+                             Spacing="10">
+
+                    <Frame CornerRadius="10" HasShadow="false" Margin="0" Padding="0"
+                           HorizontalOptions="FillAndExpand" 
+                           BackgroundColor="White">
+
+                        <Grid VerticalOptions="FillAndExpand"
+                              HorizontalOptions="FillAndExpand"
+                              RowSpacing="0" ColumnSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+
+                                <RowDefinition Height="20"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <Label Grid.Row="0" Grid.Column="0"
+                                   Grid.ColumnSpan="3" Margin="0, 20, 0, 20"
+                                   Text="Opciones para emergencias"
+                                   Style="{StaticResource PopupLabel}"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Start"
+                                   FontAttributes="Bold"
+                                   TextColor="#0033A0"/>
+
+                            <!--Frame 911-->
+                            <Frame Grid.Row="1" Grid.Column="1" Margin="0, 5, 0, 5"
+                                   BackgroundColor="Transparent"
+                                   Padding="0" HasShadow="False"
+                                   x:Name="frm911">
+                                <Grid RowSpacing="0" ColumnSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="1"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="70"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Row="0" Grid.Column="0" WidthRequest="40" Margin="0, 0, 10, 2" Source="menu_cruz"
+                                           HorizontalOptions="End" VerticalOptions="Center"/>
+                                    <Label Grid.Row="0" Grid.Column="1"
+                                           Text="Llamar al 911"
+                                           FontAttributes="None"
+                                           Style="{StaticResource PopupLabel}"/>
+                                    <Image Grid.Row="0" Grid.Column="2" WidthRequest="20" Source="flecha_derecha_cielo"
+                                           HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                                           BackgroundColor="LightGray"/>
+                                </Grid>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="frmLlamar911_Tapped" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+
+                            <!--Policia-->
+                            <Frame Grid.Row="2" Grid.Column="1" Margin="0, 5, 0, 5"
+                                   BackgroundColor="Transparent"
+                                   Padding="0" HasShadow="False"
+                                   x:Name="frmPolicia">
+                                <Grid RowSpacing="0" ColumnSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="1"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="70"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Row="0" Grid.Column="0" WidthRequest="40" Margin="0, 0, 10, 2" Source="menu_estrella"
+                                           HorizontalOptions="End" VerticalOptions="Center"/>
+                                    <Label Grid.Row="0" Grid.Column="1"
+                                           Text="Llamar a la policia"
+                                           FontAttributes="None"
+                                           Style="{StaticResource PopupLabel}"/>
+                                    <Image Grid.Row="0" Grid.Column="2" WidthRequest="20" Source="flecha_derecha_cielo"
+                                           HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                                           BackgroundColor="LightGray"/>
+                                </Grid>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="frmPolicia_Tapped" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+
+                            <!--Bomberos-->                            
+                            <Frame Grid.Row="3" Grid.Column="1" Margin="0, 5, 0, 5"
+                                   BackgroundColor="Transparent"
+                                   Padding="0" HasShadow="False"
+                                   x:Name="frmBomberos">
+                                <Grid RowSpacing="0" ColumnSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="1"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="70"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Row="0" Grid.Column="0" WidthRequest="40" Margin="0, 0, 10, 2" Source="menu_fuego"
+                                           HorizontalOptions="End" VerticalOptions="Center"/>
+                                    <Label Grid.Row="0" Grid.Column="1"
+                                           Text="Llamar a los bomberos"
+                                           FontAttributes="None"
+                                           Style="{StaticResource PopupLabel}"/>
+                                    <Image Grid.Row="0" Grid.Column="2" WidthRequest="20" Source="flecha_derecha_cielo"
+                                           HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                                           BackgroundColor="LightGray"/>
+                                </Grid>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="frmBomberos_Tapped" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+
+                            <!--Asistencia Vial telefonica-->
+                            <Frame Grid.Row="4" Grid.Column="1" Margin="0, 5, 0, 5"
+                                   BackgroundColor="Transparent"
+                                   Padding="0" HasShadow="False"
+                                   x:Name="frmAsistenciaVialTel">
+                                <Grid RowSpacing="0" ColumnSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="1"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="70"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Row="0" Grid.Column="0" WidthRequest="40" Margin="0, 0, 10, 2" Source="menu_asesora"
+                                           HorizontalOptions="End" VerticalOptions="Center"/>
+                                    <Label Grid.Row="0" Grid.Column="1"
+                                           Text="Asistencia vial vía telefónica"
+                                           FontAttributes="None"
+                                           Style="{StaticResource PopupLabel}"/>
+                                    <Image Grid.Row="0" Grid.Column="2" WidthRequest="20" Source="flecha_derecha_cielo"
+                                           HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                                           BackgroundColor="LightGray"/>
+                                </Grid>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="frmAsistenciaVialTel_Tapped" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+
+                            <!--Asistencia Vial Whatsapp-->
+                            <Frame Grid.Row="5" Grid.Column="1" Margin="0, 5, 0, 5"
+                                   BackgroundColor="Transparent"
+                                   Padding="0" HasShadow="False"
+                                   x:Name="frmAsistenciaVialWhatsapp">
+                                <Grid RowSpacing="0" ColumnSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="1"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="70"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Row="0" Grid.Column="0" WidthRequest="40" Margin="0, 0, 10, 2" Source="menu_whatsapp"
+                                           HorizontalOptions="End" VerticalOptions="Center"/>
+                                    <Label Grid.Row="0" Grid.Column="1"
+                                           Text="Asistencia vial por WhatsApp"
+                                           FontAttributes="None"
+                                           Style="{StaticResource PopupLabel}"/>
+                                    <Image Grid.Row="0" Grid.Column="2" WidthRequest="20" Source="flecha_derecha_cielo"
+                                           HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                                           BackgroundColor="LightGray"/>
+                                </Grid>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="frmAsistenciaVialWhatsapp_Tapped" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+
+                            <!--Asistencia Vial Web-->
+                            <Frame Grid.Row="6" Grid.Column="1" Margin="0, 5, 0, 5"
+                                   BackgroundColor="Transparent"
+                                   Padding="0" HasShadow="False"
+                                   x:Name="frmAsistenciaVial">
+                                <Grid RowSpacing="0" ColumnSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="1"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="70"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Row="0" Grid.Column="0" WidthRequest="40" Margin="0, 0, 10, 2" Source="menu_formulario1"
+                                           HorizontalOptions="End" VerticalOptions="Center"/>
+                                    <Label Grid.Row="0" Grid.Column="1"
+                                           Text="Asistencia vial vía Web"
+                                           FontAttributes="None"
+                                           Style="{StaticResource PopupLabel}"/>
+                                    <Image Grid.Row="0" Grid.Column="2" WidthRequest="20" Source="flecha_derecha_cielo"
+                                           HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                                           BackgroundColor="LightGray"/>
+                                </Grid>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="frmAsistenciaVial_Tapped" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+
+                        </Grid>
+                    </Frame>
+
+                    <Frame  CornerRadius="10" HasShadow="false"
+                               HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                        <Label Text="Cancelar" Style="{StaticResource PopupLabel}"
+                                   HorizontalTextAlignment="Center"/>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="frmCancelarEmergencias_Tapped"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                </StackLayout>
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="frmCancelarEmergencias_Tapped"/>
+                </ContentView.GestureRecognizers>
+            </ContentView>
+
+            <!--Popup para Usuario-->
+            <ContentView x:Name="popupUsuario" BackgroundColor="#C0808080"
+                         Padding="20, 0, 20, 10" IsVisible="false"
+                         AbsoluteLayout.LayoutBounds="0, 0, 1, 1" 
+                         AbsoluteLayout.LayoutFlags="All"
+                         HorizontalOptions="FillAndExpand">
+                <StackLayout HorizontalOptions="FillAndExpand" 
+                             VerticalOptions="End"
+                             Orientation="Vertical" 
+                             Spacing="10">
+
+                    <Frame CornerRadius="10" HasShadow="false" Margin="0" Padding="0"
+                           HorizontalOptions="FillAndExpand" 
+                           BackgroundColor="White">
+
+                        <Grid VerticalOptions="FillAndExpand"
+                              HorizontalOptions="FillAndExpand"
+                              RowSpacing="3" ColumnSpacing="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                
+                                <RowDefinition Height="30"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="0.5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0"
+                                   Grid.ColumnSpan="3" Margin="0, 20, 0, 20"
+                                   Text="Opciones de usuario"
+                                   Style="{StaticResource PopupLabel}"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Start"
+                                   FontAttributes="Bold"
+                                   TextColor="#0033A0"/>
+                            
+                            <Frame Grid.Row="1" Grid.Column="1" Margin="0, 5, 0, 5"
+                                   BackgroundColor="Transparent"
+                                   Padding="0" HasShadow="False"
+                                   x:Name="frmBtnUsuario">
+                                <Grid RowSpacing="0" ColumnSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="1"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="70"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Row="0" Grid.Column="0" WidthRequest="40" Margin="0, 0, 10, 2" Source="asistenciavialtelefono"
+                                           HorizontalOptions="End" VerticalOptions="Center"/>
+                                    <Label Grid.Row="0" Grid.Column="1"
+                                           Text="Perfil"
+                                           FontAttributes="None"
+                                           Style="{StaticResource PopupLabel}"/>
+                                    <Image Grid.Row="0" Grid.Column="2" WidthRequest="20" Source="flecha_derecha_cielo"
+                                           HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                                           BackgroundColor="LightGray"/>
+                                </Grid>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="btnUsuario_Tapped" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                            
+                            <Frame Grid.Row="2" Grid.Column="1" Margin="0, 5, 0, 5"
+                                   BackgroundColor="Transparent"
+                                   Padding="0" HasShadow="False"
+                                   x:Name="frmBtnContrasena">
+                                <Grid RowSpacing="0" ColumnSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="1"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="70"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Row="0" Grid.Column="0" WidthRequest="40" Margin="0, 0, 10, 2" Source="formulariocontacto"
+                                           HorizontalOptions="End" VerticalOptions="Center"/>
+                                    <Label Grid.Row="0" Grid.Column="1"
+                                           Text="Cambiar contraseña"
+                                           FontAttributes="None"
+                                           Style="{StaticResource PopupLabel}"/>
+                                    <Image Grid.Row="0" Grid.Column="2" WidthRequest="20" Source="flecha_derecha_cielo"
+                                           HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                                           BackgroundColor="LightGray"/>
+                                </Grid>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="btnContrasena_Tapped" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                        </Grid>
+
+                    </Frame>
+
+
+                    <Frame x:Name="frmCancelarUsuario" CornerRadius="10" HasShadow="false"
+                               HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                        <Label Text="Cancelar" Style="{StaticResource PopupLabel}"
+                               HorizontalTextAlignment="Center"/>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="frmCancelarUsuario_Tapped"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </StackLayout>
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="frmCancelarUsuario_Tapped"/>
+                </ContentView.GestureRecognizers>
+            </ContentView>
+
+            <!--Popup para Desenglosar Menu de MiSalud-->
+            <ContentView x:Name="popupMiSalud" BackgroundColor="#C0808080"
+                         Padding="0" IsVisible="false"
+                         AbsoluteLayout.LayoutBounds="0, 0, 1, 1" 
+                         AbsoluteLayout.LayoutFlags="All"
+                         HorizontalOptions="FillAndExpand">
+                <StackLayout Margin="0" Padding="0">
+
+                    <Frame Margin="0" Padding="0" BackgroundColor="Transparent">
+                        <Grid Margin="0" Padding="0" ColumnSpacing="0" RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="20" />
+                            </Grid.ColumnDefinitions>
+
+                            <Frame Grid.Row="1" Grid.Column="1" 
+                                   Margin="0" Padding="0" BackgroundColor="White" CornerRadius="5">
+
+                                <Grid Grid.Row="1" Grid.Column="1" ColumnSpacing="0" RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <Frame Grid.Row="0" Margin="0" Padding="5" HasShadow="False" BackgroundColor="#d6def0"
+                                           HorizontalOptions="FillAndExpand">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto" />
+                                                <ColumnDefinition Width="0" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Frame Grid.Column="0" Margin="0" Padding="0" HasShadow="False" BackgroundColor="Transparent">
+                                                <Image Source="icono_confondo_orejeras" Margin="10"
+                                                        Aspect="AspectFit" WidthRequest="20"
+                                                        HorizontalOptions="Center" VerticalOptions="Center" />
+                                            </Frame>
+                                            <Frame Grid.Column="2" Margin="0" Padding="0" HasShadow="False" BackgroundColor="Transparent">
+                                                <Label Text="Consulta virtual inmediata"
+                                                        FontSize="15" TextColor="#0033A0"
+                                                        VerticalOptions="Center" HorizontalOptions="Start"/>
+                                            </Frame>
+                                        </Grid>
+                                    </Frame>
+
+                                    <Frame Grid.Row="1" Margin="0" Padding="5" HasShadow="False" HorizontalOptions="FillAndExpand">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto" />
+                                                <ColumnDefinition Width="0" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Frame Grid.Column="0" Margin="0" Padding="0" HasShadow="False">
+                                                <Image Source="icono_sinfondo_cruz" Margin="10"
+                                                        Aspect="AspectFit" WidthRequest="20"
+                                                        HorizontalOptions="Center" VerticalOptions="Center" />
+                                            </Frame>
+                                            <Frame Grid.Column="2" Margin="0" Padding="0" HasShadow="False">
+                                                <Label Text="Citas médicas"
+                                                        FontSize="15" TextColor="#0033A0"
+                                                        VerticalOptions="Center" HorizontalOptions="Start"/>
+                                            </Frame>
+                                        </Grid>
+                                    </Frame>
+
+                                    <Frame Grid.Row="2" Margin="0" Padding="5" HasShadow="False" HorizontalOptions="FillAndExpand">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto" />
+                                                <ColumnDefinition Width="0" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Frame Grid.Column="0" Margin="0" Padding="0" HasShadow="False">
+                                                <Image Source="icono_sinfondo_resultados" Margin="10"
+                                                        Aspect="AspectFit" WidthRequest="20"
+                                                        HorizontalOptions="Center" VerticalOptions="Center" />
+                                            </Frame>
+                                            <Frame Grid.Column="2" Margin="0" Padding="0" HasShadow="False">
+                                                <Label Text="Resultados"
+                                                        FontSize="15" TextColor="#0033A0"
+                                                        VerticalOptions="Center" HorizontalOptions="Start"/>
+                                            </Frame>
+                                        </Grid>
+                                    </Frame>
+
+                                    <Frame Grid.Row="3" Margin="0" Padding="5" HasShadow="False" HorizontalOptions="FillAndExpand">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto" />
+                                                <ColumnDefinition Width="0" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Frame Grid.Column="0" Margin="0" Padding="0" HasShadow="False">
+                                                <Image Source="icono_sinfondo_carpeta" Margin="10"
+                                                        Aspect="AspectFit" WidthRequest="20"
+                                                        HorizontalOptions="Center" VerticalOptions="Center" />
+                                            </Frame>
+                                            <Frame Grid.Column="2" Margin="0" Padding="0" HasShadow="False">
+                                                <Label Text="Historia clínica"
+                                                        FontSize="15" TextColor="#0033A0"
+                                                        VerticalOptions="Center" HorizontalOptions="Start"/>
+                                            </Frame>
+                                        </Grid>
+                                    </Frame>
+
+                                    <Frame Grid.Row="4" Margin="0" Padding="5" HasShadow="False" HorizontalOptions="FillAndExpand">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto" />
+                                                <ColumnDefinition Width="0" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Frame Grid.Column="0" Margin="0" Padding="0" HasShadow="False">
+                                                <Image Source="icono_sinfondo_contactos" Margin="10"
+                                                        Aspect="AspectFit" WidthRequest="20"
+                                                        HorizontalOptions="Center" VerticalOptions="Center" />
+                                            </Frame>
+                                            <Frame Grid.Column="2" Margin="0" Padding="0" HasShadow="False">
+                                                <Label Text="Directorio de proveedores"
+                                                        FontSize="15" TextColor="#0033A0"
+                                                        VerticalOptions="Center" HorizontalOptions="Start"/>
+                                            </Frame>
+                                        </Grid>
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="btnIntDirectorioProvSubMenu_Tapped"/>
+                                        </Frame.GestureRecognizers>
+                                    </Frame>
+
+                                </Grid>
+                            </Frame>                            
+                        </Grid>
+
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="frmInternalMiSaludSubMenu_Tapped"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                    
+                </StackLayout>
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="frmCancelarMiSaludDesenglosar_Tapped"/>
+                </ContentView.GestureRecognizers>
+            </ContentView>
+
+            <!--Popup para popupErrorConsultaVirtual -->
+            <ContentView x:Name="popupErrorConsultaVirtual" BackgroundColor="#C0808080"
+                         Padding="0" IsVisible="False"
+                         AbsoluteLayout.LayoutBounds="0, 0, 1, 1" 
+                         AbsoluteLayout.LayoutFlags="All"
+                         HorizontalOptions="FillAndExpand">
+                <StackLayout Margin="0" Padding="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <local:CustomFrame Grid.Column="1" Margin="0" Padding="20" CornerRadius="10"
+                                           HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                            <Grid RowSpacing="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <StackLayout Grid.Row="0">
+                                    <Label Text="Uuppss..." FontSize="20" TextColor="#0033A0" HorizontalOptions="Start" />
+                                </StackLayout>
+                                <StackLayout Grid.Row="1" WidthRequest="250">
+                                    <Label Text="Escribe o selecciona los síntomas que presentas, para iniciar la consulta"
+                                           FontSize="15" TextColor="#53565A" HorizontalOptions="Start" />
+                                </StackLayout>
+                                <StackLayout Grid.Row="2">
+                                    <Label Text="REINTENTAR" FontSize="14" TextColor="#0033A0" FontAttributes="Bold" HorizontalOptions="End">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="frmCancelarErrorConsultaVirtual_Tapped"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </StackLayout>
+                            </Grid>
+                        </local:CustomFrame>
+                    </Grid>
+                </StackLayout>
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="frmCancelarErrorConsultaVirtual_Tapped"/>
+                </ContentView.GestureRecognizers>
+            </ContentView>
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

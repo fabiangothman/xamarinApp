@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:SURA"
+             x:Class="SURA.Views.AppPrivado.ElementosDashboard.MisPolizas">
+    <ContentView.Content>
+
+        <Grid Margin="15, 0, 15, 0" Padding="0"
+              RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Frame Grid.Row="0" Margin="0" Padding="0" HasShadow="False">
+                <StackLayout Margin="0, 5, 0, 10" Padding="0">
+
+                    <!--<CollectionView Grid.Column="1" x:Name="PolizasListview" BackgroundColor="Transparent" Margin="0" SelectionMode="Single">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Vertical"
+                                    ItemSpacing = "5"
+                                    />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>-->
+
+                                <!--    Inicio de Bloque completo   -->
+                                <StackLayout Margin="0" Padding="0">
+
+                                    <Grid Margin="0" Padding="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="10"/>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+
+                                        <local:CustomFrame Grid.Row="1" Margin="1" Padding="0"
+                                                       CornerRadius="10" HasShadow="True" BackgroundColor="White" BorderColor="#ecf0f1" >
+                                            <Grid Margin="0" Padding="0">
+                                                <Expander>
+                                                    <Expander.Header>
+                                                        <Grid Margin="0" Padding="0" RowSpacing="0" ColumnSpacing="0">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="0"/>
+                                                                <ColumnDefinition Width="*"/>
+                                                                <ColumnDefinition Width="0"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="auto"/>
+                                                                <RowDefinition Height="1"/>
+                                                                <RowDefinition Height="auto"/>
+                                                            </Grid.RowDefinitions>
+
+                                                            <Grid Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1"
+                                                                          Margin="0" Padding="15">
+                                                                <Grid>
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="*"/>
+                                                                        <ColumnDefinition Width="*"/>
+                                                                        <ColumnDefinition Width="10"/>
+                                                                        <ColumnDefinition Width="40"/>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <Grid.RowDefinitions>
+                                                                        <RowDefinition Height="auto"/>
+                                                                        <RowDefinition Height="auto"/>
+                                                                    </Grid.RowDefinitions>
+
+                                                                    <!--<Label Text="{Binding Solucion}"
+                                                                               Grid.Row="0" Grid.Column="0"
+                                                                               TextColor="#5F5F5F" FontSize="Small"
+                                                                               VerticalOptions="End" HorizontalOptions="Start"/>-->
+                                                                    <Label Text="Automóvil"
+                                                                               Grid.Row="0" Grid.Column="0"
+                                                                               TextColor="#5F5F5F" FontSize="Small"
+                                                                               VerticalOptions="End" HorizontalOptions="Start"/>
+                                                                    <!--<Label Text="{Binding PolizaCaratula}"
+                                                                               Grid.Row="1" Grid.Column="0"
+                                                                               TextColor="#0033A0" FontSize="Small" FontAttributes="Bold"
+                                                                               VerticalOptions="Start" HorizontalOptions="Start"/>-->
+                                                                    <Label Text="040301722150"
+                                                                               Grid.Row="1" Grid.Column="0"
+                                                                               TextColor="#0033A0" FontSize="Small" FontAttributes="Bold"
+                                                                               VerticalOptions="Start" HorizontalOptions="Start"/>
+
+                                                                    <!--<Label Text="{Binding SaldoString}"
+                                                                               Grid.Row="0" Grid.Column="1"
+                                                                               TextColor="#00AEC7" FontSize="Small" FontAttributes="Bold"
+                                                                               VerticalOptions="End" HorizontalOptions="End"/>-->
+                                                                    <Label Text="B/. 130.86"
+                                                                               Grid.Row="0" Grid.Column="1"
+                                                                               TextColor="#00AEC7" FontSize="Small" FontAttributes="Bold"
+                                                                               VerticalOptions="End" HorizontalOptions="End"/>
+                                                                    <Label Text="Saldo actual"
+                                                                               Grid.Row="1" Grid.Column="1"
+                                                                               TextColor="#0033A0" FontSize="Small"
+                                                                               VerticalOptions="Start" HorizontalOptions="End"/>
+
+                                                                    <Image x:Name="imgchevron" Source="flecha_sin_expandir"
+                                                                               Grid.Row="0" Grid.RowSpan="2" Grid.Column="3"
+                                                                               Aspect="AspectFit" WidthRequest="10"
+                                                                               HorizontalOptions="Center" VerticalOptions="Center" />
+                                                                </Grid>
+                                                            </Grid>
+
+                                                            <BoxView BackgroundColor="#0033A0"
+                                                                             Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1"
+                                                                             Margin="0"/>
+
+                                                            <StackLayout Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" x:Name="stackAsegurado"
+                                                                                 Orientation="Vertical" Spacing="3"
+                                                                                 Padding="0" Margin="0"
+                                                                                 HorizontalOptions="FillAndExpand">
+                                                                <Grid Margin="0" Padding="15">
+                                                                    <Grid>
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition Width="*"/>
+                                                                        </Grid.ColumnDefinitions>
+                                                                        <Grid.RowDefinitions>
+                                                                            <RowDefinition Height="auto"/>
+                                                                            <RowDefinition Height="auto"/>
+                                                                        </Grid.RowDefinitions>
+
+                                                                        <Label Text="Asegurado"
+                                                                                    Grid.Row="0" Grid.Column="0"
+                                                                                    TextColor="#5F5F5F" FontSize="Small"
+                                                                                    VerticalOptions="End" HorizontalOptions="Start"/>
+                                                                        <!--<Label Text="{Binding Asegurado}" x:Name="polizaName"
+                                                                                    Grid.Row="1" Grid.Column="0"
+                                                                                    TextColor="#0033A0" FontSize="Small" FontAttributes="Bold"
+                                                                                    VerticalOptions="Start" HorizontalOptions="Start"/>-->
+                                                                        <Label Text="RAFAEL ANGEL SANTAMARIA SALAZAR" x:Name="polizaName"
+                                                                                    Grid.Row="1" Grid.Column="0"
+                                                                                    TextColor="#0033A0" FontSize="Small" FontAttributes="Bold"
+                                                                                    VerticalOptions="Start" HorizontalOptions="Start"/>
+                                                                    </Grid>
+                                                                </Grid>
+                                                            </StackLayout>
+                                                        </Grid>
+                                                    </Expander.Header>
+
+                                                    <Grid Margin="0" Padding="15, 0, 15, 15">
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="auto"/>
+                                                            <RowDefinition Height="10"/>
+                                                            <RowDefinition Height="auto"/>
+                                                            <RowDefinition Height="10"/>
+                                                            <RowDefinition Height="auto"/>
+                                                        </Grid.RowDefinitions>
+
+                                                        <Grid Grid.Row="0"  Margin="0" Padding="0">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="*"/>
+                                                                <ColumnDefinition Width="*"/>
+                                                                <ColumnDefinition Width="30"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="auto"/>
+                                                                <RowDefinition Height="auto"/>
+                                                            </Grid.RowDefinitions>
+
+                                                            <Label Text="Identificación"
+                                                                           Grid.Row="0" Grid.Column="0"
+                                                                           TextColor="#5F5F5F" FontSize="Small"
+                                                                           VerticalOptions="End" HorizontalOptions="Start"/>
+                                                            <!--<Label Text="{Binding Identificacion}"
+                                                                           Grid.Row="1" Grid.Column="0"
+                                                                           TextColor="#0033A0" FontSize="Small" FontAttributes="Bold"
+                                                                           VerticalOptions="Start" HorizontalOptions="Start"/>-->
+                                                            <Label Text="4-746-2301"
+                                                                           Grid.Row="1" Grid.Column="0"
+                                                                           TextColor="#0033A0" FontSize="Small" FontAttributes="Bold"
+                                                                           VerticalOptions="Start" HorizontalOptions="Start"/>
+
+                                                            <!--<Label Text="{Binding Pago_MinimiString}"
+                                                                           Grid.Row="0" Grid.Column="1"
+                                                                           TextColor="#00AEC7" FontSize="Small" FontAttributes="Bold"
+                                                                           VerticalOptions="End" HorizontalOptions="Start"/>-->
+                                                            <Label Text="B/. 130.86"
+                                                                           Grid.Row="0" Grid.Column="1"
+                                                                           TextColor="#00AEC7" FontSize="Small" FontAttributes="Bold"
+                                                                           VerticalOptions="End" HorizontalOptions="Start"/>
+                                                            <Label Text="Prima"
+                                                                           Grid.Row="1" Grid.Column="1"
+                                                                           TextColor="#0033A0" FontSize="Small"
+                                                                           VerticalOptions="Start" HorizontalOptions="Start"/>
+                                                        </Grid>
+
+
+                                                        <Frame Grid.Row="2" Margin="0" Padding="0" HasShadow="False">
+                                                            <Grid Margin="0" Padding="0" RowSpacing="0">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="60" />
+                                                                    <ColumnDefinition Width="*" />
+                                                                    <ColumnDefinition Width="60" />
+                                                                </Grid.ColumnDefinitions>
+                                                                <Grid.RowDefinitions>
+                                                                    <RowDefinition Height="auto" />
+                                                                    <RowDefinition Height="5" />
+                                                                    <RowDefinition Height="1" />
+                                                                </Grid.RowDefinitions>
+
+                                                                <Image Source="riesgos_asegurados_escudo"
+                                                                               Grid.Row="0" Grid.Column="0"
+                                                                               Aspect="AspectFit" WidthRequest="40"
+                                                                               HorizontalOptions="Start" VerticalOptions="Center" />
+                                                                <Label Text="Riesgos asegurados"
+                                                                               Grid.Row="0" Grid.Column="1"
+                                                                               TextColor="#0033A0" FontSize="Small" FontAttributes="Bold"
+                                                                               VerticalOptions="Center" HorizontalOptions="Start"/>
+                                                                <Image Source="flecha_entrar_derecha"
+                                                                               Grid.Row="0" Grid.Column="2"
+                                                                               Aspect="AspectFit" WidthRequest="20"
+                                                                               HorizontalOptions="Center" VerticalOptions="Center" />
+                                                                <BoxView BackgroundColor="#efefef"
+                                                                                 Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="0"/>
+                                                            </Grid>
+                                                            <Frame.GestureRecognizers>
+                                                                <TapGestureRecognizer Tapped="Riesgos_Tapped"/>
+                                                            </Frame.GestureRecognizers>
+                                                        </Frame>
+
+
+                                                        <Frame Grid.Row="4" Margin="0" Padding="0" HasShadow="False">
+                                                            <Grid Margin="0" Padding="0" RowSpacing="0">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="60" />
+                                                                    <ColumnDefinition Width="*" />
+                                                                    <ColumnDefinition Width="60" />
+                                                                </Grid.ColumnDefinitions>
+                                                                <Grid.RowDefinitions>
+                                                                    <RowDefinition Height="auto" />
+                                                                    <RowDefinition Height="5" />
+                                                                    <RowDefinition Height="1" />
+                                                                </Grid.RowDefinitions>
+
+                                                                <Image Source="pagar_en_linea_escudo"
+                                                                               Grid.Row="0" Grid.Column="0"
+                                                                               Aspect="AspectFit" WidthRequest="40"
+                                                                               HorizontalOptions="Start" VerticalOptions="Center" />
+                                                                <Label Text="Pagar en linea"
+                                                                               Grid.Row="0" Grid.Column="1"
+                                                                               TextColor="#0033A0" FontSize="Small" FontAttributes="Bold"
+                                                                               VerticalOptions="Center" HorizontalOptions="Start"/>
+                                                                <Image Source="flecha_entrar_derecha"
+                                                                               Grid.Row="0" Grid.Column="2"
+                                                                               Aspect="AspectFit" WidthRequest="20"
+                                                                               HorizontalOptions="Center" VerticalOptions="Center" />
+                                                                <BoxView BackgroundColor="#efefef"
+                                                                                 Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="0"/>
+                                                            </Grid>
+                                                            <Frame.GestureRecognizers>
+                                                                <TapGestureRecognizer Tapped="Pagos_Tapped"/>
+                                                            </Frame.GestureRecognizers>
+                                                        </Frame>
+                                                    </Grid>
+                                                </Expander>
+                                            </Grid>
+
+                                            <Frame.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="ExpandirOpciones_Tapped" />
+                                            </Frame.GestureRecognizers>
+                                        </local:CustomFrame>
+                                    </Grid>
+
+                                </StackLayout>
+                                <!--    Fin de bloque completo  -->
+
+                            <!--</DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>-->
+
+                </StackLayout>
+            </Frame>
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SURA"
+             x:Class="SURA.Views.AppPrivado.Proveedores.DirectorioProveedores">
+    <ContentView.Content>
+        <Grid Padding="0" ColumnSpacing="0"
+              VerticalOptions="FillAndExpand" 
+              HorizontalOptions="FillAndExpand">
+            <Grid.RowSpacing>
+                <OnIdiom x:TypeArguments="x:Double"
+                         Phone="10"
+                         Tablet="10">
+                </OnIdiom>
+            </Grid.RowSpacing>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="5"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="1" Margin="0, 15, 0, 5"
+                   TextColor="White" FontAttributes="Bold" FontSize="Small"
+                   HorizontalTextAlignment="Start" VerticalTextAlignment="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Selecciona un tipo de aliado para buscar" TextColor="#0033A0" FontAttributes="Bold" FontSize="Medium"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+
+            <local:CustomFrame Grid.Row="1" Grid.Column="1" CornerRadius="0" HasShadow="True"
+                               Margin="0" Padding="0" IsEnabled="True" BorderColor="#ecf0f1" BackgroundColor="White">
+                <Grid Margin="0" Padding="0" RowSpacing="0" ColumnSpacing="5"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Source="icono_confondo_orejeras"
+                           WidthRequest="40" Margin="11" Aspect="AspectFit"/>
+                    <Label Grid.Column="1" Text="Profesionales de la salud"
+                           FontSize="Medium" TextColor="#0033A0"
+                           HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="btnProfesionalesSalud_Clicked"/>
+                </Frame.GestureRecognizers>
+            </local:CustomFrame>
+
+            <local:CustomFrame Grid.Row="2" Grid.Column="1" CornerRadius="0" HasShadow="True"
+                               Margin="0" Padding="0" IsEnabled="True" BorderColor="#ecf0f1" BackgroundColor="White">
+                <Grid Margin="0" Padding="0" RowSpacing="0" ColumnSpacing="5"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Source="icono_confondo_cruz_2"
+                           WidthRequest="40" Margin="11" Aspect="AspectFit"/>
+                    <Label Grid.Column="1" Text="Farmacias"
+                           FontSize="Medium" TextColor="#0033A0"
+                           HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <!--<TapGestureRecognizer Tapped="btnProfesionales_Clicked"/>-->
+                </Frame.GestureRecognizers>
+            </local:CustomFrame>
+
+            <local:CustomFrame Grid.Row="3" Grid.Column="1" CornerRadius="0" HasShadow="True"
+                               Margin="0" Padding="0" IsEnabled="True" BorderColor="#ecf0f1" BackgroundColor="White">
+                <Grid Margin="0" Padding="0" RowSpacing="0" ColumnSpacing="5"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Source="icono_confondo_micros"
+                           WidthRequest="40" Margin="11" Aspect="AspectFit"/>
+                    <Label Grid.Column="1" Text="Laboratorios"
+                           FontSize="Medium" TextColor="#0033A0"
+                           HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <!--<TapGestureRecognizer Tapped="btnProfesionales_Clicked"/>-->
+                </Frame.GestureRecognizers>
+            </local:CustomFrame>
+
+            <local:CustomFrame Grid.Row="4" Grid.Column="1" CornerRadius="0" HasShadow="True"
+                               Margin="0" Padding="0" IsEnabled="True" BorderColor="#ecf0f1" BackgroundColor="White">
+                <Grid Margin="0" Padding="0" RowSpacing="0" ColumnSpacing="5"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Source="icono_confondo_cruz"
+                           WidthRequest="40" Margin="11" Aspect="AspectFit"/>
+                    <Label Grid.Column="1" Text="Clínicas"
+                           FontSize="Medium" TextColor="#0033A0"
+                           HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <!--<TapGestureRecognizer Tapped="btnProfesionales_Clicked"/>-->
+                </Frame.GestureRecognizers>
+            </local:CustomFrame>
+
+            <local:CustomFrame Grid.Row="5" Grid.Column="1" CornerRadius="0" HasShadow="True"
+                               Margin="0" Padding="0" IsEnabled="True" BorderColor="#ecf0f1" BackgroundColor="White">
+                <Grid Margin="0" Padding="0" RowSpacing="0" ColumnSpacing="5"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Source="icono_confondo_person"
+                           WidthRequest="40" Margin="11" Aspect="AspectFit"/>
+                    <Label Grid.Column="1" Text="Centros de imageneología"
+                           FontSize="Medium" TextColor="#0033A0"
+                           HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <!--<TapGestureRecognizer Tapped="btnProfesionales_Clicked"/>-->
+                </Frame.GestureRecognizers>
+            </local:CustomFrame>
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>

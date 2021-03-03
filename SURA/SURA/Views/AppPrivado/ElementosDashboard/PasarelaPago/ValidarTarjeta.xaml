@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             x:Class="SURA.Views.AppPrivado.ElementosDashboard.PasarelaPago.ValidarTarjeta"
+             xmlns:Behaviors="clr-namespace:SURA.Helpers">
+    <ContentView.Content>
+
+        <AbsoluteLayout HeightRequest="100">
+            <Grid HeightRequest="100" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional">
+                <!--<d:Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#0033a0" Offset="0.1"/>
+                    <GradientStop Color="#00c1d8" Offset="1.0"/>
+                </LinearGradientBrush>
+            </d:Grid.Background>-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="70"/>
+                </Grid.RowDefinitions>
+
+
+                <!--Entry Keyboard="Numeric" Grid.Row="0"
+                         Grid.Column="1">
+                <Entry.Behaviors>
+                    <Behaviors:EntryMask Mask="XXXX-XXXX-XXXX-XXXX" />
+                </Entry.Behaviors>
+            </-->
+                <Frame
+                Grid.Row="0"
+                Grid.Column="1"
+                Margin="0,5,0,10"
+                Padding="0"
+                BorderColor="White"
+                BackgroundColor="Transparent">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="btnAgregar_Clicked" />
+                    </Frame.GestureRecognizers>
+                    <Grid
+                    BackgroundColor="#15FFFFFF"
+                    Padding="5"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Text="Selecciona o agrega una tarjeta de pago"
+                        TextColor="White"
+                        FontSize="19"
+                        Margin="0"
+                        Padding="0"
+                        VerticalOptions="Center"
+                        HorizontalOptions="StartAndExpand"/>
+
+
+                        <Frame
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Padding="0"
+                        Margin="0"
+                        HasShadow="False"
+                        BackgroundColor="#e7df00"
+                        HeightRequest="40"
+                        WidthRequest="40"
+                        CornerRadius="20"
+                        VerticalOptions="Center"
+                        HorizontalOptions="End">
+
+                            <Label Text="+"
+                               Padding="0"
+                               FontAttributes="Bold"
+                               FontSize="Large"
+                               TextColor="{StaticResource Blue}"
+                               Margin="0,0,0,0"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="CenterAndExpand"/>
+                        </Frame>
+
+                    </Grid>
+
+                </Frame>
+                <ScrollView VerticalOptions="Start" HorizontalOptions="FillAndExpand" Padding="0" Margin="0" Grid.Column="1"  IsClippedToBounds="True"
+                            Grid.Row="1">
+                    <StackLayout  x:Name="TarjetasListView"
+                         Spacing="10"
+                         Orientation="Vertical">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Frame CornerRadius="10"  Margin="0,0,0,0" HasShadow="False" Padding="0, 10, 0, 10">
+                                    <Frame.Background>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0.5">
+                                            <GradientStop Color="White" Offset="0.5"/>
+                                            <GradientStop Color="#e1eafd" Offset="1.0"/>
+                                        </LinearGradientBrush>
+                                    </Frame.Background>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="CollectionItem_Tapped" />
+                                    </Frame.GestureRecognizers>
+                                    <Grid RowSpacing="5" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="5"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="25"/>
+                                            <ColumnDefinition Width="25"/>
+                                            <ColumnDefinition Width="5"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+
+                                        <!--Numero-->
+                                        <!--Label Text="{Binding TarjetaEnmascaradaMasked}"
+                                           TextColor="#1B19A5"
+                                           Grid.Row="0"
+                                           Grid.Column="1"
+                                           FontSize="Small"
+                                           FontAttributes="Bold"
+                                           HorizontalOptions="StartAndExpand"
+                                           HorizontalTextAlignment="Start"
+                                           Grid.ColumnSpan="1"
+                                           CharacterSpacing="5"
+                                           Margin="0,0,0,0"/-->
+
+                                        <Label Text="{Binding TarjetaEnmascaradaMasked}"
+                                           TextColor="#1B19A5"
+                                           Grid.Row="0"
+                                           Grid.Column="1"
+                                           FontSize="Small"
+                                           FontAttributes="Bold"
+                                           HorizontalOptions="StartAndExpand"
+                                           HorizontalTextAlignment="Start"
+                                           Grid.ColumnSpan="1"
+                                           CharacterSpacing="5"
+                                           Margin="0,0,0,0"/>
+
+                                        <Label Text="{Binding TarjetaHabiente}"
+                                           TextColor="#5F5F5F"
+                                           Grid.Row="1"
+                                           Grid.Column="1"
+                                           FontSize="Medium"
+                                           HorizontalOptions="StartAndExpand"
+                                           HorizontalTextAlignment="Start"
+                                           Grid.ColumnSpan="1"
+                                           Margin="0,0,0,0"/>
+                                        <!--Label Text="Hola"
+                                           TextColor="#5F5F5F"
+                                           MaxLines="0"
+                                           FontSize="Medium"
+                                           Grid.Row="1"
+                                           Grid.Column="1"
+                                       HorizontalOptions="StartAndExpand"
+                                           VerticalOptions="Center"/-->
+
+
+                                        <Frame Grid.Row="0"
+                                       Grid.Column="2"
+                                       Grid.RowSpan="2"
+                                       WidthRequest="25"
+                                       HeightRequest="25"
+                                       Margin="0"
+                                       Padding="0"
+                                       HasShadow="False"    
+                                       BackgroundColor="Transparent">
+                                            <Frame.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="DeleteItem_Tapped" />
+                                            </Frame.GestureRecognizers>
+                                            <Image
+                                        Source="deleteicon"
+                                        HeightRequest="20"
+                                        WidthRequest="20"
+                                        BackgroundColor="Transparent"
+                                        Aspect="AspectFit"
+                                        HorizontalOptions="Center"/>
+                                        </Frame>
+
+
+                                        <Image
+                                   Source="chevron"
+                                   Grid.Row="0"
+                                   Grid.Column="3"
+                                    Grid.RowSpan="2"
+                                    HeightRequest="10"
+                                    WidthRequest="10"
+                                   BackgroundColor="Transparent"
+                                   Aspect="AspectFit"
+                                   HorizontalOptions="End"/>
+
+
+                                        <!--Propietario-->
+                                        <!--Label Text="asd"
+                                           TextColor="#5F5F5F"
+                                           MaxLines="0"
+                                           FontSize="Medium"
+                                           Grid.Row="1"
+                                           Grid.Column="1"
+                                           VerticalOptions="Center"/-->
+
+
+
+                                        <!--TipoTarjeta-->
+                                        <!--Image VerticalOptions="EndAndExpand"
+                                           HorizontalOptions="EndAndExpand"
+                                           Source="logovisaazul"
+                                           HeightRequest="48"
+                                           Grid.Column="2"
+                                           Grid.Row="1"
+                                           Grid.RowSpan="2"/-->
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                </ScrollView>
+                <Frame Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"
+                       BackgroundColor="White"
+                   Margin="0,10,0,0">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Total a pagar"
+                               HorizontalOptions="StartAndExpand"
+                               TextColor="#5F5F5F"/>
+                            <Label Text="B/.0.00"
+                               x:Name="lblTotalCardP"
+                               HorizontalOptions="End"
+                               FontAttributes="Bold"
+                               TextColor="#5F5F5F"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+
+            <Frame Margin="0"
+               Padding="0"
+                   x:Name="FrmCCVBottom"
+                   IsVisible="False"
+               HasShadow="False"
+               BackgroundColor="#80000000"
+               AbsoluteLayout.LayoutBounds="0,0,1,1"
+               AbsoluteLayout.LayoutFlags="SizeProportional">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="DismissCCVBottomFrame" />
+                </Frame.GestureRecognizers>
+
+                <StackLayout HorizontalOptions="FillAndExpand"
+                             VerticalOptions="End"
+                             Orientation="Vertical"
+                             BackgroundColor="White"
+                             Padding="10, 20, 10,20">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer />
+                    </StackLayout.GestureRecognizers>
+
+                    <Label Text="Ingrese los dígitos CVV de la tarjeta"
+                           FontAttributes="Bold"
+                           FontSize="19"
+                           TextColor="{StaticResource Blue}"
+                           HorizontalTextAlignment="Center"
+                           HorizontalOptions="FillAndExpand"/>
+
+                    <Label
+                        x:Name="ccvError"
+                        Text=" "
+                        HorizontalTextAlignment="Center"
+                        TextColor="Red"/>
+
+                    <Frame OutlineColor="#66000000"
+                           Margin="0,4,0,0"
+                           BackgroundColor="#42f3f3f3"
+                           HasShadow="False"
+                           Padding="2,3,2,3">
+
+                        <Entry HorizontalOptions="FillAndExpand"
+                               Keyboard="Numeric"
+                               MaxLength="4"
+                               FontSize="17"
+                               IsPassword="True"
+                               Text=""
+                               x:Name="CCVListEntry"
+                               HorizontalTextAlignment="Start"/>
+                    </Frame>
+
+                    <Grid
+                        Margin="0,10,0,0"
+                        HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Frame
+                            OutlineColor="#40000000"
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            Margin="10,0,5,0"
+                            BackgroundColor="White"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"
+                            CornerRadius="0"
+                            Padding="10">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="DismissCCVBottomFrame" />
+                            </Frame.GestureRecognizers>
+                            <Label Text="Cancelar"
+                                   TextColor="{StaticResource DarkGray}"
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="CenterAndExpand"
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"/>
+                        </Frame>
+
+                        <Frame
+                            OutlineColor="#e7df00"
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            Margin="5,0,10,0"
+                            BackgroundColor="{StaticResource Blue}"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"
+                            CornerRadius="0"
+                            Padding="10">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="AceptarCCVBottom" />
+                            </Frame.GestureRecognizers>
+                            <Label Text="Aceptar"
+                                   TextColor="White"
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="CenterAndExpand"
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"/>
+                        </Frame>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+        </AbsoluteLayout>
+
+
+    </ContentView.Content>
+</ContentView>

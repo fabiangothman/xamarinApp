@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>517640494308-eid8hf3g4tb41nqif3r0elli47jb44l8.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.517640494308-eid8hf3g4tb41nqif3r0elli47jb44l8</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDlHVzaYOecZatFhdQRl4x1JwT6LeyFaH8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>517640494308</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.sura.panama.ios</string>
+	<key>PROJECT_ID</key>
+	<string>app-sura</string>
+	<key>STORAGE_BUCKET</key>
+	<string>app-sura.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:517640494308:ios:0d254515e4c900a3ec20f1</string>
+	<key>DATABASE_URL</key>
+	<string>https://app-sura.firebaseio.com</string>
+</dict>
+</plist>

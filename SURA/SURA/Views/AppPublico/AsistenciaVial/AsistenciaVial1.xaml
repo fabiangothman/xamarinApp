@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SURA.Views.AppPublico.AsistenciaVial.AsistenciaVial1"
+             BackgroundColor="Transparent">
+    <ContentView.Content>
+        <Grid Padding="0" RowSpacing="0" ColumnSpacing="0"
+              VerticalOptions="FillAndExpand" 
+              HorizontalOptions="FillAndExpand"
+              HeightRequest="100"
+              x:Name="OuterGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="15"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="15"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.ColumnSpacing>
+                <OnIdiom x:TypeArguments="x:Double"
+                         Phone="0"
+                         Tablet="10">
+
+                </OnIdiom>
+            </Grid.ColumnSpacing>
+
+            <Grid.RowSpacing>
+                <OnIdiom x:TypeArguments="x:Double"
+                         Phone="0"
+                         Tablet="10">
+                </OnIdiom>
+            </Grid.RowSpacing>
+
+            <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"
+                   Text="¿Qué tipo de servicio requiere?"
+                   Style="{StaticResource ProductText}"
+                   TextColor="White"
+                   x:Name="lblRequiere"/>
+
+            <Frame Grid.Row="3" Grid.Column="1"
+                   x:Name="frmGrúa"
+                   Style="{StaticResource MainPageButton}"
+                   BackgroundColor="#38acc4">
+                <Grid Padding="0" RowSpacing="0" ColumnSpacing="0"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="75"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Row="1" Grid.Column="0"
+                           HeightRequest="70"
+                           Source="grua"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"/>
+
+                    <Label Grid.Row="3" Grid.Column="0"
+                           Text="Grúa" 
+                           Style="{StaticResource ProductText}"
+                           TextColor="White"/>
+                </Grid>
+
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="FrmGrúa_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Frame Grid.Row="3" Grid.Column="3"
+                   x:Name="frmAccidente"
+                   Style="{StaticResource MainPageButton}"
+                   BackgroundColor="#38acc4">
+                <Grid Padding="0" RowSpacing="0" ColumnSpacing="0"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="75"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Row="1" Grid.Column="0"
+                           HeightRequest="70"
+                           Source="accidente"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"/>
+
+                    <Label Grid.Row="3" Grid.Column="0"
+                           Text="Accidente" 
+                           Style="{StaticResource ProductText}"
+                           TextColor="White"/>
+                </Grid>
+
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="FrmAccidente_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Frame Grid.Row="5" Grid.Column="1"
+                   x:Name="frmCombustible"
+                   Style="{StaticResource MainPageButton}"
+                   BackgroundColor="#38acc4">
+                <Grid Padding="0" RowSpacing="0" ColumnSpacing="0"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="75"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Row="1" Grid.Column="0"
+                           HeightRequest="60"
+                           Source="combustible"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"/>
+
+                    <Label Grid.Row="3" Grid.Column="0"
+                           Text="Combustible" 
+                           Style="{StaticResource ProductText}"
+                           TextColor="White"/>
+
+                    <Label Grid.Row="4" Grid.Column="0"
+                           Text=" " 
+                           Style="{StaticResource ProductText}"
+                           TextColor="White"/>
+                </Grid>
+
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="FrmCombustible_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Frame Grid.Row="5" Grid.Column="3"
+                   x:Name="frmCambioLlanta"
+                   Style="{StaticResource MainPageButton}"
+                   BackgroundColor="#38acc4">
+                <Grid Padding="0" RowSpacing="0" ColumnSpacing="0"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="75"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Row="1" Grid.Column="0"
+                           HeightRequest="70"
+                           Source="cambiollanta"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"/>
+
+                    <Label Grid.Row="3" Grid.Column="0"
+                           Text="Cambio" 
+                           Style="{StaticResource ProductText}"
+                           TextColor="White"/>
+
+                    <Label Grid.Row="4" Grid.Column="0"
+                           Text="de llanta" 
+                           Style="{StaticResource ProductText}"
+                           TextColor="White"/>
+                </Grid>
+
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="FrmCambioLlanta_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Frame Grid.Row="7" Grid.Column="1"
+                   x:Name="frmCerrajería"
+                   Style="{StaticResource MainPageButton}"
+                   BackgroundColor="#38acc4">
+                <Grid Padding="0" RowSpacing="0" ColumnSpacing="0"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="75"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Row="1" Grid.Column="0"
+                           HeightRequest="70"
+                           Source="cerrajeria"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"/>
+
+                    <Label Grid.Row="3" Grid.Column="0"
+                           Text="Cerrajería" 
+                           Style="{StaticResource ProductText}"
+                           TextColor="White"/>
+
+                    <Label Grid.Row="4" Grid.Column="0"
+                           Text=" " 
+                           Style="{StaticResource ProductText}"
+                           TextColor="White"/>
+                </Grid>
+
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="FrmCerrajería_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Frame Grid.Row="7" Grid.Column="3"
+                   x:Name="frmCargarBatería"
+                   Style="{StaticResource MainPageButton}"
+                   BackgroundColor="#38acc4">
+                <Grid Padding="0" RowSpacing="0" ColumnSpacing="0"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="75"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Row="1" Grid.Column="0"
+                           HeightRequest="60"
+                           Source="bateria"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"/>
+
+                    <Label Grid.Row="3" Grid.Column="0"
+                           Text="Cargar la" 
+                           Style="{StaticResource ProductText}"
+                           TextColor="White"/>
+
+                    <Label Grid.Row="4" Grid.Column="0"
+                           Text="batería" 
+                           Style="{StaticResource ProductText}"
+                           TextColor="White"/>
+                </Grid>
+
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="FrmCargarBatería_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

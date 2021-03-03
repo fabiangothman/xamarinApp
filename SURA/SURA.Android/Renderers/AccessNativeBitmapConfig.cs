@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Concurrent;
+using Xamarin.Forms.GoogleMaps;
+using Xamarin.Forms.GoogleMaps.Android.Factories;
+using AndroidBitmapDescriptor = Android.Gms.Maps.Model.BitmapDescriptor;
+using AndroidBitmapDescriptorFactory = Android.Gms.Maps.Model.BitmapDescriptorFactory;
+
+namespace SURA.Droid.Renderers
+{
+    public sealed class AccessNativeBitmapConfig: IBitmapDescriptorFactory
+    {
+        private readonly ConcurrentDictionary<string, AndroidBitmapDescriptor> _cache
+            = new ConcurrentDictionary<string, AndroidBitmapDescriptor>();
+        public AndroidBitmapDescriptor ToNative(BitmapDescriptor descriptor)
+        {
+            //int pin = Droid.Resource.Drawable.pinazul;
+
+            //return AndroidBitmapDescriptorFactory.FromResource(pin);
+            var defaultFactory = DefaultBitmapDescriptorFactory.Instance;
+
+            if (!string.IsNullOrEmpty(descriptor.Id))
+            {
+                var cacheEntry = _cache.GetOrAdd(descriptor.Id, _ => defaultFactory.ToNative(descriptor));
+                return cacheEntry;
+            }
+
+            return defaultFactory.ToNative(descriptor);
+        }
+    }
+}

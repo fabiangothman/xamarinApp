@@ -1,0 +1,128 @@
+﻿<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SURA.App" >
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--<OnPlatform x:TypeArguments="x:String" x:Key="BoldFont">
+                <On Platform="Android" Value="OpenSans-Bold.ttf#Open Sans" />
+                <On Platform="UWP" Value="/Assets/OpenSans-Bold.ttf#Open Sans" />
+                <On Platform="iOS" Value="OpenSans-Bold" />
+            </OnPlatform>-->
+            <OnPlatform x:TypeArguments="x:String" x:Key="NormalFont">
+                <On Platform="Android" Value="Pacifico.ttf#Pacifico" />
+                <On Platform="UWP" Value="/Assets/Pacifico.ttf" />
+                <On Platform="iOS" Value="Pacifico" />
+            </OnPlatform>
+            
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="#17817C" />
+                <Setter Property="FontFamily" Value="" />
+                <!--<Setter Property="FontFamily" Value="{StaticResource NormalFont}" />-->
+            </Style>
+        </ResourceDictionary>
+        
+        <Color x:Key="SkyBlue">#E1FBFF</Color>
+        <Color x:Key="FrameBackground">#FFFFFF</Color>
+        <Color x:Key="DarkGray">#5F5F5F</Color>
+        <Color x:Key="Blue">#0033A0</Color>
+        <Color x:Key="White">#FFFFFF</Color>
+        <Style x:Key="MainPageTitle_Label" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource SkyBlue}"/>
+            <Setter Property="FontSize" Value="Small"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+        <Style x:Key="MainPageButton" TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="{StaticResource FrameBackground}"/>
+            <Setter Property="HasShadow" Value="False"/>
+            <Setter Property="CornerRadius" Value="12"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+
+        <Style x:Key="EntryRoundedFrame" TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="{StaticResource White}"/>
+            <Setter Property="HasShadow" Value="False"/>
+            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+            <Setter Property="HeightRequest" Value="40"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+
+        <Style x:Key="MainViewButtonText" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource DarkGray}"/>
+            <Setter Property="FontSize" Value="Small"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="BottomBar" TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="{StaticResource Blue}"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="HeightRequest" Value="70"/>
+            <Setter Property="VerticalOptions" Value="End"/>
+        </Style>
+        <Style x:Key="BottomBarLabel" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource White}"/>
+            <Setter Property="FontSize" Value="Small"/>
+            <Setter Property="FontAttributes" Value="None"/>
+        </Style>
+        <Style x:Key="PopupLabel" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource Blue}"/>
+            <Setter Property="FontSize" Value="Small"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="TitleBarText" TargetType="Label">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="Small"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+            <Setter Property="LineBreakMode" Value="MiddleTruncation"/>
+        </Style>
+        <Style x:Key="ProductText" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource Blue}"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="Small"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+        <Style x:Key="GlobalEntryStyle" TargetType="Entry">
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            <Setter Property="FontSize" Value="Small"/>
+        </Style>
+        <Style x:Key="ButtonTips" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource Blue}"/>
+            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="TextColor" Value="{StaticResource White}"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+        <Style x:Key="ProductDetailButton" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="TextColor" Value="#1ACDF0"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+        <Style x:Key="ProductDetailButtonClicked" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="TextColor" Value="{StaticResource White}"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+        <Style x:Key="ProductDetailViewLabel" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource White}"/>
+            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+            <Setter Property="FontAttributes" Value="None"/>
+            <Setter Property="FontSize" Value="Small"/>
+        </Style>
+    </Application.Resources>
+</Application>

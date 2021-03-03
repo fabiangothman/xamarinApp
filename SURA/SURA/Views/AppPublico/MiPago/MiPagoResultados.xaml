@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SURA"
+             x:Class="SURA.Views.AppPublico.MiPago.MiPagoResultados">
+  <ContentView.Content>
+      <StackLayout>
+            <Grid ColumnSpacing="0" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="15" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="15" />
+                </Grid.ColumnDefinitions>
+                
+                <Frame Grid.Row="0" Grid.Column="1" HasShadow="False" Margin="0" Padding="20">
+                    <Label Text="Selecciona las pólizas que deseas pagar"
+                           FontSize="14" TextColor="#0033A0"
+                           HorizontalOptions="Center"/>
+                </Frame>
+                <Frame Grid.Row="1" Grid.Column="1" HasShadow="False" Margin="0" Padding="0">
+                    <StackLayout>
+
+                        <!--Inicio de bloque completo-->
+                        <local:CustomFrame HasShadow="True" Margin="3" Padding="0" CornerRadius="15" BorderColor="#ecf0f1">
+                            <Grid Margin="0" Padding="0, 15, 0, 15" RowSpacing="5" ColumnSpacing="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="1" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="15" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="15" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="Automóvil"
+                                       FontSize="14" TextColor="#0033A0" FontAttributes="Bold" HorizontalOptions="Start"/>
+                                <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="040301722150"
+                                       FontSize="14" TextColor="#768692" HorizontalOptions="Start"/>
+                                <CheckBox Grid.Row="0" Grid.RowSpan="2" Grid.Column="3" x:Name="checkBoxPoliza"
+                                          HorizontalOptions="End" VerticalOptions="Center" Color="#00AEC7" />
+
+                                <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" BackgroundColor="Gray" Margin="0"/>
+
+                                <Label Grid.Row="3" Grid.Column="1" Text="Saldo Actual"
+                                       FontSize="14" TextColor="#0033A0" FontAttributes="Bold" HorizontalOptions="Start"/>
+                                <Label Grid.Row="4" Grid.Column="1" Text="Pago en tránsito"
+                                       FontSize="14" TextColor="#0033A0" FontAttributes="Bold" HorizontalOptions="Start"/>
+                                <Label Grid.Row="5" Grid.Column="1" Text="Monto sugerido"
+                                       FontSize="14" TextColor="#0033A0" FontAttributes="Bold" HorizontalOptions="Start"/>
+                                <Label Grid.Row="3" Grid.Column="2" Text="B/. 130.86"
+                                       Margin="20, 0, 0, 0" FontSize="14" TextColor="#00AEC7" FontAttributes="Bold" HorizontalOptions="Start"/>
+                                <Label Grid.Row="4" Grid.Column="2" Text="B/. 0.00"
+                                       Margin="20, 0, 0, 0" FontSize="14" TextColor="#53565A" HorizontalOptions="Start"/>
+                                <Label Grid.Row="5" Grid.Column="2" Text="B/. 130.86"
+                                       Margin="20, 0, 0, 0" FontSize="14" TextColor="#53565A" HorizontalOptions="Start"/>
+                                <Label Grid.Row="3" Grid.Column="3" Text="Estado"
+                                       FontSize="14" TextColor="#53565A" HorizontalOptions="End"/>
+                                <Label Grid.Row="4" Grid.Column="3" Text="VIGENTE"
+                                       FontSize="14" TextColor="#00AEC7" FontAttributes="Bold" HorizontalOptions="End"/>
+
+                                <Label Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" Text="Pago mínimo"
+                                       Margin="20, 20, 0, 0"  FontSize="14" TextColor="#0033A0" HorizontalOptions="Start"/>
+                                <local:CustomFrame Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3" BorderColor="#ecf0f1"
+                                       Margin="3" Padding="0" HasShadow="True" CornerRadius="30" HeightRequest="50">
+                                    <Entry x:Name="entPagoMinimo" Text="0.00" Margin="10, 0, 10, 0"
+                                           Style="{StaticResource GlobalEntryStyle}" Placeholder="0.00"/>
+                                </local:CustomFrame>
+
+                                <Label Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="3" Text="Debe ingresar un pago mínimo de B/. 1.00"
+                                       FontSize="12" TextColor="#E4002B" HorizontalOptions="Center"/>
+                            </Grid>
+                        </local:CustomFrame>
+                        <!--Fin de bloque completo-->
+
+                        <!--Inicio de bloque completo-->
+                        <local:CustomFrame HasShadow="True" Margin="3" Padding="0" CornerRadius="15" BorderColor="#ecf0f1">
+                            <Grid Margin="0" Padding="0, 15, 0, 15" RowSpacing="5" ColumnSpacing="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="1" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="15" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="15" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="Automóvil"
+                                       FontSize="14" TextColor="#0033A0" FontAttributes="Bold" HorizontalOptions="Start"/>
+                                <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="040301722150"
+                                       FontSize="14" TextColor="#768692" HorizontalOptions="Start"/>
+                                <CheckBox Grid.Row="0" Grid.RowSpan="2" Grid.Column="3"
+                                          HorizontalOptions="End" VerticalOptions="Center" Color="#00AEC7" />
+
+                                <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" BackgroundColor="Gray" Margin="0"/>
+
+                                <Label Grid.Row="3" Grid.Column="1" Text="Saldo Actual"
+                                       FontSize="14" TextColor="#0033A0" FontAttributes="Bold" HorizontalOptions="Start"/>
+                                <Label Grid.Row="4" Grid.Column="1" Text="Pago en tránsito"
+                                       FontSize="14" TextColor="#0033A0" FontAttributes="Bold" HorizontalOptions="Start"/>
+                                <Label Grid.Row="5" Grid.Column="1" Text="Monto sugerido"
+                                       FontSize="14" TextColor="#0033A0" FontAttributes="Bold" HorizontalOptions="Start"/>
+                                <Label Grid.Row="3" Grid.Column="2" Text="B/. 130.86"
+                                       Margin="20, 0, 0, 0" FontSize="14" TextColor="#00AEC7" FontAttributes="Bold" HorizontalOptions="Start"/>
+                                <Label Grid.Row="4" Grid.Column="2" Text="B/. 0.00"
+                                       Margin="20, 0, 0, 0" FontSize="14" TextColor="#53565A" HorizontalOptions="Start"/>
+                                <Label Grid.Row="5" Grid.Column="2" Text="B/. 130.86"
+                                       Margin="20, 0, 0, 0" FontSize="14" TextColor="#53565A" HorizontalOptions="Start"/>
+                                <Label Grid.Row="3" Grid.Column="3" Text="Estado"
+                                       FontSize="14" TextColor="#53565A" HorizontalOptions="End"/>
+                                <Label Grid.Row="4" Grid.Column="3" Text="VIGENTE"
+                                       FontSize="14" TextColor="#00AEC7" FontAttributes="Bold" HorizontalOptions="End"/>
+
+                                <Label Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" Text="Pago mínimo"
+                                       Margin="20, 20, 0, 0"  FontSize="14" TextColor="#0033A0" HorizontalOptions="Start"/>
+                                <local:CustomFrame Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3" BorderColor="#ecf0f1"
+                                       Margin="3" Padding="0" HasShadow="True" CornerRadius="30" HeightRequest="50">
+                                    <Entry Text="0.00" Margin="10, 0, 10, 0"
+                                           Style="{StaticResource GlobalEntryStyle}" Placeholder="0.00"/>
+                                </local:CustomFrame>
+
+                                <Label Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="3" Text="Debe ingresar un pago mínimo de B/. 1.00"
+                                       FontSize="12" TextColor="#E4002B" HorizontalOptions="Center"/>
+                            </Grid>
+                        </local:CustomFrame>
+                        <!--Fin de bloque completo-->
+
+                    </StackLayout>
+                </Frame>
+            </Grid>
+      </StackLayout>
+  </ContentView.Content>
+</ContentView>

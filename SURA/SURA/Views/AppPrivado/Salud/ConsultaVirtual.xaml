@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SURA"
+             x:Class="SURA.Views.AppPrivado.Salud.ConsultaVirtual">
+    <ContentView.Content>
+        <StackLayout>
+            <Grid RowSpacing="5" ColumnSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/><!--Buscador-->
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="15" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="15" />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Row="0" Grid.Column="1" Margin="0, 15, 0, 0">
+                    <Label Text="Si no te sientes bien, aquí podrás obtener atención 24 horas, en salud con alguno de nuestros profesionales de la salud SURA."
+                           TextColor="#768692" FontSize="16" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Grid.Column="1" Margin="0, 10, 0, 0">
+                    <Label Text="Para iniciar, compártenos la siguiente información:"
+                           TextColor="#0033A0" FontSize="16" FontAttributes="Bold" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" Grid.Column="1" Margin="0, 10, 0, 0">
+                    <StackLayout Margin="10, 0, 0, 0">
+                        <Label Text="¿Qué sintomas presentas? Busca o selecciona los síntomas:" TextColor="#0033A0" FontSize="13"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <local:CustomFrame Padding="0" Margin="0" CornerRadius="30" HasShadow="true"
+                                           BackgroundColor="White" BorderColor="#ecf0f1">
+                            <Grid Margin="0" Padding="0" ColumnSpacing="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="20"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Column="1" Margin="0" Padding="0, 2, 0, 2">
+                                    <Entry Grid.Row="0" Grid.Column="1" x:Name="entBuscador"
+                                           VerticalOptions="Center" FontSize="16"
+                                           Placeholder="Buscar"/>
+                                </StackLayout>
+                                <StackLayout Grid.Column="2" VerticalOptions="FillAndExpand">
+                                    <Image Margin="0" Source="btn_lupa_buscar"
+                                           WidthRequest="17" Aspect="AspectFit"
+                                           HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                    <StackLayout.GestureRecognizers>
+                                        <!--<TapGestureRecognizer Tapped="btnBuscarEspecializacion_Tapped" />-->
+                                    </StackLayout.GestureRecognizers>
+                                </StackLayout>
+                            </Grid>
+                        </local:CustomFrame>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Grid.Row="3" Grid.Column="1" Margin="0, 10, 0, 0">
+                    <StackLayout Margin="10, 0, 0, 0">
+                        <Label Text="Campo obligatorio" TextColor="#768692" FontSize="13"/>
+                    </StackLayout>
+                    <StackLayout Margin="10, 20, 0, 0">
+                        <Label Text="Síntomas más buscados " TextColor="#0033A0" FontSize="13"/>
+                    </StackLayout>
+                    <StackLayout Margin="0" Padding="5">
+                        <!--<StackLayout Orientation="Horizontal"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center" BackgroundColor="Pink" Padding="10">-->
+                        <FlexLayout Direction="Row" Wrap="Wrap" AlignItems="Start" JustifyContent="Start">
+                            <StackLayout Margin="5">
+                                <Frame Margin="0" Padding="12" CornerRadius="30" BackgroundColor="#E0F5F8">
+                                    <Label Text="Diarrea" TextColor="#0033A0" FontSize="14" />
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Margin="5">
+                                <Frame Margin="0" Padding="12" CornerRadius="30" BackgroundColor="#E0F5F8">
+                                    <Label Text="Dolor abdominal" TextColor="#0033A0" FontSize="14" />
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Margin="5">
+                                <Frame Margin="0" Padding="12" CornerRadius="30" BackgroundColor="#E0F5F8">
+                                    <Label Text="Fiebre" TextColor="#0033A0" FontSize="14" />
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Margin="5">
+                                <Frame Margin="0" Padding="12" CornerRadius="30" BackgroundColor="#E0F5F8">
+                                    <Label Text="Dolor de garganta" TextColor="#0033A0" FontSize="14" />
+                                </Frame>
+                            </StackLayout>
+                        </FlexLayout>
+                    </StackLayout>
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

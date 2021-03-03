@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SURA.Views.AppPrivado.ElementosDashboard.PasarelaPago.DetallePago">
+    <ContentView.Content>
+        <Grid HeightRequest="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="150"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Orientation="Horizontal"
+                         Grid.Row="0"
+                         Grid.Column="1">
+                <Label Text="Seleccione las polizas"
+                       TextColor="White"
+                       HorizontalTextAlignment="Center"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+            <CollectionView Grid.Column="1" 
+                            Grid.Row="1" x:Name="PolizasListview"
+                      BackgroundColor="Transparent"
+                      SelectionMode="Single">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical"
+                                        ItemSpacing = "5"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame CornerRadius="4" BackgroundColor="White" VerticalOptions="FillAndExpand" Margin="0,4,0,4" HasShadow="False" HorizontalOptions="FillAndExpand">
+                            <Frame.Triggers>
+                                <DataTrigger Binding="{Binding Selected}" Value="False" TargetType="Frame">
+                                    <Setter Property="BackgroundColor" Value="#d9d9d9" />
+                                </DataTrigger>
+                            </Frame.Triggers>
+
+                            <Grid RowSpacing="5" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="5"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="1"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <!--Tipo Poliza-->
+                                <Label Text="{Binding Solucion}"
+                                               TextColor="#1B19A5"
+                                               Grid.Row="0"
+                                               Grid.Column="1"
+                                               FontSize="Small"
+                                               FontAttributes="None"
+                                               HorizontalOptions="Start"
+                                               HorizontalTextAlignment="Start"/>
+                                <Label Text="{Binding PolizaCaratula}"
+                                               TextColor="#1B19A5"
+                                               Grid.Row="1"
+                                               Grid.Column="1"
+                                               FontSize="Small"
+                                               FontAttributes="None"
+                                               HorizontalOptions="Start"
+                                               HorizontalTextAlignment="Start"/>
+
+                                <!--Saldo-->
+                                <CheckBox  IsChecked="{Binding Selected}"
+                                           Grid.Row="0"
+                                           Grid.Column="1"
+                                           Grid.RowSpan="2"
+                                           Color="{StaticResource Blue}"
+                                           HorizontalOptions="End"
+                                           HeightRequest="40"
+                                           CheckedChanged="Selected_CheckedChanged"
+                                           Margin="0"/>
+
+                                <BoxView BackgroundColor="#e7df00"
+                                                 Grid.Row="2"
+                                                 Grid.Column="1"/>
+
+                                <Label Text="Saldo actual"
+                                               TextColor="#5F5F5F"
+                                               Grid.Row="3"
+                                               Grid.Column="1"
+                                               FontSize="Small"
+                                               FontAttributes="None"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Start"/>
+
+                                <Label Text="{Binding SaldoString}"
+                                               TextColor="#5F5F5F"
+                                               Grid.Row="4"
+                                               Grid.Column="1"
+                                               FontSize="Small"
+                                               FontAttributes="Bold"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Start"/>
+
+
+                                <Label Text="Estado"
+                                               TextColor="#5F5F5F"
+                                               Grid.Row="3"
+                                               Grid.Column="1"
+                                               FontSize="Small"
+                                               FontAttributes="None"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="EndAndExpand"/>
+
+                                <Label Text="{Binding Estado}"
+                                               TextColor="#5F5F5F"
+                                               Grid.Row="4"
+                                               Grid.Column="1"
+                                               FontSize="Small"
+                                               FontAttributes="Bold"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="EndAndExpand"/>
+
+                                <Label TextColor="#5F5F5F"
+                                               Grid.Row="5"
+                                               Grid.Column="1"
+                                               FontSize="Small"
+                                               FontAttributes="Bold"
+                                               VerticalOptions="Center"
+                                       HorizontalTextAlignment="Center"
+                                               HorizontalOptions="StartAndExpand">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Pago en tránsito:" FontSize="Small"/>
+                                            <Span Text=" "/>
+                                            <Span Text="{Binding PagoPorAplicarString}" TextColor="{StaticResource Blue}" FontSize="Small" FontAttributes="Bold"/>
+                                        </FormattedString>
+                                        </Label.FormattedText>
+                                </Label>
+
+                                <Label Text="{Binding MontoSugeridoString}"
+                                               TextColor="#1B19A5"
+                                               Grid.Row="6"
+                                               Grid.Column="1"
+                                               FontSize="Small"
+                                               FontAttributes="Bold"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="StartAndExpand"/>
+
+                                <Frame OutlineColor="#66000000"
+                                       Grid.Column="1"
+                                       Grid.Row="7"
+                                       BackgroundColor="#42f3f3f3"
+                                       HasShadow="False"
+                                       Padding="5, 0, 5, 0">
+
+                                    <Entry VerticalOptions="CenterAndExpand"
+                                           FontSize="Default"
+                                           Keyboard="Numeric"
+                                           TextColor="#212121"
+                                           Text="{Binding MontoPagarSeleccionado}"
+                                           TextChanged="Monto_TextChanged"
+                                           HorizontalTextAlignment="Start"/>
+
+
+                                </Frame>
+
+                                <Label Text="{Binding PagoMinimoValidation}"
+                                               TextColor="#E6003A"
+                                               Grid.Row="8"
+                                               Grid.Column="1"
+                                               FontSize="Small"
+                                               FontAttributes="None"
+                                               HorizontalOptions="Start"
+                                               HorizontalTextAlignment="Start"/>
+
+                                <Label Text="* Aplica pronto pago"
+                                               TextColor="{StaticResource Blue}"
+                                               Grid.Row="9"
+                                               Grid.Column="1"
+                                               FontSize="Small"
+                                       IsVisible="{Binding AplicaProntoPago}"
+                                               FontAttributes="Bold"
+                                               HorizontalOptions="Start"
+                                               HorizontalTextAlignment="Start"/>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Frame Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"
+                   BackgroundColor="White"
+                   Margin="0,10,0,0">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Descuento"
+                               HorizontalOptions="StartAndExpand"
+                               TextColor="#5F5F5F"/>
+                        <Label x:Name="totalDescuento"
+                               Text="B/.0.00"
+                               HorizontalOptions="End"
+                               FontAttributes="Bold"
+                               TextColor="#5F5F5F"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Total a pagar"
+                               HorizontalOptions="StartAndExpand"
+                               TextColor="#5F5F5F"/>
+                        <Label x:Name="totalMonto"
+                               Text="B/.0.00"
+                               HorizontalOptions="End"
+                               FontAttributes="Bold"
+                               TextColor="#5F5F5F"/>
+                    </StackLayout>
+
+                    <Frame  x:Name="frmSiguiente"
+                            Padding="12"
+                            CornerRadius="10" 
+                            Margin="5,0,5,0"
+                            HasShadow="false"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            BackgroundColor="{StaticResource Blue}">
+
+                        <Label Text="Proceder al pago"  
+                               TextColor="White" 
+                               FontAttributes="Bold"
+                               FontSize="Subtitle"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Center" 
+                               VerticalTextAlignment="Center"/>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Pagar_Clicked"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

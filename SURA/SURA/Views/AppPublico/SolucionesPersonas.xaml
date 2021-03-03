@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SURA.Views.AppPublico.SolucionesPersonas"
+             BackgroundColor="Transparent">
+    <ContentView.Content>
+        <Grid Padding="0" RowSpacing="0" ColumnSpacing="0"
+              VerticalOptions="FillAndExpand"
+              HeightRequest="100"
+              HorizontalOptions="FillAndExpand"
+              x:Name="OuterGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="15"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="15"/>
+            </Grid.ColumnDefinitions>
+            <Grid.ColumnSpacing>
+                <OnIdiom x:TypeArguments="x:Double"
+                         Phone="0"
+                         Tablet="10">
+
+                </OnIdiom>
+            </Grid.ColumnSpacing>
+
+            <Grid.RowSpacing>
+                <OnIdiom x:TypeArguments="x:Double"
+                         Phone="0"
+                         Tablet="10">
+                </OnIdiom>
+            </Grid.RowSpacing>
+
+            <Frame Grid.Row="1" Grid.Column="1"
+                   x:Name="frmAuto"
+                   Style="{StaticResource MainPageButton}">
+                <Grid Padding="0" RowSpacing="0" ColumnSpacing="0"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Row="1" Grid.Column="0"
+                           HeightRequest="60"
+                           Source="seguroauto"
+                           Aspect="AspectFit"
+                           VerticalOptions="Center"/>
+
+                    <Label Grid.Row="3" Grid.Column="0"
+                           Text="Seguro de Auto" 
+                           Style="{StaticResource ProductText}"
+                           Margin="40,0"/>
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="frmAuto_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Frame Grid.Row="1" Grid.Column="3"
+                   x:Name="frmVidaIndividual"
+                   Style="{StaticResource MainPageButton}">
+                <Grid Padding="0" RowSpacing="0" ColumnSpacing="0"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Row="1" Grid.Column="0"
+                           HeightRequest="60"
+                           Source="segurovida"
+                           Aspect="AspectFit"
+                           VerticalOptions="Center"/>
+
+                    <Label Grid.Row="3" Grid.Column="0"
+                           Text="Seguro de Vida" 
+                           Style="{StaticResource ProductText}" 
+                           Margin="40,0"/>
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="frmVidaIndividual_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Frame Grid.Row="3" Grid.Column="1"
+                   x:Name="frmAsistenciaFuneraria"
+                   Style="{StaticResource MainPageButton}">
+                <Grid Padding="0" RowSpacing="0" ColumnSpacing="0"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Row="1" Grid.Column="0"
+                           HeightRequest="60"
+                           Source="asistenciafuneraria"
+                           Aspect="AspectFit"
+                           VerticalOptions="Center"/>
+
+                    <Label Grid.Row="3" Grid.Column="0"
+                           Text="Seguro de Asistencia Funeraria" 
+                           Style="{StaticResource ProductText}" 
+                           MaxLines="2"
+                           LineBreakMode="TailTruncation"/>
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="frmAsistenciaFuneraria_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Frame Grid.Row="3" Grid.Column="3"
+                   x:Name="frmEnfermedadesGraves"
+                   Style="{StaticResource MainPageButton}">
+                <Grid Padding="0" RowSpacing="0" ColumnSpacing="0"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Row="1" Grid.Column="0"
+                           HeightRequest="60"
+                           Source="enfermedadesgraves"
+                           Aspect="AspectFit"
+                           VerticalOptions="Center"/>
+
+                    <Label Grid.Row="3" Grid.Column="0"
+                           Text="Seguro de Protección y Asistencia Médica" 
+                           Style="{StaticResource ProductText}"
+                           MaxLines="2"
+                           LineBreakMode="TailTruncation"/>
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="frmEnfermedadesGraves_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Frame Grid.Row="5" Grid.Column="1"
+                   x:Name="frmAccidentesPersonales"
+                   Style="{StaticResource MainPageButton}">
+                <Grid Padding="0" RowSpacing="0" ColumnSpacing="0"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Row="1" Grid.Column="0"
+                           HeightRequest="60"
+                           Source="seguroaccidentes"
+                           Aspect="AspectFit"
+                           VerticalOptions="Center"/>
+
+                    <Label Grid.Row="3" Grid.Column="0"
+                           Text="Seguro de Accidentes Personales" 
+                           Style="{StaticResource ProductText}"
+                           MaxLines="2"
+                           LineBreakMode="TailTruncation">
+                    </Label>
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="frmAccidentesPersonales_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Frame Grid.Row="5" Grid.Column="3"
+                   x:Name="frmMultiproteccionHogar"
+                   Style="{StaticResource MainPageButton}">
+                <Grid Padding="0" RowSpacing="0" ColumnSpacing="0"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Row="1" Grid.Column="0"
+                           HeightRequest="60"
+                           Source="multiproteccionhogar"
+                           Aspect="AspectFit"
+                           VerticalOptions="Center"/>
+
+                    <Label Grid.Row="3" Grid.Column="0"
+                           Text="Seguro de Hogar" 
+                           Style="{StaticResource ProductText}" 
+                           Margin="40,0"/>
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="frmProteccionHogar_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

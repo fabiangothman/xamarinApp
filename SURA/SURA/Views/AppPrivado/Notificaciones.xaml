@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SURA.Views.AppPrivado.Notificaciones">
+    <ContentView.Content>
+        <StackLayout  Grid.Row="1" Padding="8,0,8,0">
+
+            <Label x:Name="lblEiqueta"
+                           IsVisible="False"
+                           Text="No tiene notificaciones"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="CenterAndExpand"
+                           TextColor="LightGray"
+                           Style="{StaticResource TitleBarText}"/>
+            <ListView x:Name="listView" RowHeight="120" SelectionMode="None" SeparatorVisibility="None" VerticalOptions="StartAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell x:Name="tapViewCell" Tapped="Notificacion_Tapped">
+
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"
+                                                  Text="Eliminar" IsDestructive="True" />
+                            </ViewCell.ContextActions>
+
+                            <Frame VerticalOptions="Start" HorizontalOptions="Fill" CornerRadius="4" Margin="0,6,0,6" HasShadow="False">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label TextColor="Gray" Text="{Binding MessageDateTime}" FontSize="Micro" FontAttributes="None" Grid.Row="0" HorizontalOptions="End" x:Name="lblDateTime"/>
+                                        <Label  Grid.Row="1" HorizontalOptions="Start" x:Name="lblTitle" >
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span TextColor="DarkBlue" FontSize="Small" FontAttributes="Bold" Text="{Binding Title}"/>
+                                                    <Span TextColor="Transparent" Text="{Binding ID}" FontSize="5"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Label TextColor="Black" FontSize="Small" FontAttributes="None" HorizontalOptions="Start" Grid.Row="2" LineBreakMode="MiddleTruncation" x:Name="lblBody" Text="{Binding Body}"/>
+                                    </Grid>
+                                    <Image Grid.Column="0" Source="iconEstadoOrange.png" />
+                                </Grid>
+                            </Frame>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
